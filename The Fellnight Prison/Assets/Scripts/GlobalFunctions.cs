@@ -40,12 +40,12 @@ public class GlobalFunctions : MonoBehaviour {
 	
 	void OnJoinedLobby(){
 		Debug.Log("OnJoinedLobby");
-		PhotonNetwork.CreateRoom("FillerRoom-" + 1);
+        PhotonNetwork.CreateRoom("FillerRoom-" + Random.Range(1, 100000));
 	}
 	
 	void OnPhotonJoinRoomFailed(){
 		Debug.Log ("OnJoinRoomFailed");
-		PhotonNetwork.CreateRoom("FillerRoom-" + 2);
+		PhotonNetwork.CreateRoom("FillerRoom-" + Random.Range(1, 100000));
 	}
 	
 	void OnPhotonCreateRoomFailed(){
