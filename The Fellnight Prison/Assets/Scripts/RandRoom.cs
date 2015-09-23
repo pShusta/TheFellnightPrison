@@ -15,7 +15,7 @@ public class RandRoom : MonoBehaviour {
 	public GameObject Globals;
 
 	public GameObject[] SceneNodes;
-	public static GameObject[] myObjects;
+	public GameObject[] myObjects;
 
 	void Awake(){
 		if(!PhotonNetwork.connected){
@@ -25,7 +25,6 @@ public class RandRoom : MonoBehaviour {
 
 	void Start()
 	{		
-		myObjects = Resources.LoadAll<GameObject>("Tiles");
         Debug.Log(myObjects.Length);
 	}
 
