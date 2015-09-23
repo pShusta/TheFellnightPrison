@@ -28,6 +28,26 @@ public class RandRoom : MonoBehaviour {
         Debug.Log(myObjects.Length);
 	}
 
+    public void Launch()
+    {
+        Debug.Log("Lauch()");
+        if (PhotonNetwork.isMasterClient)
+        {
+            Debug.Log("PhotonNetwork.isMasterClient = true");
+            while (numToSpawn > numSpawned)
+            {
+                Debug.Log("while (numToSpawn > numSpawned)");
+                SpawnRandomObject();
+            }
+            if (!Globals.GetComponent<GlobalFunctions>().CheckReady() && numToSpawn <= numSpawned) { Globals.GetComponent<GlobalFunctions>().SetReady(true); }
+        }
+        if (Globals.GetComponent<GlobalFunctions>().CheckReady() && _spawned == false)
+        {
+            Globals.GetComponent<GlobalFunctions>().SpawnPlayer();
+            _spawned = true;
+        }
+    }
+
 	void SpawnRandomObject() 
 	{    
 		numSpawned++;
@@ -169,18 +189,6 @@ public class RandRoom : MonoBehaviour {
 
 	void Update() 
 	{
-        
-
-       if (PhotonNetwork.isMasterClient){s
-			if (numToSpawn > numSpawned) 
-			{
-				SpawnRandomObject ();
-			}else if ( !Globals.GetComponent<GlobalFunctions>().CheckReady() ) { Globals.GetComponent<GlobalFunctions>().SetReady(true); }
-		}
-		if(Globals.GetComponent<GlobalFunctions>().CheckReady() && _spawned == false) { 
-			Globals.GetComponent<GlobalFunctions>().SpawnPlayer();
-			_spawned = true;
-		}
 		
 	}
 
