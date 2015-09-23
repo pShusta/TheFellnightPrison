@@ -169,13 +169,13 @@ public class RandRoom : MonoBehaviour {
 
 	void Update() 
 	{
-        //Debug.Log("runs this");
+        
 
-        if (PhotonNetwork.isMasterClient){
+       if (PhotonNetwork.isMasterClient){s
 			if (numToSpawn > numSpawned) 
 			{
 				SpawnRandomObject ();
-			} else if ( !Globals.GetComponent<GlobalFunctions>().CheckReady() ) { Globals.GetComponent<GlobalFunctions>().SetReady(true); }
+			}else if ( !Globals.GetComponent<GlobalFunctions>().CheckReady() ) { Globals.GetComponent<GlobalFunctions>().SetReady(true); }
 		}
 		if(Globals.GetComponent<GlobalFunctions>().CheckReady() && _spawned == false) { 
 			Globals.GetComponent<GlobalFunctions>().SpawnPlayer();
