@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 32bd83ab8c69eb146aca485d75c09f29
+timeCreated: 1441780271
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cube.012
+    100002: //RootNode
+    100004: Roof 2 arc.014
+    100006: Roof 2 arc.015
+    100008: Roof 2 arc.016
+    100010: Roof 2 arc.017
+    100012: Roof 3 arc.006
+    100014: Roof 3 arc.007
+    100016: Roof 3 arc.008
+    100018: Roof 3 arc.009
+    100020: Roof 3 arc.010
+    100022: Roof 3 arc.011
+    100024: Roof 3 arc.012
+    100026: Roof 3 arc.013
+    100028: Roof 4 arc.002
+    100030: Roof 4 arc.003
+    100032: Roof 4 arc.004
+    100034: Roof 4 arc.005
+    100036: Wall Coner small.001
+    100038: Wall Coner small.002
+    100040: Wall Coner small.003
+    100042: Wall Coner small.004
+    400000: Cube.012
+    400002: //RootNode
+    400004: Roof 2 arc.014
+    400006: Roof 2 arc.015
+    400008: Roof 2 arc.016
+    400010: Roof 2 arc.017
+    400012: Roof 3 arc.006
+    400014: Roof 3 arc.007
+    400016: Roof 3 arc.008
+    400018: Roof 3 arc.009
+    400020: Roof 3 arc.010
+    400022: Roof 3 arc.011
+    400024: Roof 3 arc.012
+    400026: Roof 3 arc.013
+    400028: Roof 4 arc.002
+    400030: Roof 4 arc.003
+    400032: Roof 4 arc.004
+    400034: Roof 4 arc.005
+    400036: Wall Coner small.001
+    400038: Wall Coner small.002
+    400040: Wall Coner small.003
+    400042: Wall Coner small.004
+    2300000: Cube.012
+    2300002: Roof 2 arc.014
+    2300004: Roof 2 arc.015
+    2300006: Roof 2 arc.016
+    2300008: Roof 2 arc.017
+    2300010: Roof 3 arc.006
+    2300012: Roof 3 arc.007
+    2300014: Roof 3 arc.008
+    2300016: Roof 3 arc.009
+    2300018: Roof 3 arc.010
+    2300020: Roof 3 arc.011
+    2300022: Roof 3 arc.012
+    2300024: Roof 3 arc.013
+    2300026: Roof 4 arc.002
+    2300028: Roof 4 arc.003
+    2300030: Roof 4 arc.004
+    2300032: Roof 4 arc.005
+    2300034: Wall Coner small.001
+    2300036: Wall Coner small.002
+    2300038: Wall Coner small.003
+    2300040: Wall Coner small.004
+    3300000: Cube.012
+    3300002: Roof 2 arc.014
+    3300004: Roof 2 arc.015
+    3300006: Roof 2 arc.016
+    3300008: Roof 2 arc.017
+    3300010: Roof 3 arc.006
+    3300012: Roof 3 arc.007
+    3300014: Roof 3 arc.008
+    3300016: Roof 3 arc.009
+    3300018: Roof 3 arc.010
+    3300020: Roof 3 arc.011
+    3300022: Roof 3 arc.012
+    3300024: Roof 3 arc.013
+    3300026: Roof 4 arc.002
+    3300028: Roof 4 arc.003
+    3300030: Roof 4 arc.004
+    3300032: Roof 4 arc.005
+    3300034: Wall Coner small.001
+    3300036: Wall Coner small.002
+    3300038: Wall Coner small.003
+    3300040: Wall Coner small.004
+    4300000: Wall Coner small.004
+    4300002: Wall Coner small.003
+    4300004: Wall Coner small.002
+    4300006: Wall Coner small.001
+    4300008: Roof 3 arc.013
+    4300010: Roof 3 arc.012
+    4300012: Roof 3 arc.011
+    4300014: Roof 3 arc.010
+    4300016: Roof 4 arc.005
+    4300018: Roof 4 arc.004
+    4300020: Roof 4 arc.003
+    4300022: Roof 4 arc.002
+    4300024: Cube.012
+    4300026: Roof 2 arc.017
+    4300028: Roof 2 arc.016
+    4300030: Roof 2 arc.015
+    4300032: Roof 2 arc.014
+    4300034: Roof 3 arc.009
+    4300036: Roof 3 arc.008
+    4300038: Roof 3 arc.007
+    4300040: Roof 3 arc.006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

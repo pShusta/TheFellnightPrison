@@ -26,6 +26,7 @@ public class RandRoom : MonoBehaviour {
 	void Start()
 	{		
 		myObjects = Resources.LoadAll<GameObject>("Tiles");
+        Debug.Log(myObjects.Length);
 	}
 
 	void SpawnRandomObject() 
@@ -41,8 +42,8 @@ public class RandRoom : MonoBehaviour {
 		int Index_SceneNode = Random.Range (0,SceneNodes.Length);
 		GameObject ParentNode = SceneNodes [Index_SceneNode];
 
-		//Keep this below the SceneNodes.FindObjectsWithTag, otherwise it'll pick up the new rooms Nodes
-		GameObject myObj = PhotonNetwork.Instantiate (myObjects [whichItem].name, new Vector3 (6,6,6), Quaternion.identity, 0) as GameObject;
+        //Keep this below the SceneNodes.FindObjectsWithTag, otherwise it'll pick up the new rooms Nodes
+        GameObject myObj = PhotonNetwork.Instantiate (myObjects [whichItem].name, new Vector3 (6,6,6), Quaternion.identity, 0) as GameObject;
 		//Finds all of the Ray Cast Nodes in the new object
 		var RayNodes = myObj.transform.Cast<Transform>().Where(c=>c.gameObject.tag == "Ray Cast Node").ToArray();
 		//Finds all of the Nodes in the new object
@@ -169,7 +170,9 @@ public class RandRoom : MonoBehaviour {
 
 	void Update() 
 	{
-		if(PhotonNetwork.isMasterClient){
+        //Debug.Log("runs this");
+
+        if (PhotonNetwork.isMasterClient){
 			if (numToSpawn > numSpawned) 
 			{
 				SpawnRandomObject ();

@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: b9ced81ae063c3d499d102ef3bf42f0b
+timeCreated: 1441780272
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cube.022
+    100002: //RootNode
+    100004: Roof 2 arc.018
+    100006: Roof 2 arc.019
+    100008: Roof 2 arc.020
+    100010: Roof 2 arc.021
+    100012: Roof 3 arc.014
+    100014: Roof 3 arc.015
+    100016: Roof 3 arc.016
+    100018: Roof 3 arc.017
+    100020: Roof 3 arc.018
+    100022: Roof 3 arc.019
+    100024: Roof 3 arc.020
+    100026: Roof 3 arc.021
+    100028: Roof 3 arc.022
+    100030: Roof 3 arc.023
+    100032: Roof 3 arc.024
+    100034: Roof 3 arc.025
+    100036: Roof 3 arc.026
+    100038: Roof 3 arc.027
+    100040: Roof 3 arc.028
+    100042: Roof 3 arc.029
+    100044: Roof 4 arc.006
+    100046: Roof 4 arc.007
+    100048: Roof 4 arc.008
+    100050: Roof 4 arc.009
+    100052: Roof 4 arc.010
+    100054: Roof 4 arc.011
+    100056: Roof 4 arc.012
+    100058: Roof 4 arc.013
+    100060: Roof 4 arc.014
+    100062: Roof 4 arc.015
+    100064: Roof 4 arc.016
+    100066: Roof 4 arc.017
+    100068: Wall Coner small.001
+    100070: Wall Coner small.002
+    100072: Wall Coner small.003
+    100074: Wall Coner small.004
+    400000: Cube.022
+    400002: //RootNode
+    400004: Roof 2 arc.018
+    400006: Roof 2 arc.019
+    400008: Roof 2 arc.020
+    400010: Roof 2 arc.021
+    400012: Roof 3 arc.014
+    400014: Roof 3 arc.015
+    400016: Roof 3 arc.016
+    400018: Roof 3 arc.017
+    400020: Roof 3 arc.018
+    400022: Roof 3 arc.019
+    400024: Roof 3 arc.020
+    400026: Roof 3 arc.021
+    400028: Roof 3 arc.022
+    400030: Roof 3 arc.023
+    400032: Roof 3 arc.024
+    400034: Roof 3 arc.025
+    400036: Roof 3 arc.026
+    400038: Roof 3 arc.027
+    400040: Roof 3 arc.028
+    400042: Roof 3 arc.029
+    400044: Roof 4 arc.006
+    400046: Roof 4 arc.007
+    400048: Roof 4 arc.008
+    400050: Roof 4 arc.009
+    400052: Roof 4 arc.010
+    400054: Roof 4 arc.011
+    400056: Roof 4 arc.012
+    400058: Roof 4 arc.013
+    400060: Roof 4 arc.014
+    400062: Roof 4 arc.015
+    400064: Roof 4 arc.016
+    400066: Roof 4 arc.017
+    400068: Wall Coner small.001
+    400070: Wall Coner small.002
+    400072: Wall Coner small.003
+    400074: Wall Coner small.004
+    2300000: Cube.022
+    2300002: Roof 2 arc.018
+    2300004: Roof 2 arc.019
+    2300006: Roof 2 arc.020
+    2300008: Roof 2 arc.021
+    2300010: Roof 3 arc.014
+    2300012: Roof 3 arc.015
+    2300014: Roof 3 arc.016
+    2300016: Roof 3 arc.017
+    2300018: Roof 3 arc.018
+    2300020: Roof 3 arc.019
+    2300022: Roof 3 arc.020
+    2300024: Roof 3 arc.021
+    2300026: Roof 3 arc.022
+    2300028: Roof 3 arc.023
+    2300030: Roof 3 arc.024
+    2300032: Roof 3 arc.025
+    2300034: Roof 3 arc.026
+    2300036: Roof 3 arc.027
+    2300038: Roof 3 arc.028
+    2300040: Roof 3 arc.029
+    2300042: Roof 4 arc.006
+    2300044: Roof 4 arc.007
+    2300046: Roof 4 arc.008
+    2300048: Roof 4 arc.009
+    2300050: Roof 4 arc.010
+    2300052: Roof 4 arc.011
+    2300054: Roof 4 arc.012
+    2300056: Roof 4 arc.013
+    2300058: Roof 4 arc.014
+    2300060: Roof 4 arc.015
+    2300062: Roof 4 arc.016
+    2300064: Roof 4 arc.017
+    2300066: Wall Coner small.001
+    2300068: Wall Coner small.002
+    2300070: Wall Coner small.003
+    2300072: Wall Coner small.004
+    3300000: Cube.022
+    3300002: Roof 2 arc.018
+    3300004: Roof 2 arc.019
+    3300006: Roof 2 arc.020
+    3300008: Roof 2 arc.021
+    3300010: Roof 3 arc.014
+    3300012: Roof 3 arc.015
+    3300014: Roof 3 arc.016
+    3300016: Roof 3 arc.017
+    3300018: Roof 3 arc.018
+    3300020: Roof 3 arc.019
+    3300022: Roof 3 arc.020
+    3300024: Roof 3 arc.021
+    3300026: Roof 3 arc.022
+    3300028: Roof 3 arc.023
+    3300030: Roof 3 arc.024
+    3300032: Roof 3 arc.025
+    3300034: Roof 3 arc.026
+    3300036: Roof 3 arc.027
+    3300038: Roof 3 arc.028
+    3300040: Roof 3 arc.029
+    3300042: Roof 4 arc.006
+    3300044: Roof 4 arc.007
+    3300046: Roof 4 arc.008
+    3300048: Roof 4 arc.009
+    3300050: Roof 4 arc.010
+    3300052: Roof 4 arc.011
+    3300054: Roof 4 arc.012
+    3300056: Roof 4 arc.013
+    3300058: Roof 4 arc.014
+    3300060: Roof 4 arc.015
+    3300062: Roof 4 arc.016
+    3300064: Roof 4 arc.017
+    3300066: Wall Coner small.001
+    3300068: Wall Coner small.002
+    3300070: Wall Coner small.003
+    3300072: Wall Coner small.004
+    4300000: Wall Coner small.004
+    4300002: Wall Coner small.003
+    4300004: Wall Coner small.002
+    4300006: Wall Coner small.001
+    4300008: Roof 4 arc.017
+    4300010: Roof 4 arc.016
+    4300012: Roof 4 arc.015
+    4300014: Roof 4 arc.014
+    4300016: Roof 4 arc.013
+    4300018: Roof 4 arc.012
+    4300020: Roof 4 arc.011
+    4300022: Roof 4 arc.010
+    4300024: Roof 3 arc.029
+    4300026: Roof 3 arc.028
+    4300028: Roof 3 arc.027
+    4300030: Roof 3 arc.026
+    4300032: Roof 3 arc.025
+    4300034: Roof 3 arc.024
+    4300036: Roof 3 arc.023
+    4300038: Roof 3 arc.022
+    4300040: Roof 3 arc.021
+    4300042: Roof 3 arc.020
+    4300044: Roof 3 arc.019
+    4300046: Roof 3 arc.018
+    4300048: Roof 2 arc.021
+    4300050: Roof 2 arc.020
+    4300052: Roof 2 arc.019
+    4300054: Roof 2 arc.018
+    4300056: Cube.022
+    4300058: Roof 4 arc.009
+    4300060: Roof 4 arc.008
+    4300062: Roof 4 arc.007
+    4300064: Roof 4 arc.006
+    4300066: Roof 3 arc.017
+    4300068: Roof 3 arc.016
+    4300070: Roof 3 arc.015
+    4300072: Roof 3 arc.014
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
