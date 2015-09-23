@@ -16,4 +16,9 @@ public class BaseItem : PublicDataTypes {
         Durability = _dura;
         Weight = _weight;
     }
+
+    public void SetDura(int _value) { Durability = _value; }
+    public int GetDura() { return Durability; }
+    public void SetWeight(int _value) { Weight = _value; }
+    public int GetWeight() { return Weight; }
 }

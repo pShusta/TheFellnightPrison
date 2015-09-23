@@ -3,14 +3,18 @@ using System;
 
 public class Weapon : BaseItem{
 
+    private string Name;
+    private double Id;
     private int Range, EleDmgAmt, PhysDmgAmt;
     private DmgType PhysDmg;
     private EleDmgType EleDmg;
     private WeaponType WeapType;
     private BaseItem ItemBase;
 
-    public Weapon()
+    public Weapon(string _name)
     {
+        Name = _name;
+        Id = (double)UnityEngine.Random.Range(0, 1000000000);
         Range = UnityEngine.Random.Range(1, 20);
         Array values = EleDmgType.GetValues(typeof(EleDmgType));
         System.Random random = new System.Random();
@@ -41,8 +45,10 @@ public class Weapon : BaseItem{
         ItemBase = new BaseItem();
     }
 
-    public Weapon(DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range)
+    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range)
     {
+        Name = _name;
+        Id = (double)UnityEngine.Random.Range(0, 1000000000);
         Range = _range;
         EleDmgAmt = _eleDmgAmt;
         PhysDmgAmt = _physDmgAmt;
@@ -71,8 +77,10 @@ public class Weapon : BaseItem{
         ItemBase = new BaseItem();
     }
 
-    public Weapon(DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range, int _dura, int _weight)
+    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range, int _dura, int _weight)
     {
+        Name = _name;
+        Id = (double)UnityEngine.Random.Range(0, 1000000000);
         Range = _range;
         EleDmgAmt = _eleDmgAmt;
         PhysDmgAmt = _physDmgAmt;
@@ -101,5 +109,21 @@ public class Weapon : BaseItem{
         ItemBase = new BaseItem(_dura, _weight);
     }
 
+    public void SetName(string _value) { Name = _value; }
+    public string GetName() { return Name; }
+    public void SetRange(int _value) { Range = _value; }
+    public int GetRange() { return Range; }
+    public void SetDmgType(DmgType _value) { PhysDmg = _value; }
+    public DmgType GetDmgType() { return PhysDmg; }
+    public void SetPhysDmgAmt(int _value) { PhysDmgAmt = _value; }
+    public int GetPhysDmgAmt() { return PhysDmgAmt; }
+    public void SetEleDmgType(EleDmgType _value) { EleDmg = _value; }
+    public EleDmgType GetEleDmgType() { return EleDmg; }
+    public void SetEleDmgAmt(int _value) { EleDmgAmt = _value; }
+    public int GetEleDmgAmt() { return EleDmgAmt; }
+    public void SetWeapType(WeaponType _value) { WeapType = _value; }
+    public WeaponType GetWeapType() { return WeapType; }
+    public void SetBaseItem(BaseItem _value) { ItemBase = _value; }
+    public BaseItem GetBaseItem() { return ItemBase; }
 	
 }
