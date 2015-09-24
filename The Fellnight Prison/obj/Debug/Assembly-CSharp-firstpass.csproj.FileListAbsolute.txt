@@ -23,5 +23,3 @@ C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\Temp\bin\
 C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\obj\Debug\Assembly-CSharp-firstpass.pdb
-C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\Temp\bin\Debug\Assembly-CSharp-firstpass.dll.config
-C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\Temp\bin\Debug\MySql.Data.dll

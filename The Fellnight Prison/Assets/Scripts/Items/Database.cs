@@ -1,84 +1,86 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using MySql.Data.MySqlClient;
 
-public class Database : MonoBehaviour {
+public class Database : MonoBehaviour{
 
-    string source;
-    MySqlConnection _connection;
-
-	// Use this for initialization
-	void Start () {
-        source = "Server=localhost;Database=thefellnightprison;Uid=root;Pwd=MyloA1daine;";
-        _connection = new MySqlConnection(source);
-        _connection.Open();
-        RunCommand(_connection);
-        _connection.Close();
-	}
-
-    void RunCommand(MySqlConnection _connect)
+    void Start()
     {
-        MySqlCommand _command = _connect.CreateCommand();
-        _command.CommandText = "SELECT * from weapontest";
-        MySqlDataReader _reader = _command.ExecuteReader();
-        while (_reader.Read())
-        {
-            Debug.Log("WeaponName: " + _reader["WeaponName"]);
-            Debug.Log("WeaponDamage: " + _reader["WeaponDamage"]);
-        }
+        Weapon test = new Weapon();
     }
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
-}
-
-/*
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-
-namespace WindowsFormsApplication1
-{
-    public partial class Form1 : Form
+    public static Weapon ReadWeaponDb(int id)
     {
-        SqlConnection sc = new SqlConnection ("Data Source=SAF-PC\\SQLEXPRESS;Integrated Security=TRUE;Initial Catalog=safa");
-        SqlCommand cmd;
+        string source = "Server=10.2.130.147;Database=thefellnightprison;Uid=Fellnight;Pwd=Sunspear;";
+        MySqlConnection _connect = new MySqlConnection(source);
+        _connect.Open();
 
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        MySqlCommand _cmd = _connect.CreateCommand();
+        _cmd.CommandText = "SELECT * FROM thefellnightprison.weapons Where idWeapons = '" + id + "'";
+        MySqlDataReader _reader = _cmd.ExecuteReader();
+        _reader.Read();
+        Weapon _weap = new Weapon(      _reader["WeaponName"].ToString(),
+                                        PublicDataTypes.ToDmgType(_reader["DmgType"].ToString()),
+                                        Convert.ToInt32(_reader["DmgAmt"].ToString()),
+                                        PublicDataTypes.ToEleDmgType(_reader["EleDmgType"].ToString()),
+                                        Convert.ToInt32(_reader["EleDmgAmt"].ToString()),
+                                        Convert.ToInt32(_reader["WeaponRange"].ToString()),
+                                        Convert.ToInt32(_reader["Durability"].ToString()),
+                                        Convert.ToInt32(_reader["Weight"].ToString())
+                                 );
+        _reader.Close();
+        _connect.Close();
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        return _weap;
 
-        }
+    }
 
-        private void btnsave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                sc.Open();
-                cmd = new SqlCommand("Insert into emp (ID,Name) values('" + txtid.Text + "','" + txtname.Text + "')", sc);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Update Successfull to the Database");
-                sc.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+    public static int WeaponDbInsert(Weapon _weap)
+    {
+        string source = "Server=10.2.130.147;Database=thefellnightprison;Uid=Fellnight;Pwd=Sunspear;";
+        MySqlConnection _connect = new MySqlConnection(source);
+        _connect.Open();
 
+        //name, range, DmgType, EleDmgType, DmgAmt, EleDmgAmt, WeapType, Durability, Weight
+        string _fill = "', '";
+        string _name, _dmgt, _elet, _weapt;
+        int _range, _dmga, _elea, _dura, _wght;
+        _name = _weap.GetName();
+        _range = _weap.GetRange();
+        _dmgt = _weap.GetDmgType().ToString();
+        _elet = _weap.GetEleDmgType().ToString();
+        _weapt = _weap.GetWeapType().ToString();
+        _dmga = _weap.GetPhysDmgAmt();
+        _elea = _weap.GetEleDmgAmt();
+        _dura = _weap.GetDura();
+        _wght = _weap.GetWeight();
 
-        }
+        string values = "('" + _name + _fill + _range + _fill + _elet + _fill + _dmgt + _fill + _elea + _fill + _dmga + _fill + _weapt + _fill + _dura + _fill + _wght + "')";
+        string locations = "(WeaponName, WeaponRange, EleDmgType, DmgType, EleDmgAmt, DmgAmt, WeapType, Durability, Weight)";
+        string cmdText = "INSERT INTO weapons " + locations + " VALUES" + values;
+        
+        MySqlCommand _cmd = _connect.CreateCommand();
+        _cmd.CommandText = cmdText;
+        _cmd.ExecuteNonQuery();
+
+        _cmd.CommandText = "SELECT * FROM thefellnightprison.weapons Where WeaponName = '" +
+                                _name + "' AND WeaponRange = '" +
+                                _range + "' AND DmgType = '" +
+                                _dmgt + "' AND EleDmgType = '" +
+                                _elet + "' AND DmgAmt = '" +
+                                _dmga + "' AND EleDmgAmt = '" +
+                                _elea + "' AND Durability = '" +
+                                _dura + "' AND Weight = '" +
+                                _wght + "'";
+
+        MySqlDataReader _reader = _cmd.ExecuteReader();
+        _reader.Read();
+        string thing = _reader["idWeapons"].ToString();
+        
+        _reader.Close();
+        _connect.Close();
+
+        return Convert.ToInt32(thing);
     }
 }
-*/

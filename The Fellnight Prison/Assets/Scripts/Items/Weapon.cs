@@ -11,10 +11,9 @@ public class Weapon : BaseItem{
     private WeaponType WeapType;
     private BaseItem ItemBase;
 
-    public Weapon(string _name)
+    public Weapon(string _name = "Name: Default") : base()
     {
         Name = _name;
-        Id = (double)UnityEngine.Random.Range(0, 1000000000);
         Range = UnityEngine.Random.Range(1, 20);
         Array values = EleDmgType.GetValues(typeof(EleDmgType));
         System.Random random = new System.Random();
@@ -42,10 +41,10 @@ public class Weapon : BaseItem{
         } else {
             WeapType = WeaponType.RHigh;
         }
-        ItemBase = new BaseItem();
+        Id = Database.WeaponDbInsert(this);
     }
 
-    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range)
+    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range) : base()
     {
         Name = _name;
         Id = (double)UnityEngine.Random.Range(0, 1000000000);
@@ -74,10 +73,10 @@ public class Weapon : BaseItem{
         {
             WeapType = WeaponType.RHigh;
         }
-        ItemBase = new BaseItem();
+        Id = Database.WeaponDbInsert(this);
     }
 
-    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range, int _dura, int _weight)
+    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range, int _dura, int _weight) : base(_dura, _weight)
     {
         Name = _name;
         Id = (double)UnityEngine.Random.Range(0, 1000000000);
@@ -106,11 +105,13 @@ public class Weapon : BaseItem{
         {
             WeapType = WeaponType.RHigh;
         }
-        ItemBase = new BaseItem(_dura, _weight);
+        Id = Database.WeaponDbInsert(this);
     }
 
+    
     public void SetName(string _value) { Name = _value; }
     public string GetName() { return Name; }
+    public double GetId() { return Id; }
     public void SetRange(int _value) { Range = _value; }
     public int GetRange() { return Range; }
     public void SetDmgType(DmgType _value) { PhysDmg = _value; }
@@ -123,7 +124,5 @@ public class Weapon : BaseItem{
     public int GetEleDmgAmt() { return EleDmgAmt; }
     public void SetWeapType(WeaponType _value) { WeapType = _value; }
     public WeaponType GetWeapType() { return WeapType; }
-    public void SetBaseItem(BaseItem _value) { ItemBase = _value; }
-    public BaseItem GetBaseItem() { return ItemBase; }
 	
 }
