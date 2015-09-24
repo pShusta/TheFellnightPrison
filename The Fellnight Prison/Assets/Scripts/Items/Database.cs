@@ -12,7 +12,7 @@ public class Database : MonoBehaviour{
 
     public static Weapon ReadWeaponDb(int id)
     {
-        string source = "Server=10.2.130.147;Database=thefellnightprison;Uid=Fellnight;Pwd=Sunspear;";
+        string source = "Server=10.2.130.147:3306;Database=thefellnightprison;Uid=Fellnight;Pwd=Sunspear;";
         MySqlConnection _connect = new MySqlConnection(source);
         _connect.Open();
 
