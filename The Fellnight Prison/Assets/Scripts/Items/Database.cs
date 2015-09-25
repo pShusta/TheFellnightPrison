@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 public class Database : MonoBehaviour{
 
-    private static string serverIP = "10.2.130.147";
+    private static string serverIP = "localhost";
     private static string port = "3306";
     private static string database = "thefellnightprison";
     private static string Uid = "Fellnight";
