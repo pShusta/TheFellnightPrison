@@ -5,14 +5,27 @@ using MySql.Data.MySqlClient;
 
 public class Database : MonoBehaviour{
 
+    private static string serverIP = "10.2.130.147";
+    private static string database = "thefellnightprison";
+    private static string Uid = "Fellnight";
+    private static string Pwd = "Sunspear";
+
     void Start()
     {
         Weapon test = new Weapon();
     }
 
+    public static void setServer(string _server) { serverIP = _server; }
+    public static string getServer() { return serverIP;  }
+    public static void setDatabase(string _base) { database = _base;  }
+    public static string getDatabase() { return database;  }
+    public static void setUid(string _Uid) { Uid = _Uid;  }
+    public static string getUid() { return Uid;  }
+    public static void setPwd(string _Pwd) { Pwd = _Pwd;  }
+
     public static Weapon ReadWeaponDb(int id)
     {
-        string source = "Server=10.2.130.147:3306;Database=thefellnightprison;Uid=Fellnight;Pwd=Sunspear;";
+        string source = "Server=" + serverIP + ";Database=" + database + ";Uid=" + Uid + ";Pwd=" + Pwd + ";";
         MySqlConnection _connect = new MySqlConnection(source);
         _connect.Open();
 
@@ -38,7 +51,7 @@ public class Database : MonoBehaviour{
 
     public static int WeaponDbInsert(Weapon _weap)
     {
-        string source = "Server=10.2.130.147;Database=thefellnightprison;Uid=Fellnight;Pwd=Sunspear;";
+        string source = "Server=" + serverIP + ";Database=" + database + ";Uid=" + Uid + ";Pwd=" + Pwd + ";";
         MySqlConnection _connect = new MySqlConnection(source);
         _connect.Open();
 
