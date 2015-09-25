@@ -6,6 +6,7 @@ using MySql.Data.MySqlClient;
 public class Database : MonoBehaviour{
 
     private static string serverIP = "10.2.130.147";
+    private static string port = "3306";
     private static string database = "thefellnightprison";
     private static string Uid = "Fellnight";
     private static string Pwd = "Sunspear";
@@ -22,10 +23,12 @@ public class Database : MonoBehaviour{
     public static void setUid(string _Uid) { Uid = _Uid;  }
     public static string getUid() { return Uid;  }
     public static void setPwd(string _Pwd) { Pwd = _Pwd;  }
+    public static void setPort(string _port) { port = _port;  }
+    public static string getPort() { return port; }
 
     public static Weapon ReadWeaponDb(int id)
     {
-        string source = "Server=" + serverIP + ";Database=" + database + ";Uid=" + Uid + ";Pwd=" + Pwd + ";";
+        string source = "Server=" + serverIP + "; Port=" + port + "; Database=" + database + "; Uid=" + Uid + "; Password=" + Pwd + ";";
         MySqlConnection _connect = new MySqlConnection(source);
         _connect.Open();
 

@@ -112,6 +112,12 @@
  <Reference Include="websocket-sharp">
  <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
+ <Reference Include="I18N.West">
+ <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/I18N.West.dll</HintPath>
+ </Reference>
+ <Reference Include="I18N">
+ <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/I18N.dll</HintPath>
+ </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
  </Reference>

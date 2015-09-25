@@ -16,6 +16,8 @@ Default GameObject Tag: New Tag already registered
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.dll (this message is harmless)
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.West.dll (this message is harmless)
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
 Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-CSharp.dll (this message is harmless)
@@ -32,8 +34,12 @@ Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnig
 Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Data.dll into Unity Child Domain
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Drawing.dll (this message is harmless)
 Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Drawing.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.West.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.West.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.dll into Unity Child Domain
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.082 seconds
+- Completed reload, in  0.138 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -42,15 +48,5 @@ Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnig
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Xml.dll (this message is harmless)
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Transactions.dll (this message is harmless)
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Configuration.dll (this message is harmless)
-NotSupportedException: CodePage 1252 not supported
-  at System.Text.Encoding.GetEncoding (Int32 codepage) [0x00000] in <filename unknown>:0 
-  at MySql.Data.MySqlClient.Driver..ctor (MySql.Data.MySqlClient.MySqlConnectionStringBuilder settings) [0x00000] in <filename unknown>:0 
-  at MySql.Data.MySqlClient.Driver.Create (MySql.Data.MySqlClient.MySqlConnectionStringBuilder settings) [0x00000] in <filename unknown>:0 
-  at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection () [0x00000] in <filename unknown>:0 
-  at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection () [0x00000] in <filename unknown>:0 
-  at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: c54 -> priority: 1 
+  Thread -> id: 1e08 -> priority: 1 
