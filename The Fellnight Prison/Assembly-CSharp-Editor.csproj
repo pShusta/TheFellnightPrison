@@ -59,6 +59,22 @@
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbody2DViewEditor.cs" />
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbodyViewEditor.cs" />
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonTransformViewEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\AnimationLinkEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\AstarPathEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\AstarUpdateChecker.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\AstarUpdateWindow.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\CustomGraphEditorAttribute.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\EditorGUIx.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\EditorUtilities.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\GraphEditors\GraphEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\GraphEditors\GridGeneratorEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\GraphEditors\NavMeshGeneratorEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\GraphEditors\PointGeneratorEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\GraphUpdateSceneEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\Misc\AstarEnumFlagDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\ModifierEditors\RaycastModifierEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\ModifierEditors\SmoothModifierEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\SeekerEditor.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Scripts\Editor\BMFontReader.cs" />
@@ -94,6 +110,7 @@
      <Compile Include="Assets\_IMPORTED\NGUI\Scripts\Editor\UITiledSpriteInspector.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
@@ -101,33 +118,44 @@
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\GUI - Text Shader (AlphaClip).shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Readme_upgrading.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
      <None Include="Assets\_IMPORTED\NGUI\ReadMe - 2.7.0.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\English.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\French.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\JsonFx\JsonFxLicense.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Shaders\Refractive.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -199,6 +227,12 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

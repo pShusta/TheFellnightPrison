@@ -127,6 +127,78 @@
      <Compile Include="Assets\Scripts\UI\MainMenu\TitleScreenAnim.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu\TitleScreenButton.cs" />
      <Compile Include="Assets\Scripts\UI\Networking\NetworkController.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AI\AIPath.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AI\NavmeshController.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AI\Seeker.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AstarData.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AstarMath.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AstarPath.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\GraphUpdateScene.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\GraphUpdateShape.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\AnimationLink.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\AstarDebugger.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\AstarEnumFlagAttr.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\BinaryHeap.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\GraphEditorBase.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\GraphModifier.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\Int3.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\ListPool.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\NodeLink.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\NodeLink2.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\NodeLink3.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\ObjectPool.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\PathPool.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\StackPool.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\ThreadControlQueue.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Misc\WindowsStoreCompatibility.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Nodes\GraphNode.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Path.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\PathHandler.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Serialization\JsonConverters.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Serialization\JsonSerializer.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Serialization\SimpleJsonReplacement.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\Serialization\SimpleZipReplacement.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\astarclasses.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Example12_Procedural\ProceduralGridMover.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Example12_Procedural\ProceduralWorld.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\ExampleScripts\AIFollow.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\ExampleScripts\AstarSmoothFollow2.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\ExampleScripts\DoorController.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\ExampleScripts\DynamicGridObstacle.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\ExampleScripts\MineBotAI.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\ExampleScripts\ObjectPlacer.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\ExampleScripts\TargetMover.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\Base.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\GridGenerator.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\NavMeshGenerator.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\NodeClasses\GridNode.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\NodeClasses\PointNode.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\NodeClasses\TriangleMeshNode.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\PointGenerator.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\QuadtreeGraph.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\Utilities\BBTree.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\Utilities\EuclideanEmbedding.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\Utilities\NavMeshRenderer.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Generators\Utilities\ObjImporter.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Modifiers\AlternativePath.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Modifiers\FunnelModifier.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Modifiers\Modifiers.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Modifiers\RaycastModifier.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Modifiers\SimpleSmoothModifier.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Modifiers\StartEndModifier.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Navmesh\RelevantGraphSurface.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Pathfinders\ABPath.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\AstarChecksum.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\AstarMemory.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\AstarParallel.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\AstarProfiler.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\DotNetReplacements.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\GraphUpdateUtilities.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\LockFreeStack.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\PathUtilities.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
+     <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\changelog.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -246,6 +318,7 @@
      <Compile Include="Assets\_IMPORTED\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Scripts\UI\UIViewport.cs" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
@@ -253,33 +326,44 @@
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\GUI - Text Shader (AlphaClip).shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Readme_upgrading.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
      <None Include="Assets\_IMPORTED\NGUI\ReadMe - 2.7.0.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\English.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\French.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\JsonFx\JsonFxLicense.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Shaders\Refractive.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\_IMPORTED\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -306,6 +390,12 @@
  </Reference>
  <Reference Include="websocket-sharp">
  <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
