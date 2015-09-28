@@ -12,42 +12,21 @@ public class RandRoom : MonoBehaviour {
 
 	public Transform TempNode;
 
-	public GameObject Globals;
 
 	public GameObject[] SceneNodes;
 	public GameObject[] myObjects;
     public GameObject[] roomBounds;
 
-	void Awake(){
-		if(!PhotonNetwork.connected){
-			Globals.GetComponent<GlobalFunctions>().PhotonConnect();
-		}
-	}
 
 	void Start()
 	{		
+        myObjects = Resources.LoadAll<GameObject>("Tiles");
+        Launch();
         Debug.Log(myObjects.Length);
-	}
 
-    public void Launch()
-    {
-        Debug.Log("Lauch()");
-        if (PhotonNetwork.isMasterClient)
-        {
-            Debug.Log("PhotonNetwork.isMasterClient = true");
-            while (numToSpawn > numSpawned)
-            {
-                Debug.Log("while (numToSpawn > numSpawned)");
-                SpawnRandomObject();
-            }
-            if (!Globals.GetComponent<GlobalFunctions>().CheckReady() && numToSpawn <= numSpawned) { Globals.GetComponent<GlobalFunctions>().SetReady(true); }
-        }
-        if (Globals.GetComponent<GlobalFunctions>().CheckReady() && _spawned == false)
-        {
-            Globals.GetComponent<GlobalFunctions>().SpawnPlayer();
-            _spawned = true;
-        }
     }
+
+ 
 
     void SpawnRandomObject()
     {
@@ -65,9 +44,10 @@ public class RandRoom : MonoBehaviour {
         GameObject ParentNode = SceneNodes[Index_SceneNode];
 
         //Keep this below the SceneNodes.FindObjectsWithTag, otherwise it'll pick up the new rooms Nodes
-        GameObject myObj = PhotonNetwork.Instantiate(myObjects[whichItem].name, new Vector3(6, 6, 6), Quaternion.identity, 0) as GameObject;
+        GameObject myObj = Instantiate(myObjects[whichItem], new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
+
         //Finds all of the Ray Cast Nodes in the new object
-        var RayNodes = myObj.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Ray Cast Node").ToArray();
+        // var RayNodes = myObj.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Ray Cast Node").ToArray();
         //Finds all of the Nodes in the new object
 
         var RoomNodes = myObj.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Node").ToArray();
@@ -185,49 +165,60 @@ public class RandRoom : MonoBehaviour {
 
 
 
-        /*
-		bool checkspace = true;
-	
-		TempNode.transform.position = ParentNode.transform.position + Vector3.up;
-		int iRay = 0;
-		while(iRay < RayNodes.Length){
-			//Debug.Log("place in ray cast nodes" + RayNodes[iRay]);
-			if(iRay < RayNodes.Length * 0.5f){
-				//Debug.DrawRay (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward * myObj.transform.localScale.x, Color.blue, 10000);
-				if (Physics.Raycast (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward, myObj.transform.localScale.x - 1f))
-				{
-					//Debug.Log ("RayCast NOde Hit a thing!!!!!!!");
-					Destroy (myObj);
-					numSpawned--;
-					iRay = RayNodes.Length;
-					checkspace = false;
-				}
+/*
+bool checkspace = true;
 
-			}
-			else 
-			{
-				//Debug.DrawRay (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward * myObj.transform.localScale.z, Color.red, 10000);
-				if (Physics.Raycast (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward, myObj.transform.localScale.z - 1f)){
-				//Debug.Log ("RayCast NOde Hit a thing!!!!!!!");
-				Destroy (myObj);
-				numSpawned--;
-				iRay = RayNodes.Length;
-				checkspace = false;
-				}
-			}
-			iRay++;
-		}
-		if (checkspace == true) {
-		
-			TempNode.transform.position = ParentNode.transform.position;
-			//TempNode.DetachChildren();
-			myObj.transform.parent = ParentNode.transform;
-			ParentNode.gameObject.tag = "Used Node";
-			ChildNode.gameObject.tag = "Used Node";
-		}  
+TempNode.transform.position = ParentNode.transform.position + Vector3.up;
+int iRay = 0;
+while(iRay < RayNodes.Length){
+    //Debug.Log("place in ray cast nodes" + RayNodes[iRay]);
+    if(iRay < RayNodes.Length * 0.5f){
+        //Debug.DrawRay (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward * myObj.transform.localScale.x, Color.blue, 10000);
+        if (Physics.Raycast (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward, myObj.transform.localScale.x - 1f))
+        {
+            //Debug.Log ("RayCast NOde Hit a thing!!!!!!!");
+            Destroy (myObj);
+            numSpawned--;
+            iRay = RayNodes.Length;
+            checkspace = false;
+        }
 
-	}
-    */
+    }
+    else 
+    {
+        //Debug.DrawRay (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward * myObj.transform.localScale.z, Color.red, 10000);
+        if (Physics.Raycast (RayNodes[iRay].transform.position, RayNodes[iRay].transform.forward, myObj.transform.localScale.z - 1f)){
+        //Debug.Log ("RayCast NOde Hit a thing!!!!!!!");
+        Destroy (myObj);
+        numSpawned--;
+        iRay = RayNodes.Length;
+        checkspace = false;
+        }
+    }
+    iRay++;
+}
+if (checkspace == true) {
+
+    TempNode.transform.position = ParentNode.transform.position;
+    //TempNode.DetachChildren();
+    myObj.transform.parent = ParentNode.transform;
+    ParentNode.gameObject.tag = "Used Node";
+    ChildNode.gameObject.tag = "Used Node";
+}  
+
+}
+*/
+public void Launch()
+{
+
+
+    while (numToSpawn > numSpawned)
+    {
+        SpawnRandomObject();
+    }
+
+}
+    
 
         void Update() 
 	{

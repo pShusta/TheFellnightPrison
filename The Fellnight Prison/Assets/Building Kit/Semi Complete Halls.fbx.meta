@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 3128446cae1166742a941760864ea4ba
+timeCreated: 1443421073
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cylinder.000
+    100002: GateWay
+    100004: Hall Hub
+    100006: Hall L-1
+    100008: Hall L-2
+    100010: Hall L-Sqr Hub
+    100012: Hall Long
+    100014: Hall Med
+    100016: Hall Short
+    100018: Hall Sqr Hub
+    100020: Hub Roof
+    100022: Pillar
+    100024: //RootNode
+    400000: Cylinder.000
+    400002: GateWay
+    400004: Hall Hub
+    400006: Hall L-1
+    400008: Hall L-2
+    400010: Hall L-Sqr Hub
+    400012: Hall Long
+    400014: Hall Med
+    400016: Hall Short
+    400018: Hall Sqr Hub
+    400020: Hub Roof
+    400022: Pillar
+    400024: //RootNode
+    2300000: Cylinder.000
+    2300002: GateWay
+    2300004: Hall Hub
+    2300006: Hall L-1
+    2300008: Hall L-2
+    2300010: Hall L-Sqr Hub
+    2300012: Hall Long
+    2300014: Hall Med
+    2300016: Hall Short
+    2300018: Hall Sqr Hub
+    2300020: Hub Roof
+    2300022: Pillar
+    3300000: Cylinder.000
+    3300002: GateWay
+    3300004: Hall Hub
+    3300006: Hall L-1
+    3300008: Hall L-2
+    3300010: Hall L-Sqr Hub
+    3300012: Hall Long
+    3300014: Hall Med
+    3300016: Hall Short
+    3300018: Hall Sqr Hub
+    3300020: Hub Roof
+    3300022: Pillar
+    4300000: Hall Short
+    4300002: Hall Hub
+    4300004: Hall L-1
+    4300006: Hall Sqr Hub
+    4300008: Hall Med
+    4300010: Hall L-2
+    4300012: Cylinder.000
+    4300014: Hall Long
+    4300016: Hub Roof
+    4300018: GateWay
+    4300020: Hall L-Sqr Hub
+    4300022: Pillar
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -115,6 +115,7 @@
      <Compile Include="Assets\Scripts\MakeMap.cs" />
      <Compile Include="Assets\Scripts\NavMeshScript.cs" />
      <Compile Include="Assets\Scripts\Networking\NetworkBase.cs" />
+     <Compile Include="Assets\Scripts\NewRandRoom.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\RandRoom.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory\InvPanelVisibility.cs" />

@@ -1,0 +1,418 @@
+fileFormatVersion: 2
+guid: bb14c4cf4f1ad8348a1fdab77ef80088
+timeCreated: 1443422217
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cube.023
+    100002: //RootNode
+    100004: Roof 2 arc.022
+    100006: Roof 2 arc.023
+    100008: Roof 2 arc.024
+    100010: Roof 2 arc.025
+    100012: Roof 3 arc.030
+    100014: Roof 3 arc.031
+    100016: Roof 3 arc.032
+    100018: Roof 3 arc.033
+    100020: Roof 3 arc.034
+    100022: Roof 3 arc.035
+    100024: Roof 3 arc.036
+    100026: Roof 3 arc.037
+    100028: Roof 3 arc.038
+    100030: Roof 3 arc.039
+    100032: Roof 3 arc.040
+    100034: Roof 3 arc.041
+    100036: Roof 3 arc.042
+    100038: Roof 3 arc.043
+    100040: Roof 3 arc.044
+    100042: Roof 3 arc.045
+    100044: Roof 3 arc.046
+    100046: Roof 3 arc.047
+    100048: Roof 3 arc.048
+    100050: Roof 3 arc.049
+    100052: Roof 3 arc.050
+    100054: Roof 3 arc.051
+    100056: Roof 3 arc.052
+    100058: Roof 3 arc.053
+    100060: Roof 4 arc.018
+    100062: Roof 4 arc.019
+    100064: Roof 4 arc.020
+    100066: Roof 4 arc.021
+    100068: Roof 4 arc.022
+    100070: Roof 4 arc.023
+    100072: Roof 4 arc.024
+    100074: Roof 4 arc.025
+    100076: Roof 4 arc.026
+    100078: Roof 4 arc.027
+    100080: Roof 4 arc.028
+    100082: Roof 4 arc.029
+    100084: Roof 4 arc.030
+    100086: Roof 4 arc.031
+    100088: Roof 4 arc.032
+    100090: Roof 4 arc.033
+    100092: Roof 4 arc.034
+    100094: Roof 4 arc.035
+    100096: Roof 4 arc.036
+    100098: Roof 4 arc.037
+    100100: Roof 4 arc.038
+    100102: Roof 4 arc.039
+    100104: Roof 4 arc.040
+    100106: Roof 4 arc.041
+    100108: Roof 4 arc.042
+    100110: Roof 4 arc.043
+    100112: Roof 4 arc.044
+    100114: Roof 4 arc.045
+    100116: Roof 4 arc.046
+    100118: Roof 4 arc.047
+    100120: Roof 4 arc.048
+    100122: Roof 4 arc.049
+    100124: Roof 4 arc.050
+    100126: Roof 4 arc.051
+    100128: Roof 4 arc.052
+    100130: Roof 4 arc.053
+    100132: Wall Coner small.001
+    100134: Wall Coner small.002
+    100136: Wall Coner small.003
+    100138: Wall Coner small.004
+    400000: Cube.023
+    400002: //RootNode
+    400004: Roof 2 arc.022
+    400006: Roof 2 arc.023
+    400008: Roof 2 arc.024
+    400010: Roof 2 arc.025
+    400012: Roof 3 arc.030
+    400014: Roof 3 arc.031
+    400016: Roof 3 arc.032
+    400018: Roof 3 arc.033
+    400020: Roof 3 arc.034
+    400022: Roof 3 arc.035
+    400024: Roof 3 arc.036
+    400026: Roof 3 arc.037
+    400028: Roof 3 arc.038
+    400030: Roof 3 arc.039
+    400032: Roof 3 arc.040
+    400034: Roof 3 arc.041
+    400036: Roof 3 arc.042
+    400038: Roof 3 arc.043
+    400040: Roof 3 arc.044
+    400042: Roof 3 arc.045
+    400044: Roof 3 arc.046
+    400046: Roof 3 arc.047
+    400048: Roof 3 arc.048
+    400050: Roof 3 arc.049
+    400052: Roof 3 arc.050
+    400054: Roof 3 arc.051
+    400056: Roof 3 arc.052
+    400058: Roof 3 arc.053
+    400060: Roof 4 arc.018
+    400062: Roof 4 arc.019
+    400064: Roof 4 arc.020
+    400066: Roof 4 arc.021
+    400068: Roof 4 arc.022
+    400070: Roof 4 arc.023
+    400072: Roof 4 arc.024
+    400074: Roof 4 arc.025
+    400076: Roof 4 arc.026
+    400078: Roof 4 arc.027
+    400080: Roof 4 arc.028
+    400082: Roof 4 arc.029
+    400084: Roof 4 arc.030
+    400086: Roof 4 arc.031
+    400088: Roof 4 arc.032
+    400090: Roof 4 arc.033
+    400092: Roof 4 arc.034
+    400094: Roof 4 arc.035
+    400096: Roof 4 arc.036
+    400098: Roof 4 arc.037
+    400100: Roof 4 arc.038
+    400102: Roof 4 arc.039
+    400104: Roof 4 arc.040
+    400106: Roof 4 arc.041
+    400108: Roof 4 arc.042
+    400110: Roof 4 arc.043
+    400112: Roof 4 arc.044
+    400114: Roof 4 arc.045
+    400116: Roof 4 arc.046
+    400118: Roof 4 arc.047
+    400120: Roof 4 arc.048
+    400122: Roof 4 arc.049
+    400124: Roof 4 arc.050
+    400126: Roof 4 arc.051
+    400128: Roof 4 arc.052
+    400130: Roof 4 arc.053
+    400132: Wall Coner small.001
+    400134: Wall Coner small.002
+    400136: Wall Coner small.003
+    400138: Wall Coner small.004
+    2300000: Cube.023
+    2300002: Roof 2 arc.022
+    2300004: Roof 2 arc.023
+    2300006: Roof 2 arc.024
+    2300008: Roof 2 arc.025
+    2300010: Roof 3 arc.030
+    2300012: Roof 3 arc.031
+    2300014: Roof 3 arc.032
+    2300016: Roof 3 arc.033
+    2300018: Roof 3 arc.034
+    2300020: Roof 3 arc.035
+    2300022: Roof 3 arc.036
+    2300024: Roof 3 arc.037
+    2300026: Roof 3 arc.038
+    2300028: Roof 3 arc.039
+    2300030: Roof 3 arc.040
+    2300032: Roof 3 arc.041
+    2300034: Roof 3 arc.042
+    2300036: Roof 3 arc.043
+    2300038: Roof 3 arc.044
+    2300040: Roof 3 arc.045
+    2300042: Roof 3 arc.046
+    2300044: Roof 3 arc.047
+    2300046: Roof 3 arc.048
+    2300048: Roof 3 arc.049
+    2300050: Roof 3 arc.050
+    2300052: Roof 3 arc.051
+    2300054: Roof 3 arc.052
+    2300056: Roof 3 arc.053
+    2300058: Roof 4 arc.018
+    2300060: Roof 4 arc.019
+    2300062: Roof 4 arc.020
+    2300064: Roof 4 arc.021
+    2300066: Roof 4 arc.022
+    2300068: Roof 4 arc.023
+    2300070: Roof 4 arc.024
+    2300072: Roof 4 arc.025
+    2300074: Roof 4 arc.026
+    2300076: Roof 4 arc.027
+    2300078: Roof 4 arc.028
+    2300080: Roof 4 arc.029
+    2300082: Roof 4 arc.030
+    2300084: Roof 4 arc.031
+    2300086: Roof 4 arc.032
+    2300088: Roof 4 arc.033
+    2300090: Roof 4 arc.034
+    2300092: Roof 4 arc.035
+    2300094: Roof 4 arc.036
+    2300096: Roof 4 arc.037
+    2300098: Roof 4 arc.038
+    2300100: Roof 4 arc.039
+    2300102: Roof 4 arc.040
+    2300104: Roof 4 arc.041
+    2300106: Roof 4 arc.042
+    2300108: Roof 4 arc.043
+    2300110: Roof 4 arc.044
+    2300112: Roof 4 arc.045
+    2300114: Roof 4 arc.046
+    2300116: Roof 4 arc.047
+    2300118: Roof 4 arc.048
+    2300120: Roof 4 arc.049
+    2300122: Roof 4 arc.050
+    2300124: Roof 4 arc.051
+    2300126: Roof 4 arc.052
+    2300128: Roof 4 arc.053
+    2300130: Wall Coner small.001
+    2300132: Wall Coner small.002
+    2300134: Wall Coner small.003
+    2300136: Wall Coner small.004
+    3300000: Cube.023
+    3300002: Roof 2 arc.022
+    3300004: Roof 2 arc.023
+    3300006: Roof 2 arc.024
+    3300008: Roof 2 arc.025
+    3300010: Roof 3 arc.030
+    3300012: Roof 3 arc.031
+    3300014: Roof 3 arc.032
+    3300016: Roof 3 arc.033
+    3300018: Roof 3 arc.034
+    3300020: Roof 3 arc.035
+    3300022: Roof 3 arc.036
+    3300024: Roof 3 arc.037
+    3300026: Roof 3 arc.038
+    3300028: Roof 3 arc.039
+    3300030: Roof 3 arc.040
+    3300032: Roof 3 arc.041
+    3300034: Roof 3 arc.042
+    3300036: Roof 3 arc.043
+    3300038: Roof 3 arc.044
+    3300040: Roof 3 arc.045
+    3300042: Roof 3 arc.046
+    3300044: Roof 3 arc.047
+    3300046: Roof 3 arc.048
+    3300048: Roof 3 arc.049
+    3300050: Roof 3 arc.050
+    3300052: Roof 3 arc.051
+    3300054: Roof 3 arc.052
+    3300056: Roof 3 arc.053
+    3300058: Roof 4 arc.018
+    3300060: Roof 4 arc.019
+    3300062: Roof 4 arc.020
+    3300064: Roof 4 arc.021
+    3300066: Roof 4 arc.022
+    3300068: Roof 4 arc.023
+    3300070: Roof 4 arc.024
+    3300072: Roof 4 arc.025
+    3300074: Roof 4 arc.026
+    3300076: Roof 4 arc.027
+    3300078: Roof 4 arc.028
+    3300080: Roof 4 arc.029
+    3300082: Roof 4 arc.030
+    3300084: Roof 4 arc.031
+    3300086: Roof 4 arc.032
+    3300088: Roof 4 arc.033
+    3300090: Roof 4 arc.034
+    3300092: Roof 4 arc.035
+    3300094: Roof 4 arc.036
+    3300096: Roof 4 arc.037
+    3300098: Roof 4 arc.038
+    3300100: Roof 4 arc.039
+    3300102: Roof 4 arc.040
+    3300104: Roof 4 arc.041
+    3300106: Roof 4 arc.042
+    3300108: Roof 4 arc.043
+    3300110: Roof 4 arc.044
+    3300112: Roof 4 arc.045
+    3300114: Roof 4 arc.046
+    3300116: Roof 4 arc.047
+    3300118: Roof 4 arc.048
+    3300120: Roof 4 arc.049
+    3300122: Roof 4 arc.050
+    3300124: Roof 4 arc.051
+    3300126: Roof 4 arc.052
+    3300128: Roof 4 arc.053
+    3300130: Wall Coner small.001
+    3300132: Wall Coner small.002
+    3300134: Wall Coner small.003
+    3300136: Wall Coner small.004
+    4300000: Wall Coner small.004
+    4300002: Wall Coner small.003
+    4300004: Wall Coner small.002
+    4300006: Wall Coner small.001
+    4300008: Roof 3 arc.053
+    4300010: Roof 3 arc.052
+    4300012: Roof 3 arc.051
+    4300014: Roof 3 arc.050
+    4300016: Roof 4 arc.053
+    4300018: Roof 4 arc.052
+    4300020: Roof 4 arc.051
+    4300022: Roof 4 arc.050
+    4300024: Roof 4 arc.049
+    4300026: Roof 4 arc.048
+    4300028: Roof 4 arc.047
+    4300030: Roof 4 arc.046
+    4300032: Roof 4 arc.045
+    4300034: Roof 4 arc.044
+    4300036: Roof 4 arc.043
+    4300038: Roof 4 arc.042
+    4300040: Roof 4 arc.041
+    4300042: Roof 4 arc.040
+    4300044: Roof 4 arc.039
+    4300046: Roof 4 arc.038
+    4300048: Roof 4 arc.037
+    4300050: Roof 4 arc.036
+    4300052: Roof 4 arc.035
+    4300054: Roof 4 arc.034
+    4300056: Roof 4 arc.033
+    4300058: Roof 4 arc.032
+    4300060: Roof 4 arc.031
+    4300062: Roof 4 arc.030
+    4300064: Roof 3 arc.049
+    4300066: Roof 3 arc.048
+    4300068: Roof 3 arc.047
+    4300070: Roof 3 arc.046
+    4300072: Roof 3 arc.045
+    4300074: Roof 3 arc.044
+    4300076: Roof 3 arc.043
+    4300078: Roof 3 arc.042
+    4300080: Roof 4 arc.029
+    4300082: Roof 4 arc.028
+    4300084: Roof 4 arc.027
+    4300086: Roof 4 arc.026
+    4300088: Cube.023
+    4300090: Roof 2 arc.025
+    4300092: Roof 2 arc.024
+    4300094: Roof 2 arc.023
+    4300096: Roof 2 arc.022
+    4300098: Roof 3 arc.041
+    4300100: Roof 3 arc.040
+    4300102: Roof 3 arc.039
+    4300104: Roof 3 arc.038
+    4300106: Roof 3 arc.037
+    4300108: Roof 3 arc.036
+    4300110: Roof 3 arc.035
+    4300112: Roof 3 arc.034
+    4300114: Roof 3 arc.033
+    4300116: Roof 3 arc.032
+    4300118: Roof 3 arc.031
+    4300120: Roof 3 arc.030
+    4300122: Roof 4 arc.025
+    4300124: Roof 4 arc.024
+    4300126: Roof 4 arc.023
+    4300128: Roof 4 arc.022
+    4300130: Roof 4 arc.021
+    4300132: Roof 4 arc.020
+    4300134: Roof 4 arc.019
+    4300136: Roof 4 arc.018
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
