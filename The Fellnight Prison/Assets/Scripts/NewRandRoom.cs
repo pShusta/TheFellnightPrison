@@ -12,8 +12,9 @@ public class NewRandRoom : MonoBehaviour
     public Transform TempNode;
 
     public GameObject[] SceneNodes;
-    public static GameObject[] myObjects;
+    //public static GameObject[] myObjects;
     public GameObject[] roomBounds;
+    public GameObject[] Rooms;
 
     public GameObject[] DoorNodes;
     public GameObject[] WallNodes;
@@ -30,7 +31,7 @@ public class NewRandRoom : MonoBehaviour
 
 
         //spawns item in list position between 0 and the number of objects in myObjects
-        int whichItem = Random.Range(0, myObjects.Length);
+        int whichItem = Random.Range(0, Rooms.Length);
         //Puts all spawned objects with the Node tag in the SceneNodes Array
         //Then chooses random Node in array and saves it to ParentNode
         SceneNodes = GameObject.FindGameObjectsWithTag("Node");
@@ -38,9 +39,9 @@ public class NewRandRoom : MonoBehaviour
         GameObject ParentNode = SceneNodes[Index_SceneNode];
 
         //Keep this below the SceneNodes.FindObjectsWithTag, otherwise it'll pick up the new rooms Nodes
-        GameObject myObj = Instantiate(myObjects[whichItem], new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
+        //GameObject myObj = Instantiate(Rooms[whichItem], new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
 
-        //GameObject myObj = PhotonNetwork.Instantiate(myObjects[whichItem].name, new Vector3(6, 6, 6), Quaternion.identity, 0) as GameObject;
+        GameObject myObj = PhotonNetwork.Instantiate(Rooms[whichItem].name, new Vector3(6, 6, 6), Quaternion.identity, 0) as GameObject;
 
         //Finds all of the Ray Cast Nodes in the new object
         var RayNodes = myObj.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Ray Cast Node").ToArray();
@@ -261,8 +262,8 @@ public class NewRandRoom : MonoBehaviour
 
     void Start()
     {
-        myObjects = Resources.LoadAll<GameObject>("Rooms");
-        Debug.Log(myObjects.Length);
+        //myObjects = Resources.LoadAll<GameObject>("Rooms");
+        //Debug.Log(myObjects.Length);
 
     }
 
