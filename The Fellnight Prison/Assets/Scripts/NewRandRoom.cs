@@ -19,13 +19,6 @@ public class NewRandRoom : MonoBehaviour
     public GameObject[] WallNodes;
     public GameObject[] DeleteNodes;
 
-
-    void Start()
-    {
-        myObjects = Resources.LoadAll<GameObject>("Rooms");
-        Debug.Log(myObjects.Length);
-    }
-
     void SpawnRandomObject()
     {
         numSpawned++;
@@ -46,6 +39,9 @@ public class NewRandRoom : MonoBehaviour
 
         //Keep this below the SceneNodes.FindObjectsWithTag, otherwise it'll pick up the new rooms Nodes
         GameObject myObj = Instantiate(myObjects[whichItem], new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
+
+        //GameObject myObj = PhotonNetwork.Instantiate(myObjects[whichItem].name, new Vector3(6, 6, 6), Quaternion.identity, 0) as GameObject;
+
         //Finds all of the Ray Cast Nodes in the new object
         var RayNodes = myObj.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Ray Cast Node").ToArray();
         //Finds all of the Nodes in the new object
@@ -262,6 +258,14 @@ public class NewRandRoom : MonoBehaviour
     }
 
     */
+
+    void Start()
+    {
+        myObjects = Resources.LoadAll<GameObject>("Rooms");
+        Debug.Log(myObjects.Length);
+
+    }
+
     void Update()
     {
         if (numToSpawn > numSpawned)
@@ -271,6 +275,7 @@ public class NewRandRoom : MonoBehaviour
         if (numToSpawn <= numSpawned)
         {
             CloseDoors();
+            this.enabled = false;
         }
     }
 
