@@ -267,8 +267,26 @@ public class NewRandRoom : MonoBehaviour
 
     }
 
+    public void launch()
+    {
+        Debug.Log("launch()");
+        while (true) {
+            Debug.Log("In while(true)");
+            if (numToSpawn > numSpawned)
+            {
+                SpawnRandomObject();
+            }
+            if (numToSpawn <= numSpawned)
+            {
+                CloseDoors();
+                break;
+            }
+        }
+    }
+
     void Update()
     {
+        /*
         if (numToSpawn > numSpawned)
         {
             SpawnRandomObject();
@@ -278,6 +296,7 @@ public class NewRandRoom : MonoBehaviour
             CloseDoors();
             this.enabled = false;
         }
+        */
     }
 
 }

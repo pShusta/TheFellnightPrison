@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MainController : MonoBehaviour {
 
-    public GameObject _roomGen;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +11,9 @@ public class MainController : MonoBehaviour {
 
     public void LaunchGenerator()
     {
-        _roomGen.GetComponent<NewRandRoom>().enabled = true;
+        Debug.Log("LaunchGenerator()");
+        //this.gameObject.GetComponent<NewRandRoom>().enabled = true;
+        this.gameObject.GetComponent<NewRandRoom>().launch();
     }
 
 	// Update is called once per frame

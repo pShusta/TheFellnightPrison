@@ -6,7 +6,6 @@ public class GlobalFunctions :  MonoBehaviour{
 	private bool _ready = false;
     private bool _connection = false;
 
-    public GameObject RoomGen;
 
     public void Start()
     {
