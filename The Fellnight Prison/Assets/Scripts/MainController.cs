@@ -13,7 +13,7 @@ public class MainController : MonoBehaviour {
     {
         Debug.Log("LaunchGenerator()");
         //this.gameObject.GetComponent<NewRandRoom>().enabled = true;
-        this.gameObject.GetComponent<NewRandRoom>().launch();
+        this.gameObject.GetComponent<NewRandRoom>().enabled = true;
     }
 
 	// Update is called once per frame

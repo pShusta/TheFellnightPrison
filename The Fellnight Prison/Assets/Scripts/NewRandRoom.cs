@@ -123,7 +123,7 @@ public class NewRandRoom : MonoBehaviour
         TempNode.transform.position = ParentNode.transform.position;
 
 
-
+        
         var newBounds = myObj.GetComponent<Collider>();
 
         int i = 0;
@@ -141,7 +141,7 @@ public class NewRandRoom : MonoBehaviour
             if (nb.Intersects(ob))
             {
                 Debug.Log("Spawned Item interceted with other item");
-
+                ParentNode.gameObject.tag = "Blocked Node";
                 Destroy(myObj);
                 numSpawned--;
                 checkspace = false;
@@ -158,7 +158,7 @@ public class NewRandRoom : MonoBehaviour
             ParentNode.gameObject.tag = "Used Node";
             ChildNode.gameObject.tag = "Used Node";
         }
-
+        
 
     }
 
@@ -270,23 +270,16 @@ public class NewRandRoom : MonoBehaviour
     public void launch()
     {
         Debug.Log("launch()");
-        while (true) {
-            Debug.Log("In while(true)");
-            if (numToSpawn > numSpawned)
-            {
-                SpawnRandomObject();
-            }
-            if (numToSpawn <= numSpawned)
-            {
-                CloseDoors();
-                break;
-            }
+        while (numToSpawn > numSpawned)
+        {
+            SpawnRandomObject();
         }
+        CloseDoors();
     }
 
     void Update()
     {
-        /*
+        
         if (numToSpawn > numSpawned)
         {
             SpawnRandomObject();
@@ -296,7 +289,7 @@ public class NewRandRoom : MonoBehaviour
             CloseDoors();
             this.enabled = false;
         }
-        */
+        
     }
 
 }
