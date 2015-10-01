@@ -94,6 +94,7 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\English.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\French.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
+     <None Include="Assets\Scripts\FriendWeb\data.txt" />
      <None Include="Assets\Photon Unity Networking\Demos\DemoPickup\Assets\3dFont\3dText.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\JsonFx\JsonFxLicense.txt" />
@@ -107,17 +108,11 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\link.xml" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="I18N">
  <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/I18N.dll</HintPath>
