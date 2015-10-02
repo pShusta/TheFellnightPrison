@@ -406,7 +406,6 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\English.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\French.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
-     <None Include="Assets\Scripts\FriendWeb\data.txt" />
      <None Include="Assets\Photon Unity Networking\Demos\DemoPickup\Assets\3dFont\3dText.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\JsonFx\JsonFxLicense.txt" />
