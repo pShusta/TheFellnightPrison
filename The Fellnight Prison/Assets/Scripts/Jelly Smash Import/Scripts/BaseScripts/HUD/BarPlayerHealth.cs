@@ -7,6 +7,8 @@ public class BarPlayerHealth : PlayerHealth {
 	private int displaygraphic;
 	private GameObject thehud;
 	private float zerohpcheck;
+    private float hudtimer;
+    private int playercurrenthealth, playermaxhealth;
 
 
 	// Use this for initialization

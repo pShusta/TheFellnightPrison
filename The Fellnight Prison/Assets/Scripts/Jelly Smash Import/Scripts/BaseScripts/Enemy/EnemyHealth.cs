@@ -16,7 +16,7 @@ public class EnemyHealth : EnemyAI {
 	public float zerohpcheck;	
 	
 	void Awake() {
-		mytransform = transform;
+        myTransform = transform;
 		
 	}
 	// Use this for initialization

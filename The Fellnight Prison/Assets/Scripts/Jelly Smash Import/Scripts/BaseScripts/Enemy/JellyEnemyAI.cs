@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAI : MonoBehaviour {
+public class JellyEnemyAI : MonoBehaviour {
 	public Transform target;
 	public int movespeed = 1;
 	public int rotationspeed = 1;

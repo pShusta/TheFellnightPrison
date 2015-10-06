@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class EnemyAttack : MonoBehaviour {
+public class JellyEnemyAttack : MonoBehaviour {
 	public GameObject target;
 	public float attacktimer = 0;
 	public float cooldown = 2;
@@ -44,7 +44,7 @@ public class EnemyAttack : MonoBehaviour {
 		float direction = Vector3.Dot(dir, transform.forward);
 		//if the target is infront of the enemy and they are close enough then the mob will attack
 		if(distance < 2 && direction > 0 && attacktimer == 0) {
-			PlayerHealth ph = (PlayerHealth)target.GetComponent("PlayerHealth");
+			JellyPlayerHealth ph = (JellyPlayerHealth)target.GetComponent("PlayerHealth");
 			ph.adjusthealth(-10);
 			GetComponent<Animation>().Blend("attack", 1.0f);
 		}

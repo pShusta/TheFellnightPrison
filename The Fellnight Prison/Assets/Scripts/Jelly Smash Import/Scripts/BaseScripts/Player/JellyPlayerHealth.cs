@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour {
+public class JellyPlayerHealth : MonoBehaviour {
 	public static float playermaxhealth = 100.0f;
 	public static float playercurrenthealth = 100.0f;
+    public float emissionRate;
 	public GameObject hud;
 	private GameObject targethud;
 	public static float hudtimer = 0;

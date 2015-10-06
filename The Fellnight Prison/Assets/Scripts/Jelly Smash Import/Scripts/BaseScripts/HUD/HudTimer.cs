@@ -3,6 +3,7 @@ using System.Collections;
 
 public class HudTimer : PlayerHealth {
 	private GameObject thehudmain;
+    private float hudtimer;
 	
 	
 	// Use this for initialization

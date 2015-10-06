@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BarPlayerMana : PlayerHealth {
 	private GameObject thehudmana;
+    private float hudtimer;
 	
 	void Start () {
 		GameObject go = GameObject.FindGameObjectWithTag("HudMana");
