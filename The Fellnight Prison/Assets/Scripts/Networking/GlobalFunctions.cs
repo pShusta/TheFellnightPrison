@@ -18,7 +18,7 @@ public class GlobalFunctions :  MonoBehaviour{
     }
 
 	public void SpawnPlayer(){
-		GameObject _player = PhotonNetwork.Instantiate("NetworkPlayer", new Vector3(0,1,0), Quaternion.identity, 0);
+		GameObject _player = PhotonNetwork.Instantiate("NetworkPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position , Quaternion.identity, 0);
 		if(_player.GetPhotonView().isMine) { _player.SetActive(true); }
 	}
 
@@ -67,12 +67,14 @@ public class GlobalFunctions :  MonoBehaviour{
 	
 	void OnJoinedLobby(){
 		Debug.Log("OnJoinedLobby");
-        PhotonNetwork.CreateRoom("FillerRoom-" + Random.Range(1, 100000));
+        PhotonNetwork.JoinRoom("FillerRoom-");
+        // + Random.Range(1, 100000)
 	}
 	
 	void OnPhotonJoinRoomFailed(){
 		Debug.Log ("OnJoinRoomFailed");
-		PhotonNetwork.CreateRoom("FillerRoom-" + Random.Range(1, 100000));
+		PhotonNetwork.CreateRoom("FillerRoom-");
+        // + Random.Range(1, 100000)
 	}
 	
 	void OnPhotonCreateRoomFailed(){

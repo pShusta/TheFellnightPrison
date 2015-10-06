@@ -287,6 +287,7 @@ public class NewRandRoom : MonoBehaviour
         if (numToSpawn <= numSpawned)
         {
             CloseDoors();
+            this.gameObject.GetComponent<MainController>().FinishGenerator();
             this.enabled = false;
         }
         
