@@ -17,17 +17,18 @@ public class Pair
 }
 
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel;
-    public GameObject[] _loginInputs, SuccessOrFail;
+    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel;
+    public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
     private GameObject _view;
+    private bool UsernameAvailable;
 
 
 	// Use this for initialization
 	void Start () {
         this.gameObject.GetComponent<LoginConnection>().PhotonConnect();
-        
+        UsernameAvailable = false;
 
 	}
 	
@@ -35,6 +36,60 @@ public class Controller : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void ReturnToLogin()
+    {
+        GoodJobPanel.SetActive(false);
+        CreatePanel.SetActive(true);
+        CreateAccountButton.SetActive(false);
+        CreateAccountPanel.SetActive(false);
+        LoginPanel.SetActive(true);
+    }
+
+    public void CreateScreen()
+    {
+        LoginPanel.SetActive(false);
+        CreateAccountPanel.SetActive(true);
+    }
+
+    public void CreateAccount()
+    {
+        if (CreateInputs[1].GetComponent<Text>().text == CreateInputs[2].GetComponent<Text>().text)
+        {
+            if (UsernameAvailable)
+            {
+                myPhotonView.RPC("CreateAccount", PhotonTargets.MasterClient, CreateInputs[0].GetComponent<Text>().text, CreateInputs[1].GetComponent<Text>().text);
+                CreatePanel.SetActive(false);
+                GoodJobPanel.SetActive(true);
+            }
+        }
+        else
+        {
+            CreateInputs[3].GetComponent<Text>().text = "Passwords do not match";
+            //passwords do not match
+        }
+    }
+
+    public void CheckUsernameReturn(bool _go)
+    {
+        if (_go)
+        {
+            CreateAccountButton.SetActive(true);
+            UsernameAvailable = true;
+            CreateInputs[3].GetComponent<Text>().text = "Username Available";
+            //Good Name
+        }
+        else
+        {
+            CreateInputs[3].GetComponent<Text>().text = "Username Not Available";
+            //Bad Name
+        }
+    }
+
+    public void CheckUsername()
+    {
+        myPhotonView.RPC("DbUsernameCheck", PhotonTargets.MasterClient, CreateInputs[0].GetComponent<Text>().text, myPhotonView.owner);
+    }
 
     public void ConnectionSuccesful()
     {

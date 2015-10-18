@@ -27,6 +27,31 @@ public class PhotonRPC : MonoBehaviour {
     }
 
     [PunRPC]
+    void CreateAccount(string _username, string _password)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<Database>().CreateAccount(_username, _password);
+    }
+
+    [PunRPC]
+    void DbUsercheckReturn(bool _go)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<Controller>().CheckUsernameReturn(_go);
+    }
+
+    [PunRPC]
+    void DbUsernameCheck(string _username, PhotonPlayer _player)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        bool _go = controller.GetComponent<Database>().CheckUsername(_username);
+        Debug.Log("_go: " + _go);
+        Debug.Log("_player: " + _player);
+        myPhotonView = this.gameObject.GetComponent<PhotonView>();
+        myPhotonView.RPC("DbUsercheckReturn", _player, _go);
+    }
+
+    [PunRPC]
     void DbLogin(string[] _creds, PhotonPlayer _player)
     {
         Debug.Log("Recieved RPC");

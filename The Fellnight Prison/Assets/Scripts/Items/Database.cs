@@ -16,8 +16,6 @@ public class Database : MonoBehaviour{
 
     public GameObject[] _masterInputs;
 
-    
-
     void Start()
     {
         
@@ -33,6 +31,31 @@ public class Database : MonoBehaviour{
     public static void setPort(string _port) { port = _port;  }
     public static string getPort() { return port; }
 
+    public bool CheckUsername(string _username)
+    {
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = "SELECT * FROM users.usernamepassword Where username = '" + _username + "'";
+        MySqlDataReader _reader = _cmd.ExecuteReader();
+        _reader.Read();
+        if (!_reader.HasRows)
+        {
+            _reader.Close();
+            return true;
+        }
+        else
+        {
+            _reader.Close();
+            return false;
+        }
+    }
+
+    public void CreateAccount(string _username, string _password)
+    {
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = "INSERT INTO users.usernamepassword (Username, Passcode) VALUES ( '" + _username + "', '" + _password + "');";
+        _cmd.ExecuteNonQuery();
+    }
+
     public bool Login(string _username, string _password)
     {
         MySqlCommand _cmd = _masterConnect.CreateCommand();
@@ -40,8 +63,8 @@ public class Database : MonoBehaviour{
         MySqlDataReader _reader = _cmd.ExecuteReader();
         _reader.Read();
         //_reader.Read();
-        Debug.Log("_reader['Password'] == " + _reader["Password"]);
-        if (_reader["password"].ToString() == _password.ToString())
+        Debug.Log("_reader['Passcode'] == " + _reader["Passcode"]);
+        if (_reader["Passcode"].ToString() == _password.ToString())
         {
             _reader.Close();
             return true;
