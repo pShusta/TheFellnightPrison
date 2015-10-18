@@ -186,7 +186,10 @@
      <Compile Include="Assets\Scripts\MainController.cs" />
      <Compile Include="Assets\Scripts\MakeMap.cs" />
      <Compile Include="Assets\Scripts\NavMeshScript.cs" />
+     <Compile Include="Assets\Scripts\Networking\Controller.cs" />
      <Compile Include="Assets\Scripts\Networking\GlobalFunctions.cs" />
+     <Compile Include="Assets\Scripts\Networking\LoginConnection.cs" />
+     <Compile Include="Assets\Scripts\Networking\PhotonRPC.cs" />
      <Compile Include="Assets\Scripts\NewRandRoom.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\RandRoom.cs" />

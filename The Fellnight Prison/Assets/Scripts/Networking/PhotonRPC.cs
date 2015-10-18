@@ -1,0 +1,51 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class PhotonRPC : MonoBehaviour {
+
+    private PhotonView myPhotonView;
+
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+    public void Login(string[] loginInfo)
+    {
+        //myPhotonView = this.gameObject.GetComponent<PhotonView>();
+        
+        //Pair creds = new Pair(loginInfo, myPhotonView.owner);
+        Debug.Log("Sending RPC");
+        myPhotonView = this.gameObject.GetComponent<PhotonView>();
+        Debug.Log("PhotonPlayer: " + myPhotonView.owner);
+        myPhotonView.RPC("DbLogin", PhotonTargets.MasterClient, loginInfo, myPhotonView.owner);
+    }
+
+    [PunRPC]
+    void DbLogin(string[] _creds, PhotonPlayer _player)
+    {
+        Debug.Log("Recieved RPC");
+        string _username = _creds[0];
+        string _password = _creds[1];
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        bool _go = controller.GetComponent<Database>().Login(_username, _password);
+        Debug.Log("Sending reply RPC");
+        Debug.Log("PhotonPlayer: " + _player);
+        Debug.Log("_go: " + _go);
+        myPhotonView = this.gameObject.GetComponent<PhotonView>();
+        myPhotonView.RPC("LoginResult", _player, _go);
+    }
+
+    [PunRPC]
+    void LoginResult(bool _result)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        Debug.Log("Recieved reply RPC");
+        controller.GetComponent<Controller>().LoginResult(_result);
+    }
+}

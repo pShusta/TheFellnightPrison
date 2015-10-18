@@ -1,19 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using MySql.Data.MySqlClient;
 
 public class Database : MonoBehaviour{
 
-    private static string serverIP = "localhost";
-    private static string port = "3306";
-    private static string database = "thefellnightprison";
-    private static string Uid = "Fellnight";
-    private static string Pwd = "Sunspear";
+    private static string serverIP;
+    private static string port;
+    private static string database;
+    private static string Uid;
+    private static string Pwd;
+    private bool isMaster;
+    private MySqlConnection _masterConnect;
+
+    public GameObject[] _masterInputs;
+
+    
 
     void Start()
     {
-        Weapon test = new Weapon();
+        
     }
 
     public static void setServer(string _server) { serverIP = _server; }
@@ -25,6 +32,39 @@ public class Database : MonoBehaviour{
     public static void setPwd(string _Pwd) { Pwd = _Pwd;  }
     public static void setPort(string _port) { port = _port;  }
     public static string getPort() { return port; }
+
+    public bool Login(string _username, string _password)
+    {
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = "SELECT * FROM users.usernamepassword Where username = '" + _username + "'";
+        MySqlDataReader _reader = _cmd.ExecuteReader();
+        _reader.Read();
+        //_reader.Read();
+        Debug.Log("_reader['Password'] == " + _reader["Password"]);
+        if (_reader["password"].ToString() == _password.ToString())
+        {
+            _reader.Close();
+            return true;
+        }
+        else
+        {
+            _reader.Close();
+            return false;
+        }
+    }
+
+    public void MasterConnect()
+    {
+        serverIP = _masterInputs[0].GetComponent<Text>().text;
+        port = _masterInputs[1].GetComponent<Text>().text;
+        Uid = _masterInputs[2].GetComponent<Text>().text;
+        Pwd = _masterInputs[3].GetComponent<Text>().text;
+        database = "users";
+        string source = "Server=" + serverIP + "; Port=" + port + "; Database=" + database + "; Uid=" + Uid + "; Password=" + Pwd + ";";
+        _masterConnect = new MySqlConnection(source);
+        _masterConnect.Open();
+        Debug.Log("Connection Succesful");
+    }
 
     public static Weapon ReadWeaponDb(int id)
     {
