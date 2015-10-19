@@ -31,6 +31,30 @@ public class Database : MonoBehaviour{
     public static void setPort(string _port) { port = _port;  }
     public static string getPort() { return port; }
 
+    public int[] GeneratePlayerCore(string _username, PhotonPlayer _player)
+    {
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = "SELECT * FROM users.basestats Where username = '" + _username + "'";
+        MySqlDataReader _reader = _cmd.ExecuteReader();
+        _reader.Read();
+        int[] _stats;
+        if (_reader.HasRows)
+        {
+            _stats = new int[] {Convert.ToInt32(_reader["Str"].ToString()), 
+                                  Convert.ToInt32(_reader["Agi"].ToString()), 
+                                  Convert.ToInt32(_reader["Con"].ToString()), 
+                                  Convert.ToInt32(_reader["Intel"].ToString()), 
+                                  Convert.ToInt32(_reader["Luck"].ToString())};
+        }
+        else
+        {
+            _reader.Close();
+            return null;
+        }
+        _reader.Close();
+        return _stats;
+    }
+
     public bool CheckUsername(string _username)
     {
         MySqlCommand _cmd = _masterConnect.CreateCommand();
@@ -53,6 +77,9 @@ public class Database : MonoBehaviour{
     {
         MySqlCommand _cmd = _masterConnect.CreateCommand();
         _cmd.CommandText = "INSERT INTO users.usernamepassword (Username, Passcode) VALUES ( '" + _username + "', '" + _password + "');";
+        _cmd.ExecuteNonQuery();
+
+        _cmd.CommandText = "INSERT INTO users.basestats (Username, Str, Agi, Con, Intel, Luck) VALUES ('" + _username + "', 10, 10, 10, 10, 0);";
         _cmd.ExecuteNonQuery();
     }
 

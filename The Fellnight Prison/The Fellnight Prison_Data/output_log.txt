@@ -55,7 +55,7 @@ Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\T
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.JsonFx.dll (this message is harmless)
 Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.JsonFx.dll into Unity Child Domain
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.170 seconds
+- Completed reload, in  0.130 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -65,7 +65,7 @@ Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnig
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Transactions.dll (this message is harmless)
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Configuration.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1434 -> priority: 1 
+  Thread -> id: 920 -> priority: 1 
 Connected to Photon Server
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
@@ -94,11 +94,7 @@ Sending RPC
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-PhotonPlayer: #02
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Recieved reply RPC
+PhotonPlayer: #03
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 

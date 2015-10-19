@@ -70,7 +70,36 @@ public class PhotonRPC : MonoBehaviour {
     void LoginResult(bool _result)
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        Debug.Log("Recieved reply RPC");
         controller.GetComponent<Controller>().LoginResult(_result);
+    }
+
+    [PunRPC]
+    void GetCharacter(string _username, PhotonPlayer _player)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        int[] _stats = controller.GetComponent<Database>().GeneratePlayerCore(_username, _player);
+        myPhotonView = this.gameObject.GetComponent<PhotonView>();
+        if (_stats != null)
+        {
+            myPhotonView.RPC("ReturnCore", _player, _stats);
+        }
+        else
+        {
+            myPhotonView.RPC("NoCharacter", _player);
+        }
+    }
+
+    [PunRPC]
+    void NoCharacter()
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<Controller>().NoCharacter();
+    }
+
+    [PunRPC]
+    void ReturnCore(int[] _stats)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<Controller>().CoreReturn(_stats);
     }
 }

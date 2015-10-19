@@ -4,25 +4,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Pair
-{
-    public String[] StringArray;
-    public PhotonPlayer Player;
-
-    public Pair(string[] _stringArray, PhotonPlayer _player)
-    {
-        StringArray = _stringArray;
-        Player = _player;
-    }
-}
-
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel;
+    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
     private GameObject _view;
     private bool UsernameAvailable;
+    private Player _player;
 
 
 	// Use this for initialization
@@ -77,6 +66,7 @@ public class Controller : MonoBehaviour {
             CreateAccountButton.SetActive(true);
             UsernameAvailable = true;
             CreateInputs[3].GetComponent<Text>().text = "Username Available";
+            CreateInputs[0].GetComponentInParent<InputField>().interactable = false;
             //Good Name
         }
         else
@@ -120,11 +110,25 @@ public class Controller : MonoBehaviour {
         {
             //Login Succesful
             SuccessOrFail[0].SetActive(true);
+            
+            myPhotonView.RPC("GetCharacter", PhotonTargets.MasterClient, _loginInputs[0].GetComponent<Text>().text, myPhotonView.owner);
         }
         else
         {
             //Login Fail
             SuccessOrFail[1].SetActive(true);
         }
+    }
+
+    public void NoCharacter()
+    {
+        LoginPanel.SetActive(false);
+        CharacterCreatePanel.SetActive(true);
+    }
+
+    public void CoreReturn(int[] _stats){
+        //Recieved Core stats for player
+        _player = new Player(_loginInputs[0].GetComponent<Text>().text, _stats[0], _stats[1], _stats[2], _stats[3], _stats[4]);
+        SuccessOrFail[0].GetComponent<Text>().text = "Player Loaded";
     }
 }
