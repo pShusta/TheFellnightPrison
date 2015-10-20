@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour {
 
     private GameObject _view;
     private bool UsernameAvailable;
-    private Player _player;
+    public Player _player;
 
 
 	// Use this for initialization
@@ -91,14 +91,14 @@ public class Controller : MonoBehaviour {
 
     public void Login()
     {
-        if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<Text>().text == "")
+        if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
         {
             LoginPanel.SetActive(false);
             MasterConnectPanel.SetActive(true);
         }
         else
         {
-            string[] loginInfo = new string[2] { _loginInputs[0].GetComponent<Text>().text, _loginInputs[1].GetComponent<Text>().text };
+            string[] loginInfo = new string[2] { _loginInputs[0].GetComponent<Text>().text, _loginInputs[1].GetComponent<InputField>().text };
             _view.GetComponent<PhotonRPC>().Login(loginInfo);
         }
     }
@@ -128,7 +128,14 @@ public class Controller : MonoBehaviour {
 
     public void CoreReturn(int[] _stats){
         //Recieved Core stats for player
-        _player = new Player(_loginInputs[0].GetComponent<Text>().text, _stats[0], _stats[1], _stats[2], _stats[3], _stats[4]);
+        _player = new Player(_loginInputs[0].GetComponent<Text>().text, _stats[0], _stats[1], _stats[2], _stats[3], _stats[4], _stats[5], _stats[6]);
         SuccessOrFail[0].GetComponent<Text>().text = "Player Loaded";
+        myPhotonView.RPC("GetInventory", PhotonTargets.MasterClient, _loginInputs[0].GetComponent<Text>().text, myPhotonView.owner);
+    }
+
+    public void InvFilled()
+    {
+        SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
+        //loadlevel
     }
 }

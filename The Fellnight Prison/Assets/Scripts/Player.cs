@@ -1,8 +1,13 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 public class Player {
     public int Str, Agi, Con, Intel, Luck;
+    public int OneHandedSword, Gathering;
     public string Username;
+    public List<Weapon> InvWeapons;
+    public List<CraftingMaterial> InvMaterials;
+    
 
     public Player()
     {
@@ -11,6 +16,8 @@ public class Player {
         Con = 10;
         Intel = 10;
         Luck = 0;
+        InvWeapons = new List<Weapon>();
+        InvMaterials = new List<CraftingMaterial>();
     }
     public Player(string _user, int _str, int _agi, int _con, int _intel, int _luck)
     {
@@ -20,5 +27,20 @@ public class Player {
         Con = _con;
         Intel = _intel;
         Luck = _luck;
+        InvWeapons = new List<Weapon>();
+        InvMaterials = new List<CraftingMaterial>();
+    }
+    public Player(string _user, int _str, int _agi, int _con, int _intel, int _luck, int _one, int _gath)
+    {
+        Username = _user;
+        Str = _str;
+        Agi = _agi;
+        Con = _con;
+        Intel = _intel;
+        Luck = _luck;
+        OneHandedSword = _one;
+        Gathering = _gath;
+        InvWeapons = new List<Weapon>();
+        InvMaterials = new List<CraftingMaterial>();
     }
 }

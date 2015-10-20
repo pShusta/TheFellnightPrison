@@ -1,0 +1,482 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:Assets/Plugins/I18N.dll
+-r:Assets/Plugins/I18N.West.dll
+-r:Assets/Plugins/MySql.Data.dll
+-r:Assets/Plugins/Photon3Unity3D.dll
+-r:Assets/Plugins/System.Data.dll
+-r:Assets/Plugins/System.Drawing.dll
+-r:Assets/Plugins/WebSocket/websocket-sharp.dll
+-r:Assets/_IMPORTED/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll
+-r:Assets/_IMPORTED/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-r:"C:/Program Files/Unity/Editor/Data\Managed/Mono.Cecil.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll"
+-define:UNITY_5_2_1
+-define:UNITY_5_2
+-define:UNITY_5
+-define:ENABLE_NEW_BUGREPORTER
+-define:ENABLE_2D_PHYSICS
+-define:ENABLE_4_6_FEATURES
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_FRAME_DEBUGGER
+-define:ENABLE_GENERICS
+-define:ENABLE_HOME_SCREEN
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_LIGHT_PROBES_LEGACY
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_PLUGIN_INSPECTOR
+-define:ENABLE_SHADOWS
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_UNET
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_REFLECTION_BUFFERS
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:INCLUDE_IL2CPP
+-define:INCLUDE_DIRECTX12
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_LOG_MIXED_STACKTRACE
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:CROSS_PLATFORM_INPUT
+"Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Scripts/Demo2DJumpAndRun.cs"
+"Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Scripts/JumpAndRunMovement.cs"
+"Assets/Photon Unity Networking/Demos/DemoBoxes/DemoBoxesGui.cs"
+"Assets/Photon Unity Networking/Demos/DemoBoxes/OnAwakePhysicsSettings.cs"
+"Assets/Photon Unity Networking/Demos/DemoChangeOwner/ClickAndDrag.cs"
+"Assets/Photon Unity Networking/Demos/DemoChangeOwner/DemoOwnershipGui.cs"
+"Assets/Photon Unity Networking/Demos/DemoChangeOwner/InstantiateCube.cs"
+"Assets/Photon Unity Networking/Demos/DemoChangeOwner/MaterialPerOwner.cs"
+"Assets/Photon Unity Networking/Demos/DemoChangeOwner/OnClickDisableObj.cs"
+"Assets/Photon Unity Networking/Demos/DemoChangeOwner/OnClickRequestOwnership.cs"
+"Assets/Photon Unity Networking/Demos/DemoChangeOwner/OnClickRightDestroy.cs"
+"Assets/Photon Unity Networking/Demos/DemoChat/ChatGui.cs"
+"Assets/Photon Unity Networking/Demos/DemoChat/NamePickGui.cs"
+"Assets/Photon Unity Networking/Demos/DemoFriendsAndCustomAuth/GUICustomAuth.cs"
+"Assets/Photon Unity Networking/Demos/DemoFriendsAndCustomAuth/GUIFriendFinding.cs"
+"Assets/Photon Unity Networking/Demos/DemoFriendsAndCustomAuth/GUIFriendsInRoom.cs"
+"Assets/Photon Unity Networking/Demos/DemoFriendsAndCustomAuth/OnClickCallMethod.cs"
+"Assets/Photon Unity Networking/Demos/DemoHub/HubGui.cs"
+"Assets/Photon Unity Networking/Demos/DemoHub/MoveCam.cs"
+"Assets/Photon Unity Networking/Demos/DemoHub/ToHubButton.cs"
+"Assets/Photon Unity Networking/Demos/DemoMecanim/Scripts/DemoMecanimGUI.cs"
+"Assets/Photon Unity Networking/Demos/DemoPickup/Scripts/MessageOverlay.cs"
+"Assets/Photon Unity Networking/Demos/DemoPickup/Scripts/OnCollideSwitchTeam.cs"
+"Assets/Photon Unity Networking/Demos/DemoPickup/Scripts/OnPickedUpScript.cs"
+"Assets/Photon Unity Networking/Demos/DemoPickup/Scripts/PickupCamera.cs"
+"Assets/Photon Unity Networking/Demos/DemoPickup/Scripts/PickupController.cs"
+"Assets/Photon Unity Networking/Demos/DemoPickup/Scripts/PickupDemoGui.cs"
+"Assets/Photon Unity Networking/Demos/DemoPickup/Scripts/PickupTriggerForward.cs"
+"Assets/Photon Unity Networking/Demos/DemoRPGMovement/Scripts/DemoRPGMovement.cs"
+"Assets/Photon Unity Networking/Demos/DemoRPGMovement/Scripts/RPGCamera.cs"
+"Assets/Photon Unity Networking/Demos/DemoRPGMovement/Scripts/RPGMovement.cs"
+"Assets/Photon Unity Networking/Demos/DemoSynchronization/CubeExtra.cs"
+"Assets/Photon Unity Networking/Demos/DemoSynchronization/CubeInter.cs"
+"Assets/Photon Unity Networking/Demos/DemoSynchronization/CubeLerp.cs"
+"Assets/Photon Unity Networking/Demos/DemoSynchronization/IELdemo.cs"
+"Assets/Photon Unity Networking/Demos/DemoWorker/Scripts/Game/Player/ThirdPersonCamera.cs"
+"Assets/Photon Unity Networking/Demos/DemoWorker/Scripts/Game/Player/ThirdPersonController.cs"
+"Assets/Photon Unity Networking/Demos/DemoWorker/Scripts/Game/Player/ThirdPersonNetwork.cs"
+"Assets/Photon Unity Networking/Demos/DemoWorker/Scripts/WorkerInGame.cs"
+"Assets/Photon Unity Networking/Demos/DemoWorker/Scripts/WorkerMenu.cs"
+"Assets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/AudioRpc.cs"
+"Assets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/ClickDetector.cs"
+"Assets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/GameLogic.cs"
+"Assets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/Monstergame/Resources/Scripts/myThirdPersonController.cs"
+"Assets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/NetworkCharacter.cs"
+"Assets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/RandomMatchmaker.cs"
+"Assets/Photon Unity Networking/Demos/Shared Assets/Scripts/IdleRunJump.cs"
+"Assets/Photon Unity Networking/Demos/Shared Assets/Scripts/PlayerDiamond.cs"
+"Assets/Photon Unity Networking/Demos/Shared Assets/Scripts/PlayerVariables.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/CustomTypes.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Enums.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Extensions.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/FriendInfo.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/GizmoType.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/LoadbalancingPeer.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/NetworkingPeer.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonClasses.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonHandler.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonLagSimulationGui.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonNetwork.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonPlayer.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonStatsGui.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonStreamQueue.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonView.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/PingCloudRegions.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/RPC.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Room.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/RoomInfo.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/RpcIndexComponent.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/ServerSettings.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/SocketUdp.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/SocketWebTcp.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonAnimatorView.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonRigidbody2DView.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonRigidbodyView.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonTransformView.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonTransformViewPositionControl.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonTransformViewPositionModel.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonTransformViewRotationControl.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonTransformViewRotationModel.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonTransformViewScaleControl.cs"
+"Assets/Photon Unity Networking/Plugins/PhotonNetwork/Views/PhotonTransformViewScaleModel.cs"
+"Assets/Photon Unity Networking/UtilityScripts/ConnectAndJoinRandom.cs"
+"Assets/Photon Unity Networking/UtilityScripts/HighlightOwnedGameObj.cs"
+"Assets/Photon Unity Networking/UtilityScripts/InRoomChat.cs"
+"Assets/Photon Unity Networking/UtilityScripts/InRoomRoundTimer.cs"
+"Assets/Photon Unity Networking/UtilityScripts/InputToEvent.cs"
+"Assets/Photon Unity Networking/UtilityScripts/ManualPhotonViewAllocator.cs"
+"Assets/Photon Unity Networking/UtilityScripts/MoveByKeys.cs"
+"Assets/Photon Unity Networking/UtilityScripts/OnAwakeUsePhotonView.cs"
+"Assets/Photon Unity Networking/UtilityScripts/OnClickDestroy.cs"
+"Assets/Photon Unity Networking/UtilityScripts/OnClickInstantiate.cs"
+"Assets/Photon Unity Networking/UtilityScripts/OnClickLoadSomething.cs"
+"Assets/Photon Unity Networking/UtilityScripts/OnJoinedInstantiate.cs"
+"Assets/Photon Unity Networking/UtilityScripts/OnStartDelete.cs"
+"Assets/Photon Unity Networking/UtilityScripts/PickupItem.cs"
+"Assets/Photon Unity Networking/UtilityScripts/PickupItemSimple.cs"
+"Assets/Photon Unity Networking/UtilityScripts/PickupItemSyncer.cs"
+"Assets/Photon Unity Networking/UtilityScripts/PointedAtGameObjectInfo.cs"
+"Assets/Photon Unity Networking/UtilityScripts/PunPlayerScores.cs"
+"Assets/Photon Unity Networking/UtilityScripts/PunTeams.cs"
+"Assets/Photon Unity Networking/UtilityScripts/QuitOnEscapeOrBack.cs"
+"Assets/Photon Unity Networking/UtilityScripts/ServerTime.cs"
+"Assets/Photon Unity Networking/UtilityScripts/ShowInfoOfPlayer.cs"
+"Assets/Photon Unity Networking/UtilityScripts/ShowStatusWhenConnecting.cs"
+"Assets/Photon Unity Networking/UtilityScripts/SmoothSyncMovement.cs"
+"Assets/Photon Unity Networking/UtilityScripts/SupportLogger.cs"
+"Assets/Photon Unity Networking/UtilityScripts/TimeKeeper.cs"
+Assets/Prefabs/InventoryPackage/InventoryControllerScript.cs
+Assets/Scripts/EnemyAI.cs
+Assets/Scripts/EnemyAttack.cs
+Assets/Scripts/FriendWeb/FriendClass.cs
+Assets/Scripts/FriendWeb/FriendDatabase.cs
+Assets/Scripts/Items/BaseItem.cs
+Assets/Scripts/Items/Database.cs
+Assets/Scripts/Items/Material.cs
+Assets/Scripts/Items/PublicDataTypes.cs
+Assets/Scripts/Items/Weapon.cs
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Enemy/EnemyHealth.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Enemy/JellyEnemyAI.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Enemy/JellyEnemyAttack.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/HUD/BarPlayerHealth.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/HUD/BarPlayerMana.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/HUD/EnemyHudTimer.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/HUD/HudTimer.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Messenger/Callback.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Messenger/Messenger.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/CharCreate.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/GetPlayer.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/InstanEquip.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/JellyPlayerHealth.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/MainMenu/MainMenu.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/MainMenu/MenuHp.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/PickWeap.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/PlayerAttack2.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/BaseScripts/Player/PlayerMat.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/Portals.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/Start/SettingsScreen.cs"
+"Assets/Scripts/Jelly Smash Import/Scripts/Start/StartMenu.cs"
+Assets/Scripts/MainController.cs
+Assets/Scripts/MakeMap.cs
+Assets/Scripts/NavMeshScript.cs
+Assets/Scripts/Networking/Controller.cs
+Assets/Scripts/Networking/GlobalFunctions.cs
+Assets/Scripts/Networking/LoginConnection.cs
+Assets/Scripts/Networking/PhotonRPC.cs
+Assets/Scripts/NewRandRoom.cs
+Assets/Scripts/Player.cs
+Assets/Scripts/PlayerHealth.cs
+Assets/Scripts/RandRoom.cs
+Assets/Scripts/UI/Inventory/InvPanelVisibility.cs
+Assets/Scripts/UI/Inventory/InvUI.cs
+Assets/Scripts/UI/Inventory/QuitButton.cs
+Assets/Scripts/UI/Inventory/TickDown.cs
+Assets/Scripts/UI/Inventory/TickUp.cs
+Assets/Scripts/UI/MainMenu/Hover.cs
+Assets/Scripts/UI/MainMenu/TitleScreenAnim.cs
+Assets/Scripts/UI/MainMenu/TitleScreenButton.cs
+Assets/Scripts/UI/Networking/NetworkController.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/AI/AIPath.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/AI/NavmeshController.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/AI/Seeker.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/AstarData.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/AstarMath.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/AstarPath.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/GraphUpdateScene.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/GraphUpdateShape.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/AnimationLink.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/AstarDebugger.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/AstarEnumFlagAttr.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/BinaryHeap.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/GraphEditorBase.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/GraphModifier.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/Int3.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/ListPool.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/NodeLink.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/NodeLink2.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/NodeLink3.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/ObjectPool.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/PathPool.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/StackPool.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/ThreadControlQueue.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Misc/WindowsStoreCompatibility.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Nodes/GraphNode.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Path.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/PathHandler.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Serialization/JsonConverters.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Serialization/JsonSerializer.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Serialization/SimpleJsonReplacement.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/Serialization/SimpleZipReplacement.cs
+Assets/_IMPORTED/AstarPathfindingProject/Core/astarclasses.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralGridMover.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/Example12_Procedural/ProceduralWorld.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/ExampleScripts/AIFollow.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/ExampleScripts/AstarSmoothFollow2.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/ExampleScripts/DoorController.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/ExampleScripts/DynamicGridObstacle.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/ExampleScripts/MineBotAI.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/ExampleScripts/ObjectPlacer.cs
+Assets/_IMPORTED/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/Base.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/GridGenerator.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/NavMeshGenerator.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/NodeClasses/GridNode.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/NodeClasses/PointNode.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/NodeClasses/TriangleMeshNode.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/PointGenerator.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/QuadtreeGraph.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/Utilities/BBTree.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/Utilities/EuclideanEmbedding.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/Utilities/NavMeshRenderer.cs
+Assets/_IMPORTED/AstarPathfindingProject/Generators/Utilities/ObjImporter.cs
+Assets/_IMPORTED/AstarPathfindingProject/Modifiers/AlternativePath.cs
+Assets/_IMPORTED/AstarPathfindingProject/Modifiers/FunnelModifier.cs
+Assets/_IMPORTED/AstarPathfindingProject/Modifiers/Modifiers.cs
+Assets/_IMPORTED/AstarPathfindingProject/Modifiers/RaycastModifier.cs
+Assets/_IMPORTED/AstarPathfindingProject/Modifiers/SimpleSmoothModifier.cs
+Assets/_IMPORTED/AstarPathfindingProject/Modifiers/StartEndModifier.cs
+Assets/_IMPORTED/AstarPathfindingProject/Navmesh/RelevantGraphSurface.cs
+Assets/_IMPORTED/AstarPathfindingProject/Pathfinders/ABPath.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/AstarChecksum.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/AstarMemory.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/AstarParallel.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/AstarProfiler.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/DotNetReplacements.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/GraphUpdateUtilities.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/LockFreeStack.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/PathUtilities.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/ProfileHelper.cs
+Assets/_IMPORTED/AstarPathfindingProject/Utilities/UnityReferenceHelper.cs
+Assets/_IMPORTED/AstarPathfindingProject/changelog.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/Game/EquipItems.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/Game/EquipRandomItem.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/Game/UICursor.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/Game/UIEquipmentSlot.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/Game/UIItemSlot.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/Game/UIItemStorage.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/Game/UIStorageSlot.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/System/InvAttachmentPoint.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/System/InvBaseItem.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/System/InvDatabase.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/System/InvEquipment.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/System/InvGameItem.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/InventorySystem/System/InvStat.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/ChatInput.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/DownloadTexture.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/DragDropContainer.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/DragDropItem.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/DragDropRoot.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/DragDropSurface.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/LagPosition.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/LagRotation.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/LoadLevelOnClick.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/LookAtTarget.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/PanWithMouse.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/PlayIdleAnimations.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/SetColorOnSelection.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/ShaderQuality.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/Spin.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/SpinWithMouse.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/TypewriterEffect.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/UpdateManager.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/WindowAutoYaw.cs
+Assets/_IMPORTED/NGUI/Examples/Scripts/Other/WindowDragTilt.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/LanguageSelection.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButton.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonActivate.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonColor.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonKeyBinding.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonKeys.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonMessage.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonOffset.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonPlayAnimation.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonRotation.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonScale.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonSound.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIButtonTween.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UICenterOnChild.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UICheckbox.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UICheckboxControlledComponent.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UICheckboxControlledObject.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIDragCamera.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIDragObject.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIDragPanelContents.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIDraggableCamera.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIDraggablePanel.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIForwardEvents.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIGrid.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIImageButton.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIInputValidator.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIPopupList.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UISavedOption.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UIScrollBar.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UISlider.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UISliderColors.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UISoundVolume.cs
+Assets/_IMPORTED/NGUI/Scripts/Interaction/UITable.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/ActiveAnimation.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/AnimationOrTween.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/BMFont.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/BMGlyph.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/BMSymbol.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/BetterList.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/ByteReader.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/IgnoreTimeScale.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/Localization.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/NGUIDebug.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/NGUIMath.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/NGUITools.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/SpringPanel.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/UIDrawCall.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/UIEventListener.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/UIGeometry.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/UINode.cs
+Assets/_IMPORTED/NGUI/Scripts/Internal/UIWidget.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/AnimatedAlpha.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/AnimatedColor.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/SpringPosition.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenAlpha.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenColor.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenFOV.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenOrthoSize.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenPosition.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenRotation.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenScale.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenTransform.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/TweenVolume.cs
+Assets/_IMPORTED/NGUI/Scripts/Tweening/UITweener.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIAnchor.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIAtlas.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UICamera.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIFilledSprite.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIFont.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIInput.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIInputSaved.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UILabel.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UILocalize.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIOrthoCamera.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIPanel.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIRoot.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UISlicedSprite.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UISprite.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UISpriteAnimation.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIStretch.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UITextList.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UITexture.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UITiledSprite.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UITooltip.cs
+Assets/_IMPORTED/NGUI/Scripts/UI/UIViewport.cs
+"Assets/_IMPORTED/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/FirstPersonCharacter/Scripts/HeadBob.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/RollerBall/Scripts/Ball.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/RollerBall/Scripts/BallUserControl.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs"
+"Assets/_IMPORTED/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs"
+"Assets/_IMPORTED/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/ActivateTrigger.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/AutoMobileShaderSwitch.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/AutoMoveAndRotate.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/CameraRefocus.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/CurveControlledBob.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/DragRigidbody.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/DynamicShadowSettings.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/EventSystemChecker.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/FOVKick.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/FPSCounter.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/FollowTarget.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/ForcedReset.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/LerpControlledBob.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/ObjectResetter.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/ParticleSystemDestroyer.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/PlatformSpecificContent.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/SimpleActivatorMenu.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/SimpleMouseRotator.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/SmoothFollow.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/TimedObjectActivator.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/TimedObjectDestructor.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/WaypointCircuit.cs"
+"Assets/_IMPORTED/Standard Assets/Utility/WaypointProgressTracker.cs"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Xml.Linq.dll"
