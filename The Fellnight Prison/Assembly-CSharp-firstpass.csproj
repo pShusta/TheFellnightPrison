@@ -61,6 +61,7 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\Medieval_House\Info.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\GUI - Text Shader (SoftClip).shader" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />

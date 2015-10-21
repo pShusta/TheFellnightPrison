@@ -116,6 +116,7 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\Medieval_House\Info.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\GUI - Text Shader (SoftClip).shader" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
@@ -166,6 +167,9 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\link.xml" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -254,8 +258,6 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{D05FA018-CCE2-7008-A41D-CBC47066D594}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{9FBAFCE6-2579-1BFB-687C-2E773CCC1FD8}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

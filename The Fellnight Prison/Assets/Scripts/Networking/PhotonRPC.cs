@@ -132,4 +132,11 @@ public class PhotonRPC : MonoBehaviour {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         controller.GetComponent<Controller>().InvFilled();
     }
+
+    [PunRPC]
+    void SoloRoom()
+    {
+        PhotonNetwork.room.open = false;
+        //PhotonNetwork.room.visible = false;
+    }
 }

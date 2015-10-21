@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\JumpAndRunMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\DemoBoxesGui.cs" />
@@ -190,6 +191,7 @@
      <Compile Include="Assets\Scripts\Networking\Controller.cs" />
      <Compile Include="Assets\Scripts\Networking\GlobalFunctions.cs" />
      <Compile Include="Assets\Scripts\Networking\LoginConnection.cs" />
+     <Compile Include="Assets\Scripts\Networking\NetworkV2.cs" />
      <Compile Include="Assets\Scripts\Networking\PhotonRPC.cs" />
      <Compile Include="Assets\Scripts\NewRandRoom.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -442,6 +444,7 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\Medieval_House\Info.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\GUI - Text Shader (SoftClip).shader" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />

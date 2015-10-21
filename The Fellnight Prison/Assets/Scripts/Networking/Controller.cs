@@ -16,8 +16,7 @@ public class Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        this.gameObject.GetComponent<LoginConnection>().PhotonConnect();
-        UsernameAvailable = false;
+        
 
 	}
 	
@@ -25,6 +24,12 @@ public class Controller : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void StartGame()
+    {
+        this.gameObject.GetComponent<NetworkV2>().PhotonConnect();
+        UsernameAvailable = false;
+    }
 
     public void ReturnToLogin()
     {
