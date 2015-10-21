@@ -120,6 +120,7 @@ public class NetworkV2 : MonoBehaviour
     void OnJoinedLobby()
     {
         Debug.Log("OnJoinedLobby");
+        PhotonNetwork.automaticallySyncScene = true;
     }
 
     void OnPhotonJoinRoomFailed(object[] error)

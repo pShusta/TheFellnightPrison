@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel;
+    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+        DontDestroyOnLoad(this.gameObject);
 
 	}
 	
@@ -141,6 +141,26 @@ public class Controller : MonoBehaviour {
     public void InvFilled()
     {
         SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
-        //loadlevel
+        //Application.LoadLevel("Tavern");
+        PlayerMenu.SetActive(true);
+        PhotonNetwork.Instantiate("TempPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
     }
+
+    public void quitButton()
+    {
+        Application.Quit();
+    }
+
+    public void loadDungeonButton()
+    {
+        //PhotonNetwork.automaticallySyncScene = true;
+        myPhotonView.RPC("LoadDungeonLevel", PhotonTargets.MasterClient);
+    }
+
+    void OnPhotonCustomRoomPropertiesChanged()
+    {
+        Debug.Log("OnPhotonCustomRoomPropertiesChanged");
+    }
+
+    
 }

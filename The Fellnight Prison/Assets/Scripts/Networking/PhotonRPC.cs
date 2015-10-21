@@ -139,4 +139,11 @@ public class PhotonRPC : MonoBehaviour {
         PhotonNetwork.room.open = false;
         //PhotonNetwork.room.visible = false;
     }
+
+    [PunRPC]
+    void LoadDungeonLevel()
+    {
+        //PhotonNetwork.automaticallySyncScene = true;
+        PhotonNetwork.LoadLevel(2);
+    }
 }

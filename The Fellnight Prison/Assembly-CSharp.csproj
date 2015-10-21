@@ -197,6 +197,7 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\RandRoom.cs" />
+     <Compile Include="Assets\Scripts\TavernControoller.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory\InvPanelVisibility.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory\InvUI.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory\QuitButton.cs" />
@@ -206,6 +207,7 @@
      <Compile Include="Assets\Scripts\UI\MainMenu\TitleScreenAnim.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu\TitleScreenButton.cs" />
      <Compile Include="Assets\Scripts\UI\Networking\NetworkController.cs" />
+     <Compile Include="Assets\Scripts\UI\PlayerMenu.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AI\AIPath.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AI\NavmeshController.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Core\AI\Seeker.cs" />

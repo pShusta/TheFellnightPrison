@@ -190,6 +190,7 @@ public class Database : MonoBehaviour{
         _masterConnect = new MySqlConnection(source);
         _masterConnect.Open();
         Debug.Log("Connection Succesful");
+        Application.LoadLevel("Tavern");
     }
 
     public static  Weapon ReadWeaponDb(int id)
