@@ -190,7 +190,9 @@ public class Database : MonoBehaviour{
         _masterConnect = new MySqlConnection(source);
         _masterConnect.Open();
         Debug.Log("Connection Succesful");
-        Application.LoadLevel("Tavern");
+        PhotonNetwork.Instantiate("TempPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        this.gameObject.GetComponent<Controller>().CloseMasterLogin();
+        //Application.LoadLevel("Tavern");
     }
 
     public static  Weapon ReadWeaponDb(int id)

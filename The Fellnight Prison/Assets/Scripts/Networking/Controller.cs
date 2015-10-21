@@ -138,6 +138,11 @@ public class Controller : MonoBehaviour {
         myPhotonView.RPC("GetInventory", PhotonTargets.MasterClient, _loginInputs[0].GetComponent<Text>().text, myPhotonView.owner);
     }
 
+    public void CloseMasterLogin()
+    {
+        MasterConnectPanel.SetActive(false);
+    }
+
     public void InvFilled()
     {
         SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
@@ -157,9 +162,13 @@ public class Controller : MonoBehaviour {
         myPhotonView.RPC("LoadDungeonLevel", PhotonTargets.MasterClient);
     }
 
-    void OnPhotonCustomRoomPropertiesChanged()
+    void OnPhotonCustomRoomPropertiesChanged(Hashtable _changed)
     {
         Debug.Log("OnPhotonCustomRoomPropertiesChanged");
+        foreach (var _value in _changed.Values)
+        {
+            Debug.Log("Hastable: " + _value);
+        }
     }
 
     
