@@ -1,3 +1,8 @@
+v1.62 (13. October 2015)
+Fixed: Clean up of instantiated Game Objects (Clean Up Cache on Leave). This bug was only in v1.61.
+Changed: PhotonView.OnDestroy() to not use Application.isLoadingLevel in Unity 5.2 (which makes it obsolete). Loading a level will destroy a GameObject without using PhotonNetwork.Destroy() and that can lead to errors. When loading a level that's ok. The logging got adjusted for this case.
+Added: PhotonNetwork.BackgroundTimeout. It defines after how many seconds PUN will close a connection, when Unity called OnApplicationPause(true). By default, this is not active but on Android (e.g.), it can be useful to close a connection when the app is in background for a while.
+
 v1.61 (17. September 2015)
 Added: Option to use an Object Pool. Implement IPunPrefabPool and assign it to PhotonNetwork.PrefabPool. Note: GameObjects will not run Awake() and Start() but PUN will call OnPhotonInstantiate() as if the GameObject would be new.
 Changed: The internal state when PUN connected to the Master Server but did not yet authenticate. The server does not allow you to do requests before authenticate and the new state reflects this. This also affects connectedAndReady for that state.

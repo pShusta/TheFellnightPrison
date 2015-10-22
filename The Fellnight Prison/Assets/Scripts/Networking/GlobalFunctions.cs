@@ -5,6 +5,7 @@ public class GlobalFunctions :  MonoBehaviour{
 
 	private bool _ready = false;
     private bool _connection = false;
+    //public GameObject[] Spawns;
 
 
     public void Start()
@@ -18,8 +19,10 @@ public class GlobalFunctions :  MonoBehaviour{
     }
 
 	public void SpawnPlayer(){
-		GameObject _player = PhotonNetwork.Instantiate("NetworkPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position , Quaternion.identity, 0);
-		if(_player.GetPhotonView().isMine) { _player.SetActive(true); }
+        //GameObject.FindGameObjectWithTag("Spawnpoint").transform.position
+
+		//GameObject _player = PhotonNetwork.Instantiate("TempPlayer",  , Quaternion.identity, 0);
+		//if(_player.GetPhotonView().isMine) { _player.SetActive(true); }
 	}
 
     public bool PhotonConnection()

@@ -41,7 +41,7 @@ public class NewRandRoom : MonoBehaviour
         //Keep this below the SceneNodes.FindObjectsWithTag, otherwise it'll pick up the new rooms Nodes
         //GameObject myObj = Instantiate(Rooms[whichItem], new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
 
-        GameObject myObj = PhotonNetwork.Instantiate(Rooms[whichItem].name, new Vector3(6, 6, 6), Quaternion.identity, 0) as GameObject;
+        GameObject myObj = PhotonNetwork.Instantiate(Rooms[whichItem].name, new Vector3(100000, 100000, 100000), Quaternion.identity, 0) as GameObject;
 
         //Finds all of the Ray Cast Nodes in the new object
         var RayNodes = myObj.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Ray Cast Node").ToArray();
@@ -142,7 +142,7 @@ public class NewRandRoom : MonoBehaviour
             {
                 Debug.Log("Spawned Item interceted with other item");
                 ParentNode.gameObject.tag = "Blocked Node";
-                Destroy(myObj);
+                PhotonNetwork.Destroy(myObj);
                 numSpawned--;
                 checkspace = false;
             }
@@ -204,7 +204,9 @@ public class NewRandRoom : MonoBehaviour
         DeleteNodes = GameObject.FindGameObjectsWithTag("Delete Me");
         for (int p = 0; p < DeleteNodes.Length; p++)
         {
-            Destroy(DeleteNodes[p].gameObject);
+            DeleteNodes[p].gameObject.transform.position = new Vector3(DeleteNodes[p].gameObject.transform.position.x, DeleteNodes[p].gameObject.transform.position.y + 100, DeleteNodes[p].gameObject.transform.position.z);
+            //PhotonNetwork.Destroy(DeleteNodes[p].gameObject);
+            //PhotonNetwork.Destroy(DeleteNodes[p].gameObject.GetComponent<PhotonView>());
         }
 
 
@@ -264,7 +266,7 @@ public class NewRandRoom : MonoBehaviour
     {
         //myObjects = Resources.LoadAll<GameObject>("Rooms");
         //Debug.Log(myObjects.Length);
-
+        //PhotonNetwork.Instantiate("Small room", new Vector3(0, 0, 0), Quaternion.identity, 0);
     }
 
     public void launch()

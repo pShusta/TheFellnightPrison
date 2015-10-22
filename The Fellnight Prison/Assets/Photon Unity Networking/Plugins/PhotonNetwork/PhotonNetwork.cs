@@ -27,7 +27,7 @@ using System.IO;
 public static class PhotonNetwork
 {
     /// <summary>Version number of PUN. Also used in GameVersion to separate client version from each other.</summary>
-    public const string versionPUN = "1.61";
+    public const string versionPUN = "1.62";
 
     /// <summary>Version string for your this build. Can be used to separate incompatible clients. Sent during connect.</summary>
     /// <remarks>This is only sent when you connect so that is also the place you set it usually (e.g. in ConnectUsingSettings).</remarks>
@@ -813,6 +813,25 @@ public static class PhotonNetwork
             }
         }
     }
+
+    /// <summary>
+    /// Defines after how many seconds PUN will close a connection, after Unity's OnApplicationPause(true) call.
+    /// </summary>
+    /// <remarks>
+    /// The value is set in seconds.
+    /// Set a value greater than 0.001f, if you want to disconnect in background.
+    /// Default: 0.0f.
+    /// 
+    /// Note: 
+    /// Some platforms (e.g. iOS) don't allow to keep a connection while the app is in background. 
+    /// In those cases, this value does not change anything.
+    /// 
+    /// Unity's OnApplicationPause() callback is broken in some exports (Android) of some Unity versions.
+    /// Make sure OnApplicationPause() gets the callbacks you'd expect on the platform you target!
+    /// Check PhotonHandler.OnApplicationPause(bool pause), to see the implementation.
+    /// 
+    /// </remarks>
+    public static float BackgroundTimeout = 0.0f;
 
     /// <summary>
     /// Are we the master client?

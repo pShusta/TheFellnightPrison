@@ -241,7 +241,7 @@ public class PhotonView : Photon.MonoBehaviour
     [SerializeField]
     protected internal bool isRuntimeInstantiated;
 
-    protected internal bool destroyedByPhotonNetworkOrQuit;
+    protected internal bool destroyedByPhotonNetwork;
 
     internal MonoBehaviour[] RpcMonoBehaviours;
     private MethodInfo OnSerializeMethodInfo;
@@ -298,37 +298,20 @@ public class PhotonView : Photon.MonoBehaviour
         this.ownerId = newOwnerId;  // immediately switch ownership locally, to avoid more updates sent from this client.
     }
 
-
-    protected internal void OnApplicationQuit()
-    {
-        destroyedByPhotonNetworkOrQuit = true;	// on stop-playing its ok Destroy is being called directly (not by PN.Destroy())
-    }
-
     protected internal void OnDestroy()
     {
-        if (!this.destroyedByPhotonNetworkOrQuit)
+        if (!this.destroyedByPhotonNetwork)
         {
-            PhotonNetwork.networkingPeer.LocalCleanPhotonView(this);
-        }
+            bool wasInList = PhotonNetwork.networkingPeer.LocalCleanPhotonView(this);
+            bool loading = false;
+            
+            #if !UNITY_5 || UNITY_5_0 || UNITY_5_1
+            loading = Application.isLoadingLevel;
+            #endif
 
-        if (!this.destroyedByPhotonNetworkOrQuit && !Application.isLoadingLevel)
-        {
-            if (this.instantiationId > 0)
+            if (wasInList && !loading && !PhotonHandler.AppQuits && PhotonNetwork.logLevel >= PhotonLogLevel.Informational)
             {
-                // if this viewID was not manually assigned (and we're not shutting down or loading a level), you should use PhotonNetwork.Destroy() to get rid of GOs with PhotonViews
-                Debug.LogError("OnDestroy() seems to be called without PhotonNetwork.Destroy()?! GameObject: " + this.gameObject + " Application.isLoadingLevel: " + Application.isLoadingLevel);
-            }
-            else
-            {
-                // this seems to be a manually instantiated PV. if it's local, we could warn if the ID is not in the allocated-list
-                if (this.viewID <= 0)
-                {
-                    Debug.LogWarning(string.Format("OnDestroy manually allocated PhotonView {0}. The viewID is 0. Was it ever (manually) set?", this));
-                }
-                else if (this.isMine && !PhotonNetwork.manuallyAllocatedViewIds.Contains(this.viewID))
-                {
-                    Debug.LogWarning(string.Format("OnDestroy manually allocated PhotonView {0}. The viewID is local (isMine) but not in manuallyAllocatedViewIds list. Use UnAllocateViewID() after you destroyed the PV.", this));
-                }
+                Debug.Log("PUN-instantiated '" + this.gameObject.name + "' got destroyed by engine. This is OK when loading levels. Otherwise use: PhotonNetwork.Destroy().");
             }
         }
     }

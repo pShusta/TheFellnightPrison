@@ -2,15 +2,11 @@
 using System.Collections;
 
 public class MainController : MonoBehaviour {
-
+    public GameObject[] Spawns;
 
 	// Use this for initialization
 	void Start () {
-        if (!PhotonNetwork.connected) { 
-            GlobalFunctions.PhotonConnect();
-        }
-        else
-        {
+        if (PhotonNetwork.isMasterClient) { 
             LaunchGenerator();
         }
     }
@@ -25,11 +21,26 @@ public class MainController : MonoBehaviour {
 
     public void FinishGenerator()
     {
-        this.gameObject.GetComponent<GlobalFunctions>().SpawnPlayer();
+        this.gameObject.GetComponent<PhotonView>().RPC("SpawnPlayer", PhotonTargets.All);
+        //this.gameObject.GetComponent<GlobalFunctions>().SpawnPlayer();
     }
 
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    public void quitButton()
+    {
+        PhotonNetwork.Disconnect();
+        Application.Quit();
+    }
+
+    [PunRPC]
+    void SpawnPlayer()
+    {
+        GameObject _spawn = Spawns[Random.Range(0, Spawns.Length)];
+        GameObject _player = PhotonNetwork.Instantiate("TempPlayer", _spawn.transform.position , Quaternion.identity, 0);
+        if(_player.GetPhotonView().isMine) { _player.SetActive(true); }
+    }
 }

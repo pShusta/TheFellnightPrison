@@ -106,7 +106,12 @@ namespace ExitGames.Client.Photon
             }
 
             op[ParameterCode.GameProperties] = gameProperties;
-            op[ParameterCode.CleanupCacheOnLeave] = roomOptions.cleanupCacheOnLeave;
+
+            op[ParameterCode.CleanupCacheOnLeave] = roomOptions.cleanupCacheOnLeave;	// this is actually setting the room's config
+            if (roomOptions.cleanupCacheOnLeave)
+            {
+                gameProperties[GamePropertyKey.CleanupCacheOnLeave] = true;  			// this is only informational for the clients which join
+            }
             //if (roomOptions.checkUserOnJoin)
             //{
             //    op[ParameterCode.CheckUserOnJoin] = true;

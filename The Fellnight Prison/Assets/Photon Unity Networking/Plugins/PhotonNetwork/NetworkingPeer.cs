@@ -2257,7 +2257,7 @@ internal class NetworkingPeer : LoadbalancingPeer, IPhotonPeerListener
             for (int index = 0; index < cachedRPCMethods.Count; index++)
             {
                 MethodInfo mInfo = cachedRPCMethods[index];
-                if (mInfo.Name == inMethodName)
+                if (mInfo.Name.Equals(inMethodName))
                 {
                     foundMethods++;
                     ParameterInfo[] pArray = mInfo.GetParameters();
@@ -2725,6 +2725,8 @@ internal class NetworkingPeer : LoadbalancingPeer, IPhotonPeerListener
                 continue;
             }
 
+            view.destroyedByPhotonNetwork = true;
+
             // we only destroy/clean PhotonViews that were created by PhotonNetwork.Instantiate (and those have an instantiationId!)
             if (view.instantiationId >= 1)
             {
@@ -2849,12 +2851,10 @@ internal class NetworkingPeer : LoadbalancingPeer, IPhotonPeerListener
         this.OpRaiseEvent(PunEvent.OwnershipTransfer, new int[] { viewID, playerID }, true, new RaiseEventOptions() { Receivers = ReceiverGroup.All });   // All sends to all via server (including self)
     }
 
-    public void LocalCleanPhotonView(PhotonView view)
+    public bool LocalCleanPhotonView(PhotonView view)
     {
-        view.destroyedByPhotonNetworkOrQuit = true;
-        this.photonViewList.Remove(view.viewID);
+        return this.photonViewList.Remove(view.viewID);
     }
-
 
     public PhotonView GetPhotonView(int viewID)
     {
