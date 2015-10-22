@@ -4,20 +4,27 @@ using System.Collections;
 public class PlayerMenu : MonoBehaviour {
 
     public GameObject Menu;
+    public PhotonView theView;
+    public bool isMine;
+    public MonoBehaviour script;
+    //public Component script;
 
 	// Use this for initialization
 	void Start () {
-        Menu = GameObject.FindGameObjectWithTag("PlayerMenu");
-        Menu.SetActive(false);
-        if (this.GetComponent<PhotonView>().isMine)
+        Debug.Log("Running PlayerMenu");
+        
+        if (!this.gameObject.GetComponent<PhotonView>().isMine)
         {
-            this.GetComponent<CharacterController>().enabled = true;
-            this.GetComponent<AudioSource>().enabled = true;
-            //this.GetComponent<FirstPersonController>().enabled = true;
+            this.enabled = false;
         }
         else
         {
-            this.enabled = false;
+            Menu = GameObject.FindGameObjectWithTag("PlayerMenu");
+            Menu.SetActive(false);
+            this.gameObject.GetComponent<CharacterController>().enabled = true;
+            script.enabled = true;
+            this.gameObject.GetComponentInChildren<Camera>().enabled = true;
+            this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
         }
 	}
 	

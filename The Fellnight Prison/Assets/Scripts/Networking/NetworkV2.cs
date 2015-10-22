@@ -135,6 +135,14 @@ public class NetworkV2 : MonoBehaviour
         Debug.Log("Error Code: " + error[0].ToString() + " Message: " + error[1]);
     }
 
+    void OnPhotonPlayerDisconnected(PhotonPlayer _player)
+    {
+        if (PhotonNetwork.isMasterClient)
+        {
+            PhotonNetwork.DestroyPlayerObjects(_player);
+        }
+    }
+
     void OnCreatedRoom()
     {
         Debug.Log("OnCreatedRoom");

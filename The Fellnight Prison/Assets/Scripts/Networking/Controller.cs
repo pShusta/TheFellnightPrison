@@ -141,6 +141,7 @@ public class Controller : MonoBehaviour {
     public void CloseMasterLogin()
     {
         MasterConnectPanel.SetActive(false);
+        PlayerMenu.SetActive(true);
     }
 
     public void InvFilled()
@@ -149,6 +150,7 @@ public class Controller : MonoBehaviour {
         //Application.LoadLevel("Tavern");
         PlayerMenu.SetActive(true);
         PhotonNetwork.Instantiate("TempPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        LoginPanel.SetActive(false);
     }
 
     public void quitButton()
