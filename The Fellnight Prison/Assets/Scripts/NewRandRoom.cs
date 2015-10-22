@@ -153,8 +153,8 @@ public class NewRandRoom : MonoBehaviour
             Debug.Log("Spawned succsessful");
 
             TempNode.transform.position = ParentNode.transform.position;
-            //TempNode.DetachChildren();
-            myObj.transform.parent = ParentNode.transform;
+            TempNode.DetachChildren();
+            //myObj.transform.parent = ParentNode.transform;
             ParentNode.gameObject.tag = "Used Node";
             ChildNode.gameObject.tag = "Used Node";
         }
