@@ -144,6 +144,6 @@ public class PhotonRPC : MonoBehaviour {
     void LoadDungeonLevel()
     {
         //PhotonNetwork.automaticallySyncScene = true;
-        PhotonNetwork.LoadLevel(2);
+        PhotonNetwork.LoadLevel(1);
     }
 }

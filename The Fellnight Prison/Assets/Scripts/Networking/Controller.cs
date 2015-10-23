@@ -90,12 +90,8 @@ public class Controller : MonoBehaviour {
     {
         _view = PhotonNetwork.Instantiate("playerTest", new Vector3(0, 0, 0), Quaternion.identity, 0);
         myPhotonView = _view.GetComponent<PhotonView>();
-        ConnectingPanel.SetActive(false);
-        LoginPanel.SetActive(true);
-    }
-
-    public void Login()
-    {
+        //ConnectingPanel.SetActive(false);
+        //LoginPanel.SetActive(true);
         if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
         {
             LoginPanel.SetActive(false);
@@ -106,6 +102,26 @@ public class Controller : MonoBehaviour {
             string[] loginInfo = new string[2] { _loginInputs[0].GetComponent<Text>().text, _loginInputs[1].GetComponent<InputField>().text };
             _view.GetComponent<PhotonRPC>().Login(loginInfo);
         }
+    }
+
+    public void Login()
+    {
+        if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
+        {
+            this.gameObject.GetComponent<NetworkV2>().setAsMaster();
+        }
+        this.gameObject.GetComponent<NetworkV2>().PhotonConnect();
+        UsernameAvailable = false;
+        //if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
+        //{
+        //    LoginPanel.SetActive(false);
+        //    MasterConnectPanel.SetActive(true);
+        //}
+        //else
+        //{
+        //   string[] loginInfo = new string[2] { _loginInputs[0].GetComponent<Text>().text, _loginInputs[1].GetComponent<InputField>().text };
+        //    _view.GetComponent<PhotonRPC>().Login(loginInfo);
+        //}
     }
 
     public void LoginResult(bool _result)

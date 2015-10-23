@@ -25,7 +25,7 @@ public class NetworkV2 : MonoBehaviour
 
     public void setAsMaster()
     {
-        connectAsMaster = Master.GetComponent<Toggle>().isOn;
+        connectAsMaster = true;
     }
 
     public void PhotonConnect()
@@ -153,9 +153,9 @@ public class NetworkV2 : MonoBehaviour
         Debug.Log("OnJoinedRoom: " + PhotonNetwork.room.ToString());
 
         this.gameObject.GetComponent<Controller>().ConnectionSuccesful();
-        if (solo && !PhotonNetwork.isMasterClient)
-        {
-            this.gameObject.GetComponent<Controller>().myPhotonView.RPC("SoloRoom", PhotonTargets.MasterClient);
-        }
+        //if (solo && !PhotonNetwork.isMasterClient)
+        //{
+        //    this.gameObject.GetComponent<Controller>().myPhotonView.RPC("SoloRoom", PhotonTargets.MasterClient);
+        //}
     }
 }
