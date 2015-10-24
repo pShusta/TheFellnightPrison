@@ -12,7 +12,7 @@ public class TurnOnCharacter : MonoBehaviour {
         if (this.gameObject.GetComponent<PhotonView>().isMine)
         {
             Controller = GameObject.FindGameObjectWithTag("GameController");
-            this.gameObject.GetComponent<Animator>().enabled = true;
+            //this.gameObject.GetComponent<Animator>().enabled = true;
             this.gameObject.GetComponentInChildren<Camera>().enabled = true;
             this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
             script.enabled = true;
