@@ -9,21 +9,34 @@ public class Controller : MonoBehaviour {
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
-    private GameObject _view;
-    private bool UsernameAvailable, _create;
+    private GameObject _view, PlayerToon;
+    private bool UsernameAvailable, _create, okay;
     public Player _player;
+
+    public GameObject curMenu;
 
 
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this.gameObject);
         _create = false;
+        okay = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        
 	}
+
+    public GameObject getCurMenu()
+    {
+        return curMenu;
+    }
+
+    public void setCurMenu(GameObject _value)
+    {
+        curMenu = _value;
+    }
 
     public void StartGame()
     {
@@ -186,7 +199,7 @@ public class Controller : MonoBehaviour {
         SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
         //Application.LoadLevel("Tavern");
         PlayerMenu.SetActive(true);
-        GameObject temp = PhotonNetwork.Instantiate("SKELETON", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        PlayerToon = PhotonNetwork.Instantiate("SKELETON", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
         LoginPanel.SetActive(false);
         Inventory.SetActive(true);
     }

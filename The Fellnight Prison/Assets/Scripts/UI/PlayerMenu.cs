@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMenu : MonoBehaviour {
 
-    public GameObject Menu;
+    public GameObject Menu, Controller;
     public PhotonView theView;
     public bool isMine;
     public MonoBehaviour script;
@@ -27,7 +27,13 @@ public class PlayerMenu : MonoBehaviour {
             this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
         }
 	}
-	
+
+    public void closeWindow()
+    {
+        Menu.SetActive(false);
+        Controller.GetComponent<Controller>().setCurMenu(null);
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -35,10 +41,12 @@ public class PlayerMenu : MonoBehaviour {
             if (Menu.active)
             {
                 Menu.SetActive(false);
+                Controller.GetComponent<Controller>().setCurMenu(null);
             }
             else
             {
                 Menu.SetActive(true);
+                Controller.GetComponent<Controller>().setCurMenu(Menu);
             }
         }
 	}

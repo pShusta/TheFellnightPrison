@@ -33,7 +33,7 @@ public class NetworkMotion : Photon.MonoBehaviour {
         }
         else
         {
-            realPosition = (Vector3)stream.RecieveNext();
+            realPosition = (Vector3)stream.ReceiveNext();
             realRotation = (Quaternion)stream.ReceiveNext();
         }
     }

@@ -9,6 +9,8 @@ public class Swing : MonoBehaviour
     private float inputY;
     private float Run;
     private float inputH;
+    private GameObject Controller;
+    private bool okay;
 
     private bool isRunning = false;
 
@@ -30,6 +32,8 @@ public class Swing : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        okay = true;
+        Controller = GameObject.FindGameObjectWithTag("GameController");
         anim = GetComponent<Animator>();
         sword = Weapon.GetComponent<BoxCollider>();
         clip = GetComponent<Animation>();
@@ -84,14 +88,31 @@ public class Swing : MonoBehaviour
     void Update()
     {
 
+        if (Controller.GetComponent<Controller>().curMenu != null && okay)
+        {
+            okay = false;
+            //PlayerToon.GetComponent<MonoBehaviour>()
+            //kill mouse look
+            //kill attack
+        }
+        else if (Controller.GetComponent<Controller>().curMenu == null && !okay)
+        {
+            okay = true;
+            //enable mouse look
+            //enable attack
+        }
+
         playerCamra.transform.position = bone.transform.position;
 
-        //Handles camera and player rotation
-        float rotLR = Input.GetAxis("Mouse X") * MS;
-        transform.Rotate(0, rotLR, 0);
-        VR -= Input.GetAxis("Mouse Y") * VS;
-        VR = Mathf.Clamp(VR, -UDR, UDR);
-        Camera.main.transform.localRotation = Quaternion.Euler(VR, 0, 0);
+        if (okay)
+        {
+            //Handles camera and player rotation
+            float rotLR = Input.GetAxis("Mouse X") * MS;
+            transform.Rotate(0, rotLR, 0);
+            VR -= Input.GetAxis("Mouse Y") * VS;
+            VR = Mathf.Clamp(VR, -UDR, UDR);
+            Camera.main.transform.localRotation = Quaternion.Euler(VR, 0, 0);
+        }
 
 
         //Gets the mouse direction and saves it to inputX/inputY
@@ -134,30 +155,31 @@ public class Swing : MonoBehaviour
             anim.SetBool("isBlocking", false);
         }
 
-
-        //Handles player attacking
-        //if player clicks left mouse button and moves in a direction an attack will occur from that direction
-        if (Input.GetButtonDown("Fire1"))
+        if (okay)
         {
+            //Handles player attacking
+            //if player clicks left mouse button and moves in a direction an attack will occur from that direction
+            if (Input.GetButtonDown("Fire1"))
+            {
 
 
-            //anim.SetTrigger("Attack");
-            StartCoroutine("xInput");
+                //anim.SetTrigger("Attack");
+                StartCoroutine("xInput");
 
 
+            }
+            if (Input.mouseScrollDelta.y > 0)
+            {
+                // if (inputH != 0 || inputY != 0)
+                //{
+                anim.SetTrigger("Attack");
+                StartCoroutine("colliderOn");
+
+                //anim.ResetTrigger("Attack");
+
+                // }
+            }
         }
-        if (Input.mouseScrollDelta.y > 0)
-        {
-            // if (inputH != 0 || inputY != 0)
-            //{
-            anim.SetTrigger("Attack");
-            StartCoroutine("colliderOn");
-
-            //anim.ResetTrigger("Attack");
-
-            // }
-        }
-
 
         /*
         if (Input.GetButtonDown("Fire1") && (Input.GetAxis("Mouse X") == -1))
