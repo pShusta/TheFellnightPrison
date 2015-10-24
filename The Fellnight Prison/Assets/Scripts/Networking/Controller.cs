@@ -28,6 +28,11 @@ public class Controller : MonoBehaviour {
         
 	}
 
+    public void takeDamage()
+    {
+
+    }
+
     public GameObject getCurMenu()
     {
         return curMenu;
@@ -186,6 +191,7 @@ public class Controller : MonoBehaviour {
         _player = new Player(_loginInputs[0].GetComponent<Text>().text, _stats[0], _stats[1], _stats[2], _stats[3], _stats[4], _stats[5], _stats[6]);
         SuccessOrFail[0].GetComponent<Text>().text = "Player Loaded";
         myPhotonView.RPC("GetInventory", PhotonTargets.MasterClient, _loginInputs[0].GetComponent<Text>().text, myPhotonView.owner);
+        myPhotonView.name = _player.Username;
     }
 
     public void CloseMasterLogin()
@@ -202,6 +208,7 @@ public class Controller : MonoBehaviour {
         PlayerToon = PhotonNetwork.Instantiate("SKELETON", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
         LoginPanel.SetActive(false);
         Inventory.SetActive(true);
+        myPhotonView.RPC("SendPlayer", PhotonTargets.MasterClient, _player);
     }
 
     public void quitButton()

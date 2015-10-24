@@ -18,6 +18,8 @@ public class Database : MonoBehaviour{
     public GameObject Inventory;
     public GameObject[] _masterInputs;
 
+    public List<Player> Players = new List<Player>();
+
     void Start()
     {
         
@@ -29,6 +31,10 @@ public class Database : MonoBehaviour{
         List<int> _ids = new List<int>();
         List<string> _types = new List<string>();
         string[] _ty = new string[] { "Weapons", "Materials" };
+        List<Weapon> Weapons = new List<Weapon>();
+        List<CraftingMaterial> Mats = new List<CraftingMaterial>();
+        string equip = "";
+        Weapon Equip = null;
 
         MySqlCommand _cmd = _masterConnect.CreateCommand();
         _cmd.CommandText = "SELECT * FROM users." + _username + "Items;";
@@ -37,6 +43,10 @@ public class Database : MonoBehaviour{
         {
             _ids.Add(Convert.ToInt32(_reader["Item"].ToString()));
             _types.Add(_reader["Type"].ToString());
+            if (_reader["Equiped"].ToString() == "1")
+            {
+                equip = _reader["Item"].ToString();
+            }
         }
         _reader.Close();
         string _c = "";
@@ -76,6 +86,20 @@ public class Database : MonoBehaviour{
                                             _reader["Durability"].ToString(),
                                             _reader["Weight"].ToString()
                                      );
+                        Weapon temp = new Weapon(Convert.ToInt32(_reader["idWeapons"].ToString()),
+                                                  _reader["WeaponName"].ToString(),
+                                                  PublicDataTypes.ToDmgType(_reader["DmgType"].ToString()),
+                                                  Convert.ToInt32(_reader["DmgAmt"].ToString()),
+                                                  PublicDataTypes.ToEleDmgType(_reader["EleDmgType"].ToString()),
+                                                  Convert.ToInt32(_reader["EleDmgAmt"].ToString()),
+                                                  Convert.ToInt32(_reader["WeaponRange"].ToString()),
+                                                  Convert.ToInt32(_reader["Durability"].ToString()),
+                                                  Convert.ToInt32(_reader["Weight"].ToString()));
+                        Weapons.Add(temp);
+                        if (_reader["idWeapons"].ToString() == equip)
+                        {
+                            Equip = temp;
+                        }
                     }
                     else if (t == "Materials")
                     {
@@ -85,6 +109,10 @@ public class Database : MonoBehaviour{
                                             _reader["Durability"].ToString(),
                                             _reader["Weight"].ToString()
                                      );
+                        Mats.Add(new CraftingMaterial(Convert.ToInt32(_reader["idMaterials"].ToString()),
+                                                      _reader["MaterialName"].ToString(),
+                                                      Convert.ToInt32(_reader["Durability"].ToString()),
+                                                      Convert.ToInt32(_reader["Weight"].ToString())));
                     }
                     //Debug.Log(_reader["id" + t].ToString());
                 }
@@ -93,6 +121,22 @@ public class Database : MonoBehaviour{
             _c = "";
         }
         this.gameObject.GetComponent<Controller>().myPhotonView.RPC("InvFilled", _player);
+        foreach (Player _p in Players)
+        {
+            if (_p.Username == _username)
+            {
+                foreach(CraftingMaterial _m in Mats)
+                {
+                    _p.InvMaterials.Add(_m);
+                }
+                foreach (Weapon _w in Weapons)
+                {
+                    _p.InvWeapons.Add(_w);
+                }
+                _p.Equiped = Equip;
+                break;
+            }
+        }
     }
 
     public int[] GeneratePlayerCore(string _username, PhotonPlayer _player)
@@ -126,6 +170,8 @@ public class Database : MonoBehaviour{
                                   Convert.ToInt32(_reader["Gathering"].ToString())};
         }
         _reader.Close();
+        Player _p = new Player(_username, _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1]);
+        Players.Add(_p);
         int[] _stats = new int[] { _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1] };
         return _stats;
     }
@@ -160,7 +206,7 @@ public class Database : MonoBehaviour{
         _cmd.CommandText = "INSERT INTO users.skills (Username) VALUES ('" + _username + "');";
         _cmd.ExecuteNonQuery();
 
-        _cmd.CommandText = "CREATE TABLE " + _username + "Items (Item INT(11), Type VARCHAR(45), Quantity INT(11));";
+        _cmd.CommandText = "CREATE TABLE " + _username + "Items (Item INT(11), Type VARCHAR(45), Quantity INT(11), Equiped INT(11));";
         _cmd.ExecuteNonQuery();
     }
 

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 public class Player {
     public int Str, Agi, Con, Intel, Luck;
-    public int OneHandedSword, Gathering;
+    public int OneHandedSword, Gathering, MaxHp;
+    public float CurHp;
     public string Username;
+    public Weapon Equiped;
     public List<Weapon> InvWeapons;
     public List<CraftingMaterial> InvMaterials;
     
-
     public Player()
     {
         Str = 10;
@@ -16,6 +17,8 @@ public class Player {
         Con = 10;
         Intel = 10;
         Luck = 0;
+        MaxHp = Con * 2;
+        CurHp = MaxHp;
         InvWeapons = new List<Weapon>();
         InvMaterials = new List<CraftingMaterial>();
     }
@@ -27,6 +30,8 @@ public class Player {
         Con = _con;
         Intel = _intel;
         Luck = _luck;
+        MaxHp = Con * 2;
+        CurHp = MaxHp;
         InvWeapons = new List<Weapon>();
         InvMaterials = new List<CraftingMaterial>();
     }
@@ -38,9 +43,16 @@ public class Player {
         Con = _con;
         Intel = _intel;
         Luck = _luck;
+        MaxHp = Con * 2;
+        CurHp = MaxHp;
         OneHandedSword = _one;
         Gathering = _gath;
         InvWeapons = new List<Weapon>();
         InvMaterials = new List<CraftingMaterial>();
+    }
+
+    public void takeDamage(float _value)
+    {
+        CurHp -= _value;
     }
 }

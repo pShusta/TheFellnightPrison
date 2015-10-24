@@ -163,6 +163,7 @@
      <Compile Include="Assets\Scripts\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\FriendWeb\FriendClass.cs" />
      <Compile Include="Assets\Scripts\FriendWeb\FriendDatabase.cs" />
+     <Compile Include="Assets\Scripts\HitBox.cs" />
      <Compile Include="Assets\Scripts\Items\BaseItem.cs" />
      <Compile Include="Assets\Scripts\Items\Database.cs" />
      <Compile Include="Assets\Scripts\Items\Material.cs" />
@@ -191,6 +192,7 @@
      <Compile Include="Assets\Scripts\Jelly Smash Import\Scripts\Start\StartMenu.cs" />
      <Compile Include="Assets\Scripts\MainController.cs" />
      <Compile Include="Assets\Scripts\MakeMap.cs" />
+     <Compile Include="Assets\Scripts\MobHealth.cs" />
      <Compile Include="Assets\Scripts\NavMeshScript.cs" />
      <Compile Include="Assets\Scripts\Networking\Controller.cs" />
      <Compile Include="Assets\Scripts\Networking\GlobalFunctions.cs" />

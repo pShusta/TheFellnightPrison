@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerWeapon : MonoBehaviour
 {
 
+    public PhotonView myView;
     public GameObject weapon;
     private BoxCollider sword;
 
@@ -14,17 +15,22 @@ public class PlayerWeapon : MonoBehaviour
 
 
     }
-    void OnCollisionEnter(Collision sword)
+    void OnTriggerEnter(Collider other)
     {
-        if (sword.gameObject.name == "target")
+        this.gameObject.GetComponent<Collider>().enabled = false;
+        Weapon equiped;
+        int _dmg = 0;
+        Debug.Log("You hit: " + other.gameObject.name);
+        foreach (Player _p in GameObject.FindGameObjectWithTag("GameController").GetComponent<Database>().Players)
         {
-
-            Debug.Log("you hit a target");
-            Destroy(sword.gameObject);
-
-
+            if (_p.Username == myView.name)
+            {
+                equiped = _p.Equiped;
+                _dmg = equiped.GetPhysDmgAmt();
+                //get weapon
+            }
         }
-
+        other.gameObject.GetComponent<HitBox>().takeDamage(_dmg);
     }
 
     // Update is called once per frame
