@@ -55,36 +55,40 @@ public class Database : MonoBehaviour{
                     }
                 }
             }
+            Debug.Log("SELECT * FROM thefellnightprison." + t + " WHERE " + _c + ";");
             _cmd.CommandText = "SELECT * FROM thefellnightprison." + t + " WHERE " + _c + ";";
-            _reader = _cmd.ExecuteReader();
-            while (_reader.Read())
+            if (_c != "")
             {
-                if(t == "Weapons")
+                _reader = _cmd.ExecuteReader();
+                while (_reader.Read())
                 {
-                    this.gameObject.GetComponent<Controller>().myPhotonView.RPC("RecieveWeapon", _player,
-                                        _reader["idWeapons"].ToString(),
-                                        _reader["WeaponName"].ToString(),
-                                        _reader["DmgType"].ToString(),
-                                        _reader["DmgAmt"].ToString(),
-                                        _reader["EleDmgType"].ToString(),
-                                        _reader["EleDmgAmt"].ToString(),
-                                        _reader["WeaponRange"].ToString(),
-                                        _reader["Durability"].ToString(),
-                                        _reader["Weight"].ToString()
-                                 );
+                    if (t == "Weapons")
+                    {
+                        this.gameObject.GetComponent<Controller>().myPhotonView.RPC("RecieveWeapon", _player,
+                                            _reader["idWeapons"].ToString(),
+                                            _reader["WeaponName"].ToString(),
+                                            _reader["DmgType"].ToString(),
+                                            _reader["DmgAmt"].ToString(),
+                                            _reader["EleDmgType"].ToString(),
+                                            _reader["EleDmgAmt"].ToString(),
+                                            _reader["WeaponRange"].ToString(),
+                                            _reader["Durability"].ToString(),
+                                            _reader["Weight"].ToString()
+                                     );
+                    }
+                    else if (t == "Materials")
+                    {
+                        this.gameObject.GetComponent<Controller>().myPhotonView.RPC("RecieveMaterial", _player,
+                                            _reader["idMaterials"].ToString(),
+                                            _reader["MaterialName"].ToString(),
+                                            _reader["Durability"].ToString(),
+                                            _reader["Weight"].ToString()
+                                     );
+                    }
+                    //Debug.Log(_reader["id" + t].ToString());
                 }
-                else if (t == "Materials")
-                {
-                    this.gameObject.GetComponent<Controller>().myPhotonView.RPC("RecieveMaterial", _player,
-                                        _reader["idMaterials"].ToString(),
-                                        _reader["MaterialName"].ToString(),
-                                        _reader["Durability"].ToString(),
-                                        _reader["Weight"].ToString()
-                                 );
-                }
-                //Debug.Log(_reader["id" + t].ToString());
+                _reader.Close();
             }
-            _reader.Close();
             _c = "";
         }
         this.gameObject.GetComponent<Controller>().myPhotonView.RPC("InvFilled", _player);
@@ -184,7 +188,7 @@ public class Database : MonoBehaviour{
         serverIP = _masterInputs[0].GetComponent<Text>().text;
         port = _masterInputs[1].GetComponent<Text>().text;
         Uid = _masterInputs[2].GetComponent<Text>().text;
-        Pwd = _masterInputs[3].GetComponent<Text>().text;
+        Pwd = _masterInputs[3].GetComponent<InputField>().text;
         database = "users";
         string source = "Server=" + serverIP + "; Port=" + port + "; Database=" + database + "; Uid=" + Uid + "; Password=" + Pwd + ";";
         _masterConnect = new MySqlConnection(source);
