@@ -19,10 +19,13 @@ public class Swing : MonoBehaviour
 
     public float moveSpeed = 5f;
     public float MS = 5f;
+    public float VS = 3f;
 
     float VR = 0;
     public float UDR = 60f;
 
+    public GameObject playerCamra;
+    public GameObject bone;
 
     // Use this for initialization
     void Start()
@@ -46,31 +49,57 @@ public class Swing : MonoBehaviour
             // Debug.Log("time into animation");
             sword.enabled = true;
             MS = .5f;
+            VS = 1;
             yield return null;
         }
+        anim.ResetTrigger("Attack");
         sword.enabled = false;
         frame = 0;
         MS = 5;
+        VS = 3;
+    }
+    public int inputIndex = 0;
+    public int runIndex = 30;
+    IEnumerator xInput()
+    {
+        while (inputIndex < runIndex)
+        {
+            if (inputX != 0)
+            {
+                anim.SetTrigger("Attack");
+                StartCoroutine("colliderOn");
+                inputIndex = 30;
+            }
+            inputIndex++;
+            yield return null;
+
+
+        }
+
+        inputIndex = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        playerCamra.transform.position = bone.transform.position;
+
         //Handles camera and player rotation
         float rotLR = Input.GetAxis("Mouse X") * MS;
         transform.Rotate(0, rotLR, 0);
-        VR -= Input.GetAxis("Mouse Y") * MS;
+        VR -= Input.GetAxis("Mouse Y") * VS;
         VR = Mathf.Clamp(VR, -UDR, UDR);
         Camera.main.transform.localRotation = Quaternion.Euler(VR, 0, 0);
 
 
         //Gets the mouse direction and saves it to inputX/inputY
-        inputY = Input.GetAxis("Mouse Y");
+        inputY = Input.mouseScrollDelta.y;
         inputX = Input.GetAxis("Mouse X");
         //Then sets the animation paramiter float to that value
         anim.SetFloat("posX", inputX);
-        anim.SetFloat("Ydirection", inputY);
+        anim.SetFloat("Ydirection", inputY * -1);
 
 
         //Same as above but for movement
@@ -110,10 +139,22 @@ public class Swing : MonoBehaviour
         //if player clicks left mouse button and moves in a direction an attack will occur from that direction
         if (Input.GetButtonDown("Fire1"))
         {
+
+
+            //anim.SetTrigger("Attack");
+            StartCoroutine("xInput");
+
+
+        }
+        if (Input.mouseScrollDelta.y > 0)
+        {
             // if (inputH != 0 || inputY != 0)
             //{
             anim.SetTrigger("Attack");
             StartCoroutine("colliderOn");
+
+            //anim.ResetTrigger("Attack");
+
             // }
         }
 
