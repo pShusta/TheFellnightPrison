@@ -15,6 +15,7 @@ public class Database : MonoBehaviour{
     private bool isMaster;
     private static MySqlConnection _masterConnect;
 
+    public GameObject Inventory;
     public GameObject[] _masterInputs;
 
     void Start()
@@ -194,7 +195,8 @@ public class Database : MonoBehaviour{
         _masterConnect = new MySqlConnection(source);
         _masterConnect.Open();
         Debug.Log("Connection Succesful");
-        PhotonNetwork.Instantiate("TempPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate("SKELETON", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        Inventory.SetActive(true);
         this.gameObject.GetComponent<Controller>().CloseMasterLogin();
         //Application.LoadLevel("Tavern");
     }

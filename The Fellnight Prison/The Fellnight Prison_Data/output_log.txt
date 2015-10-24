@@ -53,11 +53,7 @@ Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\T
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.JsonFx.dll (this message is harmless)
 Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.JsonFx.dll into Unity Child Domain
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.148 seconds
+- Completed reload, in  0.136 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
-Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.dll (this message is harmless)
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2a04 -> priority: 1 

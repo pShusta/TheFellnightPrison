@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu;
+    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
@@ -186,8 +186,9 @@ public class Controller : MonoBehaviour {
         SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
         //Application.LoadLevel("Tavern");
         PlayerMenu.SetActive(true);
-        PhotonNetwork.Instantiate("TempPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        GameObject temp = PhotonNetwork.Instantiate("SKELETON", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
         LoginPanel.SetActive(false);
+        Inventory.SetActive(true);
     }
 
     public void quitButton()
