@@ -27,7 +27,7 @@ public class Database : MonoBehaviour{
 
     public void GetInventory(string _username, PhotonPlayer _player)
     {
-        
+        Debug.Log("Database.GetInventory();");   
         List<int> _ids = new List<int>();
         List<string> _types = new List<string>();
         string[] _ty = new string[] { "Weapons", "Materials" };
@@ -70,6 +70,14 @@ public class Database : MonoBehaviour{
             _cmd.CommandText = "SELECT * FROM thefellnightprison." + t + " WHERE " + _c + ";";
             if (_c != "")
             {
+                try
+                {
+                    _reader.Close();
+                }
+                catch
+                {
+
+                }
                 _reader = _cmd.ExecuteReader();
                 while (_reader.Read())
                 {
@@ -120,6 +128,7 @@ public class Database : MonoBehaviour{
             }
             _c = "";
         }
+        Debug.Log("Calling InvFilled");
         this.gameObject.GetComponent<Controller>().myPhotonView.RPC("InvFilled", _player);
         foreach (Player _p in Players)
         {

@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PhotonRPC : MonoBehaviour {
 
-    private PhotonView myPhotonView;
+    public PhotonView myPhotonView;
 
 	// Use this for initialization
 	void Start () {
@@ -107,12 +107,14 @@ public class PhotonRPC : MonoBehaviour {
     [PunRPC]
     void GetInventory(string _username, PhotonPlayer _player)
     {
+        Debug.Log("GetInventory();");
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         controller.GetComponent<Database>().GetInventory(_username, _player);
     }
 
     [PunRPC]
     void RecieveWeapon(string id, string wName, string dmgtype, string dmgamt, string edmgtype, string edmgamt, string range, string dura, string weight){
+        Debug.Log("Recieve Weapon");
         Weapon _temp = new Weapon(Convert.ToInt32(id), wName, PublicDataTypes.ToDmgType(dmgtype), Convert.ToInt32(dmgamt), PublicDataTypes.ToEleDmgType(edmgtype), Convert.ToInt32(edmgamt), Convert.ToInt32(range), Convert.ToInt32(dura), Convert.ToInt32(weight));
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         controller.GetComponent<Controller>()._player.InvWeapons.Add(_temp);
@@ -121,6 +123,7 @@ public class PhotonRPC : MonoBehaviour {
     [PunRPC]
     void RecieveMaterial(string id, string name, string dura, string weight)
     {
+        Debug.Log("Recieve Material");
         CraftingMaterial _temp = new CraftingMaterial(Convert.ToInt32(id), name, Convert.ToInt32(dura), Convert.ToInt32(weight));
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         controller.GetComponent<Controller>()._player.InvMaterials.Add(_temp);

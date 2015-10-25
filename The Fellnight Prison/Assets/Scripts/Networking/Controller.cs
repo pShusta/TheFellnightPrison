@@ -202,6 +202,7 @@ public class Controller : MonoBehaviour {
 
     public void InvFilled()
     {
+        Debug.Log("Controller.InvFilled");
         SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
         //Application.LoadLevel("Tavern");
         PlayerMenu.SetActive(true);

@@ -34,6 +34,8 @@ public int _panelNum;
             if (_panelNum >= (ConvertBase((_rot - 3), 16)) && _panelNum <= (ConvertBase((_rot + 3), 16)))
             {
                 _panel.enabled = true;
+                float _num = _rot - _panelNum;
+                _panel.GetComponentInChildren<UILabel>().text = "Item #:" + _num;
             }
             else
             {
@@ -45,6 +47,8 @@ public int _panelNum;
             if (_panelNum >= (ConvertBase((_rot - 3), 16)) || _panelNum <= (ConvertBase((_rot + 3), 16)))
             {
                 _panel.enabled = true;
+                float _num = _rot - _panelNum;
+                _panel.GetComponentInChildren<UILabel>().text = "Item #:" + _num;
             }
             else
             {
@@ -55,7 +59,7 @@ public int _panelNum;
 	void Update () {
 		_numItems = this.transform.parent.parent.GetComponent<InvUI>().GetInvCount();
 		_rot = (float)Math.Floor((16f * (float)Math.Floor(_slider.sliderValue * _numItems)) / 16f);
-		
+        Debug.Log("_rot: " + _rot);
 		if((_rot < 3 && _panelNum > 12) || (_rot > _numItems - 3 && _panelNum > ConvertBase(_numItems, 16))){
 			_panel.enabled = false;
 		} else {

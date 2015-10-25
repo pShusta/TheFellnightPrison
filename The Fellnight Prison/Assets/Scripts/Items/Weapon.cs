@@ -138,7 +138,7 @@ public class Weapon : BaseItem{
         {
             WeapType = WeaponType.RHigh;
         }
-        Id = Database.WeaponDbInsert(this);
+        //Id = Database.WeaponDbInsert(this);
     }
     
     public void SetName(string _value) { Name = _value; }
