@@ -250,7 +250,7 @@ public class Database : MonoBehaviour{
         _masterConnect = new MySqlConnection(source);
         _masterConnect.Open();
         Debug.Log("Connection Succesful");
-        PhotonNetwork.Instantiate("SKELETON", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate("GM", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
         Inventory.SetActive(true);
         this.gameObject.GetComponent<Controller>().CloseMasterLogin();
         //Application.LoadLevel("Tavern");

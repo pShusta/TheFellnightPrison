@@ -11,7 +11,15 @@ public class PlayerWeapon : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        sword = weapon.GetComponent<BoxCollider>();
+        if (PhotonNetwork.isMasterClient)
+        {
+            sword = weapon.GetComponent<BoxCollider>();
+        }
+        else
+        {
+            this.enabled = false;
+        }
+        
 
 
     }
@@ -23,10 +31,13 @@ public class PlayerWeapon : MonoBehaviour
         Debug.Log("You hit: " + other.gameObject.name);
         foreach (Player _p in GameObject.FindGameObjectWithTag("GameController").GetComponent<Database>().Players)
         {
-            if (_p.Username == myView.name)
+            if (_p.Username == myView.owner.name)
             {
                 equiped = _p.Equiped;
-                _dmg = equiped.GetPhysDmgAmt();
+                //_dmg = equiped.GetPhysDmgAmt();
+                Debug.Log("Setting _dmg");
+                //temporary for alpha, set to flat 5
+                _dmg = 5;
                 //get weapon
             }
         }

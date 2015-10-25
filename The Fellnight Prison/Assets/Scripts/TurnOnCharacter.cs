@@ -4,7 +4,7 @@ using System.Collections;
 public class TurnOnCharacter : MonoBehaviour {
 
     private bool okay;
-    private GameObject Menu, Controller;
+    private GameObject Menu, Controller, healthbar;
     public MonoBehaviour script;
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,8 @@ public class TurnOnCharacter : MonoBehaviour {
             script.enabled = true;
             Menu = GameObject.FindGameObjectWithTag("PlayerMenu");
             Menu.SetActive(false);
+            //healthbar = GameObject.FindGameObjectWithTag("HealthPanel");
+            //healthbar.SetActive(true);
         }
         else
         {

@@ -1,41 +1,85 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
-	public int maxHealth = 100;
-	public int curHealth = 100;
-	
-	public float healthBarLength;
-	
-	
+
+    //public GameObject weapon;
+    //public Player me;
+    private float curHp, maxHp;
+    private GameObject healthbar, curHealth, maxHealth;
+	// Use this for initialization
 	void Start () {
-		healthBarLength = Screen.width / 2;
+        if (this.gameObject.GetComponent<PhotonView>().isMine && !PhotonNetwork.isMasterClient)
+        {
+            maxHp = 1;
+            curHp = 1;
+            healthbar = GameObject.FindGameObjectWithTag("HealthPanel");
+            curHealth = GameObject.FindGameObjectWithTag("CurHp");
+            maxHealth = GameObject.FindGameObjectWithTag("MaxHp");
+            maxHealth.GetComponent<Text>().text = maxHp.ToString();
+            //sword = weapon.GetComponent<Box
+        }
+        else
+        {
+            this.enabled = false;
+        }
+        
 	}
-	
-	
+
+    public int frame = 0;
+    public int runFrames = 25;
+    public float MS = 5f;
+    public float VS = 3f;
+    
+    public BoxCollider sword;
+    public Animator anim;
+
+    public void startCollider()
+    {
+        frame = 0;
+        sword.enabled = true;
+        MS = .5f;
+        VS = 1;
+    }
+    void turnOffCollider()
+    {
+        anim.ResetTrigger("Attack");
+        sword.enabled = false;
+        frame = -1;
+        MS = 5;
+        VS = 3;
+    }
+
+	// Update is called once per frame
 	void Update () {
-		AddjustCurrentHealth(0);
-		
+        if (frame >= 0)
+        {
+            frame++;
+            if (frame >= runFrames)
+            {
+                turnOffCollider();
+            }
+        }
+
+        curHealth.GetComponent<Text>().text = curHp.ToString();
+        if (curHp <= 0)
+        {
+            Debug.Log("You're Dead!");
+        }
 	}
-	
-	
-	void OnGUI(){
-		GUI.Box(new Rect(10, 10, healthBarLength, 20), curHealth + "/" + maxHealth);	
-	}
-	
-	
-	public void AddjustCurrentHealth(int adj) {
-		curHealth += adj;	
-		
-		if(curHealth < 0)
-			curHealth = 0;
-		
-		if(curHealth > maxHealth)
-			curHealth = maxHealth;
-		
-		if(maxHealth < 1)
-			maxHealth = 1;
-		
-		healthBarLength = (Screen.width / 2) * (curHealth / (float)maxHealth);
-	}
+
+    [PunRPC]
+    void PlayerSetHealth(float MaxHealth)
+    {
+        maxHp = MaxHealth;
+        curHp = maxHp;
+        maxHealth.GetComponent<Text>().text = maxHp.ToString();
+    }
+
+    [PunRPC]
+    void PlayerTakeDamage(float _value)
+    {
+        curHp -= _value;
+    }
 }

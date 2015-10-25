@@ -3,17 +3,27 @@ using System.Collections;
 
 public class HitBox : MonoBehaviour {
 
-    public int MaxDamage;
-    public bool blocked, mob;
+    private float MaxDamage;
+    public bool blocked, mob, limb;
     public GameObject MobHealth;
 	// Use this for initialization
 	void Start () {
-	
+        if (!PhotonNetwork.isMasterClient)
+        {
+            this.enabled = false;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (limb)
+        {
+            MaxDamage = MobHealth.GetComponent<MobHealth>().MaxHp * (float)0.4;
+        }
+        else
+        {
+            MaxDamage = MaxDamage = MobHealth.GetComponent<MobHealth>().MaxHp;
+        }
 	}
 
     public void takeDamage(float _value)
@@ -29,6 +39,10 @@ public class HitBox : MonoBehaviour {
         if (mob)
         {
             MobHealth.GetComponent<MobHealth>().takeDamage(_value);
+        }
+        else
+        {
+            MobHealth.GetComponent<MasterPlayerHealth>().takeDamage(_value);
         }
     }
 }

@@ -36,6 +36,7 @@ public class Swing : MonoBehaviour
         Controller = GameObject.FindGameObjectWithTag("GameController");
         anim = GetComponent<Animator>();
         sword = Weapon.GetComponent<BoxCollider>();
+        sword.enabled = false;
         clip = GetComponent<Animation>();
         //Time.timeScale = 0.5F;
 
@@ -44,24 +45,7 @@ public class Swing : MonoBehaviour
     public int frame = 0;
     public int runFrames = 25;
 
-    IEnumerator colliderOn()
-    {
-        while (frame < runFrames)
-        {
-            frame++;
-            //print(frame);
-            // Debug.Log("time into animation");
-            sword.enabled = true;
-            MS = .5f;
-            VS = 1;
-            yield return null;
-        }
-        anim.ResetTrigger("Attack");
-        sword.enabled = false;
-        frame = 0;
-        MS = 5;
-        VS = 3;
-    }
+
     public int inputIndex = 0;
     public int runIndex = 30;
     IEnumerator xInput()
@@ -71,7 +55,9 @@ public class Swing : MonoBehaviour
             if (inputX != 0)
             {
                 anim.SetTrigger("Attack");
-                StartCoroutine("colliderOn");
+                this.gameObject.GetComponent<PhotonView>().RPC("setTrigger", PhotonTargets.All, "Attack");
+                //startCollider();
+                //StartCoroutine("colliderOn");
                 inputIndex = 30;
             }
             inputIndex++;
@@ -84,9 +70,35 @@ public class Swing : MonoBehaviour
 
     }
 
+    /*
+    public void startCollider()
+    {
+        frame = 0;
+        sword.enabled = true;
+        MS = .5f;
+        VS = 1;
+    }
+    void turnOffCollider()
+    {
+        anim.ResetTrigger("Attack");
+        sword.enabled = false;
+        frame = -1;
+        MS = 5;
+        VS = 3;
+    }
+     */
+
     // Update is called once per frame
     void Update()
     {
+        //if (frame >= 0)
+        //{
+        //    frame++;
+        //    if (frame >= runFrames)
+        //    {
+        //        turnOffCollider();
+        //    }
+        //}
 
         if (Controller.GetComponent<Controller>().curMenu != null && okay)
         {
@@ -136,7 +148,7 @@ public class Swing : MonoBehaviour
         {
             isRunning = true;
             anim.SetBool("isRunning", true);
-            Debug.Log("shift being held down");
+            //Debug.Log("shift being held down");
         }
         else
         {
@@ -173,7 +185,9 @@ public class Swing : MonoBehaviour
                 // if (inputH != 0 || inputY != 0)
                 //{
                 anim.SetTrigger("Attack");
-                StartCoroutine("colliderOn");
+                this.gameObject.GetComponent<PhotonView>().RPC("setTrigger", PhotonTargets.All, "Attack");
+                //startCollider();
+                //StartCoroutine("colliderOn");
 
                 //anim.ResetTrigger("Attack");
 

@@ -6,12 +6,15 @@ public class NetworkMotion : Photon.MonoBehaviour
 
     Vector3 realPosition = Vector3.zero;
     Quaternion realRotation = Quaternion.identity;
+    public PhotonView myView;
 
     Animator anim;
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        myView = this.gameObject.GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -54,7 +57,21 @@ public class NetworkMotion : Photon.MonoBehaviour
             anim.SetFloat("inputV", (float)stream.ReceiveNext());
             anim.SetBool("isRunning", (bool)stream.ReceiveNext());
             anim.SetBool("isBlocking", (bool)stream.ReceiveNext());
+            //myView.RPC("setTrigger", PhotonTargets.All, "Attack");
+        }
+    }
 
+    [PunRPC]
+    void setTrigger(string triggerName)
+    {
+        anim.SetTrigger(triggerName);
+        if (PhotonNetwork.isMasterClient)
+        {
+            this.GetComponent<MasterPlayerHealth>().startCollider();
+        }
+        else
+        {
+            this.GetComponent<PlayerHealth>().startCollider();
         }
     }
 }

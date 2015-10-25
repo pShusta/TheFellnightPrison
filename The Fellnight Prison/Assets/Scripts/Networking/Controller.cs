@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory;
+    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
@@ -190,8 +190,8 @@ public class Controller : MonoBehaviour {
         //Recieved Core stats for player
         _player = new Player(_loginInputs[0].GetComponent<Text>().text, _stats[0], _stats[1], _stats[2], _stats[3], _stats[4], _stats[5], _stats[6]);
         SuccessOrFail[0].GetComponent<Text>().text = "Player Loaded";
+        myPhotonView.owner.name = _player.Username;
         myPhotonView.RPC("GetInventory", PhotonTargets.MasterClient, _loginInputs[0].GetComponent<Text>().text, myPhotonView.owner);
-        myPhotonView.name = _player.Username;
     }
 
     public void CloseMasterLogin()
@@ -206,7 +206,10 @@ public class Controller : MonoBehaviour {
         SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
         //Application.LoadLevel("Tavern");
         PlayerMenu.SetActive(true);
-        PlayerToon = PhotonNetwork.Instantiate("SKELETON", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        HealthPanel.SetActive(true);
+        PlayerToon = PhotonNetwork.Instantiate("SkeletonPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
+        PlayerToon.GetComponent<PhotonView>().owner.name = _player.Username; ;
+        //PlayerToon.GetComponent<MasterPlayerHealth>().setMe(_player);
         LoginPanel.SetActive(false);
         Inventory.SetActive(true);
         myPhotonView.RPC("SendPlayer", PhotonTargets.MasterClient, _player);
