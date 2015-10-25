@@ -27,8 +27,8 @@ public class PlayerHealth : MonoBehaviour {
         
 	}
 
-    public int frame = 0;
-    public int runFrames = 25;
+    public float frame = 0;
+    public int runFrames = 200;
     public float MS = 5f;
     public float VS = 3f;
     
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void startCollider()
     {
-        frame = 0;
+        frame = Time.time;
         sword.enabled = true;
         MS = .5f;
         VS = 1;
@@ -55,8 +55,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
         if (frame >= 0)
         {
-            frame++;
-            if (frame >= runFrames)
+            if (Time.time - frame > 5)
             {
                 turnOffCollider();
             }

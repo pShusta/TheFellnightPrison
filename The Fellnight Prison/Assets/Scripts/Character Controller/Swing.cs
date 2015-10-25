@@ -43,7 +43,7 @@ public class Swing : MonoBehaviour
     }
 
     public int frame = 0;
-    public int runFrames = 25;
+    public int runFrames = 200;
 
 
     public int inputIndex = 0;
