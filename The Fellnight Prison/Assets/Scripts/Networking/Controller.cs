@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, UIController,  CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
+    public GameObject LoadDungeonButton, LoginButton, LoginPanel, UIController,  CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
@@ -103,7 +103,14 @@ public class Controller : MonoBehaviour {
 
     public void CheckUsername()
     {
-        myPhotonView.RPC("DbUsernameCheck", PhotonTargets.MasterClient, CreateInputs[0].GetComponent<Text>().text, myPhotonView.owner);
+        string _name = CreateInputs[0].GetComponent<InputField>().text;
+        //_name.Replace(" ", "");
+        //CreateInputs[0].GetComponent<InputField>().text = _name;
+        if(_name.Contains(" ")){
+            CreateInputs[3].GetComponent<Text>().text = "Please remove spaces";
+        } else {
+            myPhotonView.RPC("DbUsernameCheck", PhotonTargets.MasterClient, _name, myPhotonView.owner);
+        }
     }
 
     public void ConnectionSuccesful()
@@ -125,6 +132,7 @@ public class Controller : MonoBehaviour {
 
     public void Login()
     {
+        LoginButton.GetComponent<Button>().interactable = false;
         if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
         {
             this.gameObject.GetComponent<NetworkV2>().setAsMaster();
@@ -205,6 +213,8 @@ public class Controller : MonoBehaviour {
 
     public void loadDungeonButton()
     {
+        LoadDungeonButton.GetComponentInChildren<Text>().text = "Loading";
+        LoadDungeonButton.GetComponent<Button>().interactable = false;
         myPhotonView.RPC("LoadDungeonLevel", PhotonTargets.MasterClient);
     }
 

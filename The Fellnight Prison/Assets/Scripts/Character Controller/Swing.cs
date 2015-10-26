@@ -28,6 +28,7 @@ public class Swing : MonoBehaviour
 
     public GameObject playerCamra;
     public GameObject bone;
+    private MenuController MenuController;
 
     // Use this for initialization
     void Start()
@@ -38,6 +39,7 @@ public class Swing : MonoBehaviour
         sword = Weapon.GetComponent<BoxCollider>();
         sword.enabled = false;
         clip = GetComponent<Animation>();
+        MenuController = GameObject.FindGameObjectWithTag("MenuController").GetComponent<MenuController>();
         //Time.timeScale = 0.5F;
 
     }
@@ -91,32 +93,10 @@ public class Swing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (frame >= 0)
-        //{
-        //    frame++;
-        //    if (frame >= runFrames)
-        //    {
-        //        turnOffCollider();
-        //    }
-        //}
-
-        if (Controller.GetComponent<Controller>().curMenu != null && okay)
-        {
-            okay = false;
-            //PlayerToon.GetComponent<MonoBehaviour>()
-            //kill mouse look
-            //kill attack
-        }
-        else if (Controller.GetComponent<Controller>().curMenu == null && !okay)
-        {
-            okay = true;
-            //enable mouse look
-            //enable attack
-        }
 
         playerCamra.transform.position = bone.transform.position;
 
-        if (okay)
+        if (!MenuController.lockView)
         {
             //Handles camera and player rotation
             float rotLR = Input.GetAxis("Mouse X") * MS;
@@ -167,7 +147,7 @@ public class Swing : MonoBehaviour
             anim.SetBool("isBlocking", false);
         }
 
-        if (okay)
+        if (!MenuController.lockView)
         {
             //Handles player attacking
             //if player clicks left mouse button and moves in a direction an attack will occur from that direction

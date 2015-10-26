@@ -78,7 +78,7 @@ public GameObject _wheelObj;
         else
         {
             _name.text = "Inventory Empty";
-            _desciption.text = "You have no items in your inventory";
+            _desciption.text = "You have no items";
         }
 	}
 
