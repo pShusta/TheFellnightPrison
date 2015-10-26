@@ -6,19 +6,9 @@ public class MenuController : MonoBehaviour {
     private bool clear;
     public GameObject curMenu;
     public GameObject mainMenu, inventory;
-    public bool lockView;
-    public bool unLock;
-    
 	// Use this for initialization
 	void Start () {
-        if (unLock)
-        {
-            clear = true;
-        }
-        else
-        {
-            clear = false;
-        }
+        clear = false;
 	}
 	
 	// Update is called once per frame
@@ -29,14 +19,12 @@ public class MenuController : MonoBehaviour {
             if (inventory.activeSelf)
             {
                 curMenu.SetActive(false);
-                lockView = false;
             }
             else
             {
                 curMenu.SetActive(false);
                 curMenu = inventory;
                 curMenu.SetActive(true);
-                lockView = true;
             }
         }
         if (Input.GetKeyUp(KeyCode.Escape) && clear)
@@ -45,14 +33,12 @@ public class MenuController : MonoBehaviour {
             if (mainMenu.activeSelf)
             {
                 curMenu.SetActive(false);
-                lockView = false;
             }
             else
             {
                 curMenu.SetActive(false);
                 curMenu = mainMenu;
                 curMenu.SetActive(true);
-                lockView = true;
             }
         }
 	}
