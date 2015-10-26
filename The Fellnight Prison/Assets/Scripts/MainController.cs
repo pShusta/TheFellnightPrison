@@ -40,7 +40,7 @@ public class MainController : MonoBehaviour {
     void SpawnPlayer()
     {
         GameObject _spawn = Spawns[Random.Range(0, Spawns.Length)];
-        GameObject _player = PhotonNetwork.Instantiate("SKELETON", _spawn.transform.position , Quaternion.identity, 0);
+        GameObject _player = PhotonNetwork.Instantiate("TempPlayer", _spawn.transform.position , Quaternion.identity, 0);
         if(_player.GetPhotonView().isMine) { _player.SetActive(true); }
     }
 }

@@ -5,10 +5,9 @@ using System.Collections;
 public class MasterPlayerHealth : MonoBehaviour
 {
 
-    //public GameObject weapon;
     public Player me;
-    //private GameObject healthbar, curHealth, maxHealth;
-    // Use this for initialization
+    public bool GM;
+
     void Start()
     {
         if (!PhotonNetwork.isMasterClient)
@@ -17,15 +16,20 @@ public class MasterPlayerHealth : MonoBehaviour
         }
         else
         {
-            foreach(Player _p in GameObject.FindGameObjectWithTag("GameController").GetComponent<Database>().Players){
-                if(_p.Username == this.gameObject.GetComponent<PhotonView>().owner.name){
-                    Debug.Log("Found Owner");
-                    me = _p;
-                    break;
+            if (!GM)
+            {
+                foreach (Player _p in GameObject.FindGameObjectWithTag("GameController").GetComponent<Database>().Players)
+                {
+                    if (_p.Username == this.gameObject.GetComponent<PhotonView>().owner.name)
+                    {
+                        Debug.Log("Found Owner");
+                        me = _p;
+                        break;
+                    }
                 }
+                Debug.Log("Setting Health for: " + this.gameObject.GetComponent<PhotonView>().owner.name);
+                this.gameObject.GetComponent<PhotonView>().RPC("PlayerSetHealth", this.gameObject.GetComponent<PhotonView>().owner, (float)me.MaxHp);
             }
-            Debug.Log("Setting Health for: " + this.gameObject.GetComponent<PhotonView>().owner.name);
-            this.gameObject.GetComponent<PhotonView>().RPC("PlayerSetHealth", this.gameObject.GetComponent<PhotonView>().owner, (float)me.MaxHp);
         }
     }
 
@@ -57,17 +61,20 @@ public class MasterPlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (frame >= 0)
+        if (!GM)
         {
-            if (Time.time - frame > 5)
+            if (frame >= 0)
             {
-                turnOffCollider();
+                if (Time.time - frame > 5)
+                {
+                    turnOffCollider();
+                }
             }
-        }
 
-        if (me.CurHp <= 0)
-        {
-            Debug.Log("You're Dead!");
+            if (me.CurHp <= 0)
+            {
+                Debug.Log("You're Dead!");
+            }
         }
     }
 

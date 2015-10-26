@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
+    public GameObject LoginPanel, UIController,  CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
@@ -16,14 +16,12 @@ public class Controller : MonoBehaviour {
     public GameObject curMenu;
 
 
-	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this.gameObject);
         _create = false;
         okay = true;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         
 	}
@@ -112,8 +110,6 @@ public class Controller : MonoBehaviour {
     {
         _view = PhotonNetwork.Instantiate("playerTest", new Vector3(0, 0, 0), Quaternion.identity, 0);
         myPhotonView = _view.GetComponent<PhotonView>();
-        //ConnectingPanel.SetActive(false);
-        //LoginPanel.SetActive(true);
         if(_create){
         } else if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
         {
@@ -151,16 +147,6 @@ public class Controller : MonoBehaviour {
                 _view.GetComponent<PhotonRPC>().Login(loginInfo);
             }
         }
-        //if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
-        //{
-        //    LoginPanel.SetActive(false);
-        //    MasterConnectPanel.SetActive(true);
-        //}
-        //else
-        //{
-        //   string[] loginInfo = new string[2] { _loginInputs[0].GetComponent<Text>().text, _loginInputs[1].GetComponent<InputField>().text };
-        //    _view.GetComponent<PhotonRPC>().Login(loginInfo);
-        //}
     }
 
     public void LoginResult(bool _result)
@@ -197,21 +183,18 @@ public class Controller : MonoBehaviour {
     public void CloseMasterLogin()
     {
         MasterConnectPanel.SetActive(false);
-        PlayerMenu.SetActive(true);
+
     }
 
     public void InvFilled()
     {
         Debug.Log("Controller.InvFilled");
         SuccessOrFail[0].GetComponent<Text>().text = "Inventory Loaded";
-        //Application.LoadLevel("Tavern");
-        PlayerMenu.SetActive(true);
         HealthPanel.SetActive(true);
         PlayerToon = PhotonNetwork.Instantiate("SkeletonPlayer", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
         PlayerToon.GetComponent<PhotonView>().owner.name = _player.Username; ;
-        //PlayerToon.GetComponent<MasterPlayerHealth>().setMe(_player);
+        UIController.GetComponent<MenuController>().setClear(true);
         LoginPanel.SetActive(false);
-        Inventory.SetActive(true);
         myPhotonView.RPC("SendPlayer", PhotonTargets.MasterClient, _player);
     }
 
@@ -222,17 +205,7 @@ public class Controller : MonoBehaviour {
 
     public void loadDungeonButton()
     {
-        //PhotonNetwork.automaticallySyncScene = true;
         myPhotonView.RPC("LoadDungeonLevel", PhotonTargets.MasterClient);
-    }
-
-    void OnPhotonCustomRoomPropertiesChanged(Hashtable _changed)
-    {
-        Debug.Log("OnPhotonCustomRoomPropertiesChanged");
-        foreach (var _value in _changed.Values)
-        {
-            Debug.Log("Hastable: " + _value);
-        }
     }
 
     

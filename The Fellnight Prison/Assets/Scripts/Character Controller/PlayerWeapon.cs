@@ -41,7 +41,18 @@ public class PlayerWeapon : MonoBehaviour
                 //get weapon
             }
         }
-        other.gameObject.GetComponent<HitBox>().takeDamage(_dmg);
+                
+        //other.gameObject.GetComponent<HitBox>().takeDamage(_dmg);
+        MonoBehaviour _script = other.gameObject.GetComponent<HitBox>();
+        if (_script != null)
+        {
+            other.gameObject.GetComponent<HitBox>().takeDamage(_dmg);
+        }
+        else
+        {
+            Debug.Log("Immortal Object");
+        }
+        
     }
 
     // Update is called once per frame

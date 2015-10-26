@@ -15,7 +15,7 @@ public class Database : MonoBehaviour{
     private bool isMaster;
     private static MySqlConnection _masterConnect;
 
-    public GameObject Inventory;
+    public GameObject Inventory, UIController;
     public GameObject[] _masterInputs;
 
     public List<Player> Players = new List<Player>();
@@ -226,7 +226,7 @@ public class Database : MonoBehaviour{
         MySqlDataReader _reader = _cmd.ExecuteReader();
         _reader.Read();
         //_reader.Read();
-        Debug.Log("_reader['Passcode'] == " + _reader["Passcode"]);
+        //Debug.Log("_reader['Passcode'] == " + _reader["Passcode"]);
         if (_reader["Passcode"].ToString() == _password.ToString())
         {
             _reader.Close();
@@ -251,7 +251,8 @@ public class Database : MonoBehaviour{
         _masterConnect.Open();
         Debug.Log("Connection Succesful");
         PhotonNetwork.Instantiate("GM", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
-        Inventory.SetActive(true);
+        UIController.GetComponent<MenuController>().setClear(true);
+        //Inventory.SetActive(true);
         this.gameObject.GetComponent<Controller>().CloseMasterLogin();
         //Application.LoadLevel("Tavern");
     }

@@ -7,9 +7,7 @@ public class PlayerMenu : MonoBehaviour {
     public PhotonView theView;
     public bool isMine;
     public MonoBehaviour script;
-    //public Component script;
 
-	// Use this for initialization
 	void Start () {
         Debug.Log("Running PlayerMenu");
         
@@ -28,26 +26,6 @@ public class PlayerMenu : MonoBehaviour {
         }
 	}
 
-    public void closeWindow()
-    {
-        Menu.SetActive(false);
-        Controller.GetComponent<Controller>().setCurMenu(null);
-    }
-
-	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            if (Menu.active)
-            {
-                Menu.SetActive(false);
-                Controller.GetComponent<Controller>().setCurMenu(null);
-            }
-            else
-            {
-                Menu.SetActive(true);
-                Controller.GetComponent<Controller>().setCurMenu(Menu);
-            }
-        }
 	}
 }
