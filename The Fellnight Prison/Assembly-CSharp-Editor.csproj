@@ -61,6 +61,55 @@
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbody2DViewEditor.cs" />
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonRigidbodyViewEditor.cs" />
      <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Views\PhotonTransformViewEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\ApexComponentMasterEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\ArrivalBaseEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\AttributePropertyDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\AttributesUtilityWindow.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\DefaultArrivalComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\DefaultHeightNavigatorEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\DefaultOrientationComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\DefaultSpeedComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\DefaultSteeringComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\DynamicObstacleEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\EditorAsync.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\EditorUtilities.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\GameServicesInitializerComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\GridComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\GridFieldUtilityWindow.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\GridPortalComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\GridVisualizerEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\HeightNavigationCapabilitiesPropertyDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\HumanoidSpeedComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\InputReceiverBasicEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\LabelPropertyDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\LayerMappingComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\LoadBalancerComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\LoadBalancerPerformanceVisualizerEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\MaxCheckedPropertyDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\MenuExtentions.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\MinCheckedPropertyDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\NavigationSettingsComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\OrientationComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\PathOptionsComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\PathServiceComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\PathVisualizerEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\ProductsWindow.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\RangeXPropertyDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\SpeedComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\SteerForPathComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\SteerableUnitComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\SteeringComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\TerrainHeightMapEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\UnitComponentEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\VersionUpgrader.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\ApexPath.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\ApexProductAttribute.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\ApexSettings.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\IconInfo.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\ProductInfo.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\ProductManager.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\ProductStatus.cs" />
+     <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Editor\Versioning\ProductType.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\AnimationLinkEditor.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\AstarPathEditor.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\AstarUpdateChecker.cs" />
@@ -77,6 +126,11 @@
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\ModifierEditors\RaycastModifierEditor.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\ModifierEditors\SmoothModifierEditor.cs" />
      <Compile Include="Assets\_IMPORTED\AstarPathfindingProject\Editor\SeekerEditor.cs" />
+     <Compile Include="Assets\_IMPORTED\Behavior Designer\Editor\BehaviorTreeInspector.cs" />
+     <Compile Include="Assets\_IMPORTED\Behavior Designer\Editor\ExternalBehaviorTreeInspector.cs" />
+     <Compile Include="Assets\_IMPORTED\Behavior Designer\Editor\Object Drawers\FloatSliderDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Behavior Designer\Editor\Object Drawers\IntSliderDrawer.cs" />
+     <Compile Include="Assets\_IMPORTED\Behavior Designer\Editor\Object Drawers\SharedGenericVariableDrawer.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
      <Compile Include="Assets\_IMPORTED\NGUI\Scripts\Editor\BMFontReader.cs" />
@@ -122,10 +176,12 @@
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\_IMPORTED\Apex\Apex Path\ChangeLog.txt" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
      <None Include="Assets\Medieval_Toon_Village\Info.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
+     <None Include="Assets\_IMPORTED\Apex\Apex Path Examples and Documentation\Apex Path Examples and Tutorials Project Setup.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
@@ -140,6 +196,7 @@
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\_IMPORTED\Apex\Apex Path\Getting Started.txt" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\Readme_upgrading.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\_IMPORTED\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
@@ -165,11 +222,12 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\_IMPORTED\Behavior Designer\Editor\GridShader.shader" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\_IMPORTED\AstarPathfindingProject\link.xml" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -187,34 +245,34 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="I18N">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/I18N.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/I18N.dll</HintPath>
  </Reference>
  <Reference Include="I18N.West">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/I18N.West.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/I18N.West.dll</HintPath>
  </Reference>
  <Reference Include="MySql.Data">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/MySql.Data.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/MySql.Data.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/System.Drawing.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/System.Drawing.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.JsonFx">
- <HintPath>C:/Users/Phil/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -248,6 +306,12 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="BehaviorDesignerEditor">
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/Behavior Designer/Editor/BehaviorDesignerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="BehaviorDesignerRuntime">
+ <HintPath>C:/Users/Owner/Documents/GitHub/TheFellnightPrison/The Fellnight Prison/Assets/_IMPORTED/Behavior Designer/Runtime/BehaviorDesignerRuntime.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
