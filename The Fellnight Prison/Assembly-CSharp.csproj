@@ -218,7 +218,9 @@
      <Compile Include="Assets\Scripts\UI\MainMenu\TitleScreenButton.cs" />
      <Compile Include="Assets\Scripts\UI\MenuController.cs" />
      <Compile Include="Assets\Scripts\UI\Networking\NetworkController.cs" />
+     <Compile Include="Assets\Scripts\UI\Party.cs" />
      <Compile Include="Assets\Scripts\UI\PlayerMenu.cs" />
+     <Compile Include="Assets\Scripts\UI\SocialScreen.cs" />
      <Compile Include="Assets\Scripts\UI\onappfocus.cs" />
      <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Scripts\ApexComponentAttribute.cs" />
      <Compile Include="Assets\_IMPORTED\Apex\Apex Path\Scripts\ApexComponentMaster.cs" />
@@ -1327,7 +1329,6 @@
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\English.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Examples\Other\French.txt" />
      <None Include="Assets\_IMPORTED\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
-     <None Include="Assets\Apex\Apex Path Examples and Documentation\Apex Path Examples and Tutorials Project Setup.txt" />
      <None Include="Assets\Photon Unity Networking\Demos\DemoPickup\Assets\3dFont\3dText.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
