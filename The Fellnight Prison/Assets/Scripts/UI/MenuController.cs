@@ -3,9 +3,9 @@ using System.Collections;
 
 public class MenuController : MonoBehaviour {
 
-    private bool clear;
     public GameObject curMenu;
     public GameObject mainMenu, inventory;
+    public bool lockLook, clear;
 	// Use this for initialization
 	void Start () {
         clear = false;
@@ -18,6 +18,7 @@ public class MenuController : MonoBehaviour {
             Debug.Log("Called Inventory");
             if (inventory.activeSelf)
             {
+                lockLook = false;
                 curMenu.SetActive(false);
             }
             else
@@ -25,6 +26,7 @@ public class MenuController : MonoBehaviour {
                 curMenu.SetActive(false);
                 curMenu = inventory;
                 curMenu.SetActive(true);
+                lockLook = true;
             }
         }
         if (Input.GetKeyUp(KeyCode.Escape) && clear)
@@ -32,6 +34,7 @@ public class MenuController : MonoBehaviour {
             Debug.Log("Called Main Menu");
             if (mainMenu.activeSelf)
             {
+                lockLook = false;
                 curMenu.SetActive(false);
             }
             else
@@ -39,6 +42,7 @@ public class MenuController : MonoBehaviour {
                 curMenu.SetActive(false);
                 curMenu = mainMenu;
                 curMenu.SetActive(true);
+                lockLook = true;
             }
         }
 	}

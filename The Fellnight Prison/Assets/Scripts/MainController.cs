@@ -39,8 +39,16 @@ public class MainController : MonoBehaviour {
     [PunRPC]
     void SpawnPlayer()
     {
+        GameObject _player;
         GameObject _spawn = Spawns[Random.Range(0, Spawns.Length)];
-        GameObject _player = PhotonNetwork.Instantiate("TempPlayer", _spawn.transform.position , Quaternion.identity, 0);
+        if (!PhotonNetwork.isMasterClient)
+        {
+            _player = PhotonNetwork.Instantiate("SkeletonPlayer", _spawn.transform.position, Quaternion.identity, 0);
+        }
+        else
+        {
+            _player = PhotonNetwork.Instantiate("GM", _spawn.transform.position, Quaternion.identity, 0);
+        }
         if(_player.GetPhotonView().isMine) { _player.SetActive(true); }
     }
 }

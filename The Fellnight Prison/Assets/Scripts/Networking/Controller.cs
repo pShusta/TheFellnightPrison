@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Controller : MonoBehaviour {
-    public GameObject LoginPanel, UIController,  CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
+    public GameObject DungeonButton, LoginButton, LoginPanel, UIController,  CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
@@ -103,7 +103,14 @@ public class Controller : MonoBehaviour {
 
     public void CheckUsername()
     {
-        myPhotonView.RPC("DbUsernameCheck", PhotonTargets.MasterClient, CreateInputs[0].GetComponent<Text>().text, myPhotonView.owner);
+        if (CreateInputs[0].GetComponent<Text>().text.Contains(" "))
+        {
+            CreateInputs[3].GetComponent<Text>().text = "Please remove spaces";
+        }
+        else
+        {
+            myPhotonView.RPC("DbUsernameCheck", PhotonTargets.MasterClient, CreateInputs[0].GetComponent<Text>().text, myPhotonView.owner);
+        }
     }
 
     public void ConnectionSuccesful()
@@ -125,6 +132,7 @@ public class Controller : MonoBehaviour {
 
     public void Login()
     {
+        LoginButton.GetComponent<Button>().interactable = false;
         if (_loginInputs[0].GetComponent<Text>().text == "Master" && _loginInputs[1].GetComponent<InputField>().text == "")
         {
             this.gameObject.GetComponent<NetworkV2>().setAsMaster();
@@ -205,6 +213,8 @@ public class Controller : MonoBehaviour {
 
     public void loadDungeonButton()
     {
+        DungeonButton.GetComponent<Button>().interactable = false;
+        DungeonButton.GetComponentInChildren<Text>().text = "Loading";
         myPhotonView.RPC("LoadDungeonLevel", PhotonTargets.MasterClient);
     }
 

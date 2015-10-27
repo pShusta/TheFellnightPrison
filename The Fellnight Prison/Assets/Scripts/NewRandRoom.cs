@@ -26,7 +26,7 @@ public class NewRandRoom : MonoBehaviour
 
 
         roomBounds = GameObject.FindGameObjectsWithTag("Bounds");
-        Debug.Log(roomBounds.Length);
+        //Debug.Log(roomBounds.Length);
 
 
 
@@ -140,7 +140,7 @@ public class NewRandRoom : MonoBehaviour
 
             if (nb.Intersects(ob))
             {
-                Debug.Log("Spawned Item interceted with other item");
+                //Debug.Log("Spawned Item interceted with other item");
                 ParentNode.gameObject.tag = "Blocked Node";
                 PhotonNetwork.Destroy(myObj);
                 numSpawned--;
@@ -150,7 +150,7 @@ public class NewRandRoom : MonoBehaviour
         }
         if (checkspace == true)
         {
-            Debug.Log("Spawned succsessful");
+            //Debug.Log("Spawned succsessful");
 
             TempNode.transform.position = ParentNode.transform.position;
             TempNode.DetachChildren();
@@ -271,7 +271,7 @@ public class NewRandRoom : MonoBehaviour
 
     public void launch()
     {
-        Debug.Log("launch()");
+        //Debug.Log("launch()");
         while (numToSpawn > numSpawned)
         {
             SpawnRandomObject();
