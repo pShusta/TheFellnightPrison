@@ -1,3 +1,120 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-9100
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-3636
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=1671 outsize=948 ok=1
+Cmd: preprocess
+  insize=1907 outsize=961 ok=1
+Cmd: preprocess
+  insize=238 outsize=238 ok=1
+Cmd: preprocess
+  insize=1602 outsize=535 ok=1
+Cmd: preprocess
+  insize=1940 outsize=918 ok=1
+Cmd: preprocess
+  insize=708 outsize=708 ok=1
+Cmd: preprocess
+  insize=514 outsize=514 ok=1
+Cmd: preprocess
+  insize=883 outsize=883 ok=1
+Cmd: preprocess
+  insize=2519 outsize=885 ok=1
+Cmd: preprocess
+  insize=1943 outsize=936 ok=1
+Cmd: preprocess
+  insize=792 outsize=792 ok=1
+Cmd: preprocess
+  insize=1541 outsize=535 ok=1
+Cmd: preprocess
+  insize=1984 outsize=958 ok=1
+Cmd: preprocess
+  insize=445 outsize=445 ok=1
+Cmd: preprocess
+  insize=1914 outsize=947 ok=1
+Cmd: preprocess
+  insize=1907 outsize=944 ok=1
+Cmd: preprocess
+  insize=3042 outsize=2109 ok=1
+Cmd: preprocess
+  insize=1982 outsize=959 ok=1
+Cmd: preprocess
+  insize=1224 outsize=503 ok=1
+Cmd: preprocess
+  insize=2003 outsize=921 ok=1
+Cmd: preprocess
+  insize=469 outsize=469 ok=1
+Cmd: preprocess
+  insize=1170 outsize=479 ok=1
+Cmd: preprocess
+  insize=6178 outsize=3909 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (64): 'vert': output parameter 'o' not completely initialized\nCompiling Vertex program with DIRECTIONAL LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF
+  api=4 type=0 insize=9668 outsize=0 kw=DIRECTIONAL LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF pd= ok=0
+Cmd: preprocess
+  insize=1624 outsize=947 ok=1
+Cmd: preprocess
+  insize=2361 outsize=2709 ok=1
+Cmd: preprocess
+  insize=1315 outsize=524 ok=1
+Cmd: preprocess
+  insize=1772 outsize=993 ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=993 outsize=169 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=993 outsize=88 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=979 outsize=156 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=979 outsize=85 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1025 outsize=169 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1025 outsize=109 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1248 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1248 outsize=216 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1369 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1369 outsize=468 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1324 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1324 outsize=225 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1309 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1309 outsize=201 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1307 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1307 outsize=467 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1328 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1328 outsize=240 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1269 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1269 outsize=240 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1265 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1265 outsize=240 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1325 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1325 outsize=197 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1384 outsize=184 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1384 outsize=225 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1093 outsize=156 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1093 outsize=346 kw= pd= ok=1
+Cmd: compileSnippet
+  api=8 type=0 insize=1081 outsize=1828 kw= pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1081 outsize=140 kw= pd= ok=1

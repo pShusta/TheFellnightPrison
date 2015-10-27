@@ -90,7 +90,7 @@ public class MenuController : MonoBehaviour {
     public void partyInviteAccept()
     {
         partyMessageBox.SetActive(false);
-        this.gameObject.GetComponentInChildren<SocialScreen>().joinParty(inviter);
+        GameObject.FindGameObjectWithTag("SocialMenu").GetComponent<SocialScreen>().joinParty(inviter);
     }
 
     public void partyInviteDecline()

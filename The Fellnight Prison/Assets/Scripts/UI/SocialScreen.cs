@@ -13,16 +13,25 @@ public class SocialScreen : MonoBehaviour {
 
     void Start()
     {
-        CurrentParty = new Party(PhotonNetwork.player);
+        //Debug.Log("PhotonNetwork.player in SocialScreen.Start()" + PhotonNetwork.player);
+        //CurrentParty = new Party(PhotonNetwork.player);
     }
     // Use this for initialization
 	void OnEnable () {
+        if (CurrentParty == null)
+        {
+            CurrentParty = new Party(PhotonNetwork.player);
+        }
         nonGmPlayers = new PhotonPlayer[9];
         GmPlayers = new PhotonPlayer[11];
         ConnectedPlayers = PhotonNetwork.playerList;
         int counter = 0;
         int gmcounter = 0;
         foreach (GameObject _object in PlayerButtons)
+        {
+            _object.SetActive(false);
+        }
+        foreach (GameObject _object in PartyButtons)
         {
             _object.SetActive(false);
         }
@@ -119,7 +128,14 @@ public class SocialScreen : MonoBehaviour {
         foreach (PhotonPlayer _player in CurrentParty.Members)
         {
             CurrentParyNames[counter].SetActive(true);
-            CurrentParyNames[counter].GetComponent<Text>().text = _player.name;
+            if (_player.name != "")
+            {
+                CurrentParyNames[counter].GetComponent<Text>().text = _player.name;
+            }
+            else
+            {
+                CurrentParyNames[counter].GetComponent<Text>().text = "Master";
+            }
             KickButtons[counter].SetActive(true);
             counter++;
         }
