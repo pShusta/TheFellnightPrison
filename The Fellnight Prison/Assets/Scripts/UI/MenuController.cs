@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MenuController : MonoBehaviour {
 
+    private PhotonPlayer inviter;
     public GameObject curMenu;
-    public GameObject mainMenu, inventory;
+    public GameObject mainMenu, inventory, socialMenu, partyMessageBox;
     public bool lockLook, clear;
 	// Use this for initialization
 	void Start () {
@@ -45,6 +47,22 @@ public class MenuController : MonoBehaviour {
                 lockLook = true;
             }
         }
+        if (Input.GetKeyUp(KeyCode.S) && clear)
+        {
+            Debug.Log("Called Social menu");
+            if (socialMenu.activeSelf)
+            {
+                lockLook = false;
+                curMenu.SetActive(false);
+            }
+            else
+            {
+                curMenu.SetActive(false);
+                curMenu = socialMenu;
+                curMenu.SetActive(true);
+                lockLook = true;
+            }
+        }
 	}
 
     public void setClear(bool _value)
@@ -60,5 +78,23 @@ public class MenuController : MonoBehaviour {
     public void clearTrue()
     {
         clear = true;
+    }
+
+    public void invitePlayerToParty(PhotonPlayer _inviter)
+    {
+        partyMessageBox.SetActive(true);
+        partyMessageBox.GetComponentInChildren<Text>().text = _inviter.name + " has invited you to a party.";
+        inviter = _inviter;
+    }
+
+    public void partyInviteAccept()
+    {
+        partyMessageBox.SetActive(false);
+        this.gameObject.GetComponentInChildren<SocialScreen>().joinParty(inviter);
+    }
+
+    public void partyInviteDecline()
+    {
+        partyMessageBox.SetActive(false);
     }
 }

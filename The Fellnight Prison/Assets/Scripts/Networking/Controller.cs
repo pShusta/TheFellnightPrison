@@ -5,11 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Controller : MonoBehaviour {
-    public GameObject DungeonButton, LoginButton, LoginPanel, UIController,  CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
+    public GameObject PlayerToon, DungeonButton, LoginButton, LoginPanel, UIController, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
 
-    private GameObject _view, PlayerToon;
+    private GameObject _view;
     private bool UsernameAvailable, _create, okay;
     public Player _player;
 
