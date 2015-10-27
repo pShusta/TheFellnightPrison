@@ -39,9 +39,11 @@ public class TurnOnCharacter : MonoBehaviour {
     }
 
     [PunRPC]
-    void recieveCurrentParty(List<PhotonPlayer> _players, bool _open)
+    void recieveCurrentParty(PhotonPlayer[] _players, bool _open)
     {
-        Party _party = new Party(_players, _open);
+        List<PhotonPlayer> _players2 = new List<PhotonPlayer>();
+        foreach (PhotonPlayer _p in _players) { _players2.Add(_p); }
+        Party _party = new Party(_players2, _open);
         GameObject.FindGameObjectWithTag("MenuController").GetComponentInChildren<SocialScreen>().recieveCurrentParty(_party);
     }
 }

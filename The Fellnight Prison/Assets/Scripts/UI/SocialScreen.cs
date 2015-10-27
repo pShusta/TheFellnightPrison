@@ -103,14 +103,19 @@ public class SocialScreen : MonoBehaviour {
     public void playerJoinParty(PhotonPlayer _player)
     {
         int counter = 0;
+        CurrentParty.Members.Add(_player);
         List<PhotonPlayer> _players = new List<PhotonPlayer>();
         foreach (PhotonPlayer _p in CurrentParty.Members)
         {
             _players.Add(_p);
             counter++;
         }
-        CurrentParty.Members[counter] = _player;
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().PlayerToon.GetComponent<PhotonView>().RPC("playerJoinParty", _player, _players, CurrentParty.PartyOpen);
+        PhotonPlayer[] _players2 = new PhotonPlayer[_players.Count];
+        for (int i = 0; i < _players.Count; i++)
+        {
+            _players2[i] = _players[i];
+        }
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().PlayerToon.GetComponent<PhotonView>().RPC("recieveCurrentParty", _player, _players2, CurrentParty.PartyOpen);
         updateCurrentPartyUi();
     }
 
