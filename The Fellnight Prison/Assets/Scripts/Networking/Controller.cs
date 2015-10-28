@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour {
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
     public bool loadInit = true;
+    private string? username, password;
 
     private GameObject _view;
     private bool UsernameAvailable, _create, okay;
@@ -116,6 +117,10 @@ public class Controller : MonoBehaviour {
 
     public void ConnectionSuccesful()
     {
+
+        //<---------------------------
+
+
         _view = PhotonNetwork.Instantiate("playerTest", new Vector3(0, 0, 0), Quaternion.identity, 0);
         myPhotonView = _view.GetComponent<PhotonView>();
         if(_create){

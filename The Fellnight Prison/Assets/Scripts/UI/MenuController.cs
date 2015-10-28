@@ -10,7 +10,7 @@ public class MenuController : MonoBehaviour {
     public bool lockLook, clear;
 	// Use this for initialization
 	void Start () {
-        clear = false;
+        //clear = false;
 	}
 	
 	// Update is called once per frame

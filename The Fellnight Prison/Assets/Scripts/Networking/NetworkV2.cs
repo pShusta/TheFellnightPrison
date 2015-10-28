@@ -15,6 +15,7 @@ public class NetworkV2 : MonoBehaviour
     public void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        roomName = "FellnightPrisonLobby";
     }
 
     public void Update()
@@ -94,35 +95,15 @@ public class NetworkV2 : MonoBehaviour
             if (connectAsMaster)
             {
                 initialLoad = false;
+                this.gameObject.GetComponent<Controller>().setInit(true);
                 PhotonNetwork.JoinOrCreateRoom("FellnightPrisonLobby", roomOptions, TypedLobby.Default);
             }
             else
             {
                 Debug.Log("Connecting as non-Master client");
-                if (solo)
-                {
-                    foreach (RoomInfo _room in rooms)
-                    {
-                        if (_room.playerCount == 1 && _room.open)
-                        {
-                            initialLoad = false;
-                            PhotonNetwork.JoinRoom(_room.name);
-                            break;
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (RoomInfo _room in rooms)
-                    {
-                        if (_room.playerCount < _room.maxPlayers && _room.open)
-                        {
-                            initialLoad = false;
-                            PhotonNetwork.JoinRoom(_room.name);
-                            break;
-                        }
-                    }
-                }
+                this.gameObject.GetComponent<Controller>().setInit(true);
+                initialLoad = false;
+                PhotonNetwork.JoinRoom("FellnightPrisonLobby");
             }
         }
         else
@@ -172,19 +153,17 @@ public class NetworkV2 : MonoBehaviour
         if (PhotonNetwork.isMasterClient)
         {
             PhotonNetwork.DestroyPlayerObjects(_player);
+
+        }
+        if (PhotonNetwork.playerList.Length <= 1)
+        {
+            returnToSunspear();
         }
     }
 
     void OnCreatedRoom()
     {
         Debug.Log("OnCreatedRoom");
-    }
-
-    void OnPhotonPlayerDisconnect()
-    {
-        if(PhotonNetwork.playerList.Length <= 1){
-            returnToSunspear();
-        }
     }
 
     void OnJoinedRoom()
@@ -239,7 +218,11 @@ public class NetworkV2 : MonoBehaviour
     {
         initialLoad = true;
         initialLoad2 = true;
+        roomName = "FellnightPrisonLobby";
         //this.gameObject.GetComponent<Controller>().loadInit = false;
+        Application.LoadLevel(0);
+        initialLoad = true;
+        initialLoad2 = true;
         PhotonNetwork.LeaveRoom();
     }
 }
