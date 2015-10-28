@@ -8,7 +8,7 @@ public class PhotonRPC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        DontDestroyOnLoad(this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -148,5 +148,19 @@ public class PhotonRPC : MonoBehaviour {
     {
         //PhotonNetwork.automaticallySyncScene = true;
         PhotonNetwork.LoadLevel(1);
+    }
+
+    [PunRPC]
+    void gmHostDungeon(string _roomName)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<NetworkV2>().gmHostDungeon(_roomName);
+    }
+
+    [PunRPC]
+    void loadRoom(string _roomName)
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<NetworkV2>().loadRoom(_roomName);
     }
 }

@@ -22,7 +22,7 @@ public class Database : MonoBehaviour{
 
     void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void GetInventory(string _username, PhotonPlayer _player)

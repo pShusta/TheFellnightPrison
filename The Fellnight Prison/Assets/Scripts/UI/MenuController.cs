@@ -93,6 +93,7 @@ public class MenuController : MonoBehaviour {
         Debug.Log("Inviter: " + inviter);
         socialMenu.SetActive(true);
         curMenu = socialMenu;
+        lockLook = true;
         socialMenu.GetComponent<SocialScreen>().joinParty(inviter);
     }
 

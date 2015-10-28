@@ -8,6 +8,7 @@ public class Controller : MonoBehaviour {
     public GameObject PlayerToon, DungeonButton, LoginButton, LoginPanel, UIController, CreateAccountPanel, MasterConnectPanel, ConnectingPanel, CreateAccountButton, CreatePanel, GoodJobPanel, CharacterCreatePanel, PlayerMenu, Inventory, HealthPanel;
     public GameObject[] _loginInputs, SuccessOrFail, CreateInputs;
     public PhotonView myPhotonView;
+    public bool loadInit = true;
 
     private GameObject _view;
     private bool UsernameAvailable, _create, okay;
@@ -122,6 +123,7 @@ public class Controller : MonoBehaviour {
         {
             LoginPanel.SetActive(false);
             MasterConnectPanel.SetActive(true);
+            this.gameObject.GetComponent<Database>().MasterConnect();
         }
         else
         {
@@ -148,6 +150,7 @@ public class Controller : MonoBehaviour {
             {
                 LoginPanel.SetActive(false);
                 MasterConnectPanel.SetActive(true);
+                //this.gameObject.GetComponent<Database>().MasterConnect();
             }
             else
             {
@@ -188,10 +191,16 @@ public class Controller : MonoBehaviour {
         myPhotonView.RPC("GetInventory", PhotonTargets.MasterClient, _loginInputs[0].GetComponent<Text>().text, myPhotonView.owner);
     }
 
+    public void setInit(bool _value)
+    {
+        loadInit = _value;
+    }
+
     public void CloseMasterLogin()
     {
         MasterConnectPanel.SetActive(false);
-
+        if(!loadInit)
+            this.gameObject.GetComponent<NetworkV2>().wait(10);
     }
 
     public void InvFilled()

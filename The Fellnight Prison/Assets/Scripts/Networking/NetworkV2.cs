@@ -4,18 +4,30 @@ using UnityEngine.UI;
 
 public class NetworkV2 : MonoBehaviour
 {
-    public bool connectAsMaster, solo;
+    public bool connectAsMaster, solo, GM;
+    private bool initialLoad = true;
+    private bool initialLoad2 = true;
     public GameObject Solo, Master;
     private bool roomLock = false;
+    private float? timer = null;
+    private string roomName;
 
     public void Start()
     {
-
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void Update()
     {
-
+        if (timer != null)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                timer = null;
+                launchDungeon();
+            }
+        }
     }
 
     public void setSolo()
@@ -64,7 +76,7 @@ public class NetworkV2 : MonoBehaviour
     {
         Debug.Log("OnRecievedRoomListUpdate");
 
-        RoomOptions roomOptions = new RoomOptions() { isVisible = true, maxPlayers = 6 };
+        RoomOptions roomOptions = new RoomOptions() { isVisible = true, maxPlayers = 20 };
         RoomInfo[] rooms = PhotonNetwork.GetRoomList();
         int numRooms = 0;
         try
@@ -77,34 +89,54 @@ public class NetworkV2 : MonoBehaviour
             Debug.Log("set numRooms failed.");
         }
 
-        if (connectAsMaster)
+        if (initialLoad)
         {
-            PhotonNetwork.CreateRoom("FellnightPrisonRoom" + numRooms, roomOptions, TypedLobby.Default);
-        }
-        else
-        {
-            Debug.Log("Connecting as non-Master client");
-            if (solo)
+            if (connectAsMaster)
             {
-                foreach (RoomInfo _room in rooms)
-                {
-                    if (_room.playerCount == 1 && _room.open)
-                    {
-                        PhotonNetwork.JoinRoom(_room.name);
-                        break;
-                    }
-                }
+                initialLoad = false;
+                PhotonNetwork.JoinOrCreateRoom("FellnightPrisonLobby", roomOptions, TypedLobby.Default);
             }
             else
             {
-                foreach (RoomInfo _room in rooms)
+                Debug.Log("Connecting as non-Master client");
+                if (solo)
                 {
-                    if (_room.playerCount < _room.maxPlayers && _room.open)
+                    foreach (RoomInfo _room in rooms)
                     {
-                        PhotonNetwork.JoinRoom(_room.name);
-                        break;
+                        if (_room.playerCount == 1 && _room.open)
+                        {
+                            initialLoad = false;
+                            PhotonNetwork.JoinRoom(_room.name);
+                            break;
+                        }
                     }
                 }
+                else
+                {
+                    foreach (RoomInfo _room in rooms)
+                    {
+                        if (_room.playerCount < _room.maxPlayers && _room.open)
+                        {
+                            initialLoad = false;
+                            PhotonNetwork.JoinRoom(_room.name);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (GM)
+            {
+                roomOptions = new RoomOptions() { isVisible = true, maxPlayers = 7 };
+                this.gameObject.GetComponent<Controller>().setInit(false);
+                PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
+            }
+            else
+            {
+                this.gameObject.GetComponent<Controller>().setInit(false);
+                PhotonNetwork.JoinRoom(roomName);
             }
         }
     }
@@ -148,14 +180,66 @@ public class NetworkV2 : MonoBehaviour
         Debug.Log("OnCreatedRoom");
     }
 
+    void OnPhotonPlayerDisconnect()
+    {
+        if(PhotonNetwork.playerList.Length <= 1){
+            returnToSunspear();
+        }
+    }
+
     void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom: " + PhotonNetwork.room.ToString());
-
+        //if(!initialLoad2)
+        //    this.gameObject.GetComponent<Controller>().setInit(false);
         this.gameObject.GetComponent<Controller>().ConnectionSuccesful();
+
+            //if (GM)
+            //{
+            //   wait(5);
+            //}
         //if (solo && !PhotonNetwork.isMasterClient)
         //{
         //    this.gameObject.GetComponent<Controller>().myPhotonView.RPC("SoloRoom", PhotonTargets.MasterClient);
         //}
+    }
+
+    public void wait(float _time)
+    {
+        timer = _time;
+    }
+
+    void launchDungeon()
+    {
+        //PhotonNetwork.LoadLevel(0);
+        PhotonNetwork.LoadLevel(1);
+    }
+
+    
+    public void gmHostDungeon(string _roomName)
+    {
+        initialLoad = false;
+        GM = true;
+        roomName = _roomName;
+        PhotonNetwork.LeaveRoom();
+
+        //wait(10);
+    }
+    
+    public void loadRoom(string _roomName)
+    {
+        initialLoad = false;
+        initialLoad2 = false;
+        roomName = _roomName;
+        PhotonNetwork.LeaveRoom();
+        //RoomOptions roomOptions = new RoomOptions() { isVisible = true, maxPlayers = 7 };
+    }
+
+    public void returnToSunspear()
+    {
+        initialLoad = true;
+        initialLoad2 = true;
+        //this.gameObject.GetComponent<Controller>().loadInit = false;
+        PhotonNetwork.LeaveRoom();
     }
 }

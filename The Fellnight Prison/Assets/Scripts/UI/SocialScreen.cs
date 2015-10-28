@@ -6,10 +6,11 @@ using System.Collections.Generic;
 public class SocialScreen : MonoBehaviour {
 
     private PhotonPlayer[] ConnectedPlayers, nonGmPlayers, GmPlayers;
-    private Party CurrentParty;
+    public Party CurrentParty;
     private Party[] PublicParties;
     public GameObject[] PlayerButtons, KickButtons, PartyButtons, CurrentParyNames;
     public GameObject MakePublicButton, MakePrivateButton, SendButton, LoadDungeonButton, ChatText, ChatInputField;
+    private float? timer = null;
 
     void Start()
     {
@@ -56,7 +57,54 @@ public class SocialScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (timer != null)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                timer = null;
+                launchDungeon();
+            }
+        }
+        nonGmPlayers = new PhotonPlayer[9];
+        GmPlayers = new PhotonPlayer[11];
+        ConnectedPlayers = PhotonNetwork.playerList;
+        int counter = 0;
+        int gmcounter = 0;
+        foreach (GameObject _object in PlayerButtons)
+        {
+            _object.SetActive(false);
+        }
+        foreach (GameObject _object in PartyButtons)
+        {
+            _object.SetActive(false);
+        }
+        foreach (PhotonPlayer _player in ConnectedPlayers)
+        {
+            //Debug.Log("Name: " + _player.name);
+            if (_player.name != "" && _player.name != PhotonNetwork.player.name)
+            {
+                nonGmPlayers[counter] = _player;
+                PlayerButtons[counter].SetActive(true);
+                PlayerButtons[counter].GetComponentInChildren<Text>().text = _player.name;
+                counter++;
+            }
+            else if (_player.name != PhotonNetwork.player.name && !_player.isMasterClient)
+            {
+                GmPlayers[gmcounter] = _player;
+                gmcounter++;
+            }
+        }
+        updateCurrentPartyUi();
+
+        if (CurrentParty.Members[0] != PhotonNetwork.player)
+        {
+            LoadDungeonButton.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            LoadDungeonButton.GetComponent<Button>().interactable = true;
+        }
 	}
 
     public void makePublicButton()
@@ -77,6 +125,25 @@ public class SocialScreen : MonoBehaviour {
     public void loadDungeonButton()
     {
         Debug.Log("loadDungeonButton");
+        //request master to host room
+        string roomName = "FellnightPrison" + CurrentParty.Members[0].name;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().myPhotonView.RPC("gmHostDungeon", GmPlayers[0], roomName);
+        wait(3);
+        //wait for five second, allowing master to ready room
+        //call rpc on all PhotonPlayer in CurrentParty, go reverse order so owner leaves last, have them leave room and join the room the master preped
+    }
+
+    void launchDungeon()
+    {
+        for (int i = 1; i <= CurrentParty.Members.Count; i++)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().myPhotonView.RPC("loadRoom", CurrentParty.Members[CurrentParty.Members.Count - i], "FellnightPrison" + CurrentParty.Members[0].name);
+        }
+    }
+
+    private void wait(float _time)
+    {
+        timer = _time;
     }
 
     public void invitePlayerButton(int _playerNum)
@@ -87,7 +154,26 @@ public class SocialScreen : MonoBehaviour {
 
     public void kickPlayerButton(int _playerNum)
     {
-        Debug.Log("kickPlayerButton: " + _playerNum);
+        PhotonPlayer poorKid = CurrentParty.Members[_playerNum];
+        //Debug.Log("kickPlayerButton: " + _playerNum);
+        foreach (PhotonPlayer _player in CurrentParty.Members)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().PlayerToon.GetComponent<PhotonView>().RPC("kickPlayer", _player, poorKid);
+        }
+    }
+
+    public void kickPlayer(PhotonPlayer _player)
+    {
+        if (_player != PhotonNetwork.player)
+        {
+            CurrentParty.RemoveMember(_player);
+            updateCurrentPartyUi();
+        }
+        else
+        {
+            CurrentParty = new Party(PhotonNetwork.player);
+            updateCurrentPartyUi();
+        }
     }
 
     public void joinPublicPartyButton(int _partyNum)

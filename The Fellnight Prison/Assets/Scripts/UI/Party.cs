@@ -22,6 +22,11 @@ public class Party {
         PartyOpen = open;
     }
 
+    public void RemoveMember(PhotonPlayer _player)
+    {
+        Members.Remove(_player);
+    }
+
     public void makePublic()
     {
         PartyOpen = true;

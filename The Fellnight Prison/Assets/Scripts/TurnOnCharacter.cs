@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 public class TurnOnCharacter : MonoBehaviour {
 
-    private bool okay;
+    private bool okay, go;
     private GameObject Menu, Controller, healthbar;
     public MonoBehaviour script;
     public bool GM;
+    private string roomName;
+    private float? timer = null;
 	// Use this for initialization
 	void Start () {
         if (this.gameObject.GetComponent<PhotonView>().isMine)
@@ -15,6 +17,7 @@ public class TurnOnCharacter : MonoBehaviour {
             this.gameObject.GetComponentInChildren<Camera>().enabled = true;
             this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
             script.enabled = true;
+            go = false;
         }
         else
         {
@@ -24,6 +27,7 @@ public class TurnOnCharacter : MonoBehaviour {
 
     void Update()
     {
+        
     }
 
     [PunRPC]
@@ -46,4 +50,12 @@ public class TurnOnCharacter : MonoBehaviour {
         Party _party = new Party(_players2, _open);
         GameObject.FindGameObjectWithTag("MenuController").GetComponentInChildren<SocialScreen>().recieveCurrentParty(_party);
     }
+    [PunRPC]
+    void kickPlayer(PhotonPlayer _player)
+    {
+        GameObject.FindGameObjectWithTag("MenuController").GetComponentInChildren<SocialScreen>().kickPlayer(_player);
+    }
+
+    
+
 }
