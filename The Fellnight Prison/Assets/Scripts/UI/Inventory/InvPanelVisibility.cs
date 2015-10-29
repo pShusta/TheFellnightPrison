@@ -28,6 +28,7 @@ public GameObject InvMain;
         }
         return _num;
     }
+
     void BaseEnable()
     {
         if (ConvertBase(_rot, 16) < 13 && ConvertBase(_rot, 16) > 2)
