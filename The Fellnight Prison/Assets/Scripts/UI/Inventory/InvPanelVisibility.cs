@@ -9,6 +9,7 @@ private UIPanel _panel;
 
 public UISlider _slider;
 public int _panelNum;
+public GameObject InvMain;
 
 	void Start(){
 		_wheelTrans = this.transform.parent;
@@ -34,8 +35,9 @@ public int _panelNum;
             if (_panelNum >= (ConvertBase((_rot - 3), 16)) && _panelNum <= (ConvertBase((_rot + 3), 16)))
             {
                 _panel.enabled = true;
-                float _num = _rot - _panelNum;
-                _panel.GetComponentInChildren<UILabel>().text = "Item #:" + _num;
+                float _num = (_rot - _panelNum) % 16;
+                //Debug.Log("_slider.sliderValue * _numItems = " + (int)( Math.Round( (_slider.sliderValue * _numItems - _num), 0, MidpointRounding.ToEven)));
+                _panel.GetComponentInChildren<UILabel>().text = InvMain.GetComponent<InvUI>()._inventory[(int)( Math.Round( (_slider.sliderValue * _numItems - _num), 0, MidpointRounding.ToEven))].Name;
             }
             else
             {
@@ -47,8 +49,9 @@ public int _panelNum;
             if (_panelNum >= (ConvertBase((_rot - 3), 16)) || _panelNum <= (ConvertBase((_rot + 3), 16)))
             {
                 _panel.enabled = true;
-                float _num = _rot - _panelNum;
-                _panel.GetComponentInChildren<UILabel>().text = "Item #:" + _num;
+                float _num = (_rot - _panelNum) % 16;
+                //Debug.Log("_slider.sliderValue * _numItems = " + (int)( Math.Round( (_slider.sliderValue * _numItems - _num), 0, MidpointRounding.ToEven)));
+                _panel.GetComponentInChildren<UILabel>().text = InvMain.GetComponent<InvUI>()._inventory[(int)( Math.Round( (_slider.sliderValue * _numItems - _num), 0, MidpointRounding.ToEven))].Name;
             }
             else
             {

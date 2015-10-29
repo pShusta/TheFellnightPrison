@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class InvUI : MonoBehaviour {
 private UISlider _slider;
-private List<BaseItem> _inventory;
+public List<BaseItem> _inventory;
 private int _speed;
 private float _value, _rot, _numItems;
 private Transform _wheelTrans;
@@ -32,11 +32,11 @@ public GameObject _wheelObj;
         _inventory = new List<BaseItem>();
         try
         {
-            foreach (Weapon _w in GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>()._player.InvWeapons)
+            foreach (Weapon _w in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().player.InvWeapons)
             {
                 _inventory.Add(_w);
             }
-            foreach (CraftingMaterial _w in GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>()._player.InvMaterials)
+            foreach (CraftingMaterial _w in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().player.InvMaterials)
             {
                 _inventory.Add(_w);
             }
@@ -60,10 +60,11 @@ public GameObject _wheelObj;
         {
             _numItems = _inventory.Count - 1;
             _rot = 22.5f * _slider.sliderValue * _numItems;
+            //_slider.sliderValue = Math.Round()
             _wheelTrans.rotation = Quaternion.Euler(_rot, _wheelTrans.rotation.y, _wheelTrans.rotation.z);
             if (Input.GetMouseButtonUp(0))
             {
-                _wheelTrans.rotation = Quaternion.Euler((float)Math.Floor(_rot / 22.5f) * 22.5f, _wheelTrans.rotation.y, _wheelTrans.rotation.z);
+                _wheelTrans.rotation = Quaternion.Euler((float)Math.Round((_rot / 22.5f), 0, MidpointRounding.AwayFromZero) * 22.5f, _wheelTrans.rotation.y, _wheelTrans.rotation.z);
             }
             _value = Input.GetAxis("Mouse ScrollWheel");
             if (_value != 0)
@@ -74,6 +75,8 @@ public GameObject _wheelObj;
                     _slider.sliderValue += 1 / _numItems;
                 _value = 0;
             }
+            _name.text = _inventory[(int)(Math.Round((_slider.sliderValue * _numItems), 0, MidpointRounding.ToEven))].Name;
+            _desciption.text = _inventory[(int)(Math.Round((_slider.sliderValue * _numItems ), 0, MidpointRounding.ToEven))].Name;
         }
         else
         {

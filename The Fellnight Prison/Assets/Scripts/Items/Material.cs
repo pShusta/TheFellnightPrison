@@ -15,16 +15,14 @@ public class CraftingMaterial : BaseItem
     }
 
     public CraftingMaterial(string _name, int _dura, int _weight)
-        : base(_dura, _weight)
+        : base(_name, _dura, _weight)
     {
-        Name = _name;
         Id = Database.MaterialDbInsert(this);
     }
 
     public CraftingMaterial(int id, string _name, int _dura, int _weight)
-        : base(_dura, _weight)
+        : base(_name, _dura, _weight)
     {
-        Name = _name;
         Id = id;
     }
 

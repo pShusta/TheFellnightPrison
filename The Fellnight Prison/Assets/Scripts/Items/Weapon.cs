@@ -3,7 +3,6 @@ using System;
 
 public class Weapon : BaseItem{
 
-    private string Name;
     private double Id;
     private int Range, EleDmgAmt, PhysDmgAmt;
     private DmgType PhysDmg;
@@ -11,11 +10,10 @@ public class Weapon : BaseItem{
     private WeaponType WeapType;
     private BaseItem ItemBase;
 
-    public Weapon(string _name = "Random Weapon") : base()
+    public Weapon(string _name = "Random Weapon") : base(_name)
     {
         if (_name != "Monster Sword")
         {
-            Name = _name;
             Range = UnityEngine.Random.Range(1, 20);
             Array values = EleDmgType.GetValues(typeof(EleDmgType));
             System.Random random = new System.Random();
@@ -99,9 +97,8 @@ public class Weapon : BaseItem{
         Id = Database.WeaponDbInsert(this);
     }
 
-    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range, int _dura, int _weight) : base(_dura, _weight)
+    public Weapon(string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range, int _dura, int _weight) : base(_name, _dura, _weight)
     {
-        Name = _name;
         Id = (double)UnityEngine.Random.Range(0, 1000000000);
         Range = _range;
         EleDmgAmt = _eleDmgAmt;
@@ -132,9 +129,8 @@ public class Weapon : BaseItem{
     }
 
     public Weapon(int id, string _name, DmgType _dmgType, int _physDmgAmt, EleDmgType _eleDmgType, int _eleDmgAmt, int _range, int _dura, int _weight)
-        : base(_dura, _weight)
+        : base(_name, _dura, _weight)
     {
-        Name = _name;
         Id = id;
         Range = _range;
         EleDmgAmt = _eleDmgAmt;
