@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BaseItem : PublicDataTypes {
 
+    public double Id;
     public string Name;
     private int Durability, Weight;
 

@@ -3,7 +3,7 @@ using System;
 
 public class Weapon : BaseItem{
 
-    private double Id;
+    
     private int Range, EleDmgAmt, PhysDmgAmt;
     private DmgType PhysDmg;
     private EleDmgType EleDmg;

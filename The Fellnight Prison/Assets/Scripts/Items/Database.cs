@@ -185,7 +185,16 @@ public class Database : MonoBehaviour{
         }
         _reader.Close();
         Player _p = new Player(_username, _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1]);
-        //Players.Add(_p);
+        //if GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players contains the player, remove it, thenadd it back in
+        //     this will insure that the most up to date version is available
+        foreach (Player _play in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+        {
+            if (_play.Username == _p.Username)
+            {
+                GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players.Remove(_play);
+                break;
+            }
+        }
         GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players.Add(_p);
         int[] _stats = new int[] { _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1] };
         return _stats;
@@ -312,6 +321,8 @@ public class Database : MonoBehaviour{
         string locations = "(WeaponName, WeaponRange, EleDmgType, DmgType, EleDmgAmt, DmgAmt, WeapType, Durability, Weight)";
         string cmdText = "INSERT INTO weapons " + locations + " VALUES" + values;
         
+        //  "UPDATE users." + username + "items SET Equiped = " + value + " WHERE Type = 'Weapons' AND Item = " + id + ";";
+
         MySqlCommand _cmd = _masterConnect.CreateCommand();
         _cmd.CommandText = cmdText;
         _cmd.ExecuteNonQuery();
@@ -390,5 +401,82 @@ public class Database : MonoBehaviour{
     public List<Player> getPlayers()
     {
         return GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players;
+    }
+
+    public void updateWeaponEquiped(double _weap, double _weap2, string username)
+    {
+        updateWeaponEquip(_weap, _weap2, username);
+    }
+
+    public static void updateWeaponEquip(double _weap, double _weap2, string username)
+    {
+        foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+        {
+            if (_p.Username == username)
+            {
+                foreach (Weapon _w in _p.InvWeapons)
+                {
+                    if (_w.Id == _weap)
+                    {
+                        _p.Equiped = _w;
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+
+        Debug.Log("Changing Equiped");
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+
+        string cmdText = "UPDATE users." + username + "items SET Equiped = 1 WHERE Type = 'Weapons' AND Item = " + _weap + ";";
+        _cmd.CommandText = cmdText;
+        _cmd.ExecuteNonQuery();
+
+        cmdText = "UPDATE users." + username + "items SET Equiped = 0 WHERE Type = 'Weapons' AND Item = " + _weap2 + ";";
+        _cmd.CommandText = cmdText;
+        _cmd.ExecuteNonQuery();
+ 
+    }
+
+    public void dropWeapon(double _weap, string username)
+    {
+        dropWeaponNow(_weap, username);
+    }
+
+    public static void dropWeaponNow(double _weap, string username)
+    {
+        foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+        {
+            if (_p.Username == username)
+            {
+                foreach (Weapon _w in _p.InvWeapons)
+                {
+                    if (_w.Id == _weap)
+                    {
+                        _p.InvWeapons.Remove(_w);
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+
+        Debug.Log("Dropping Weapon");
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+
+        string cmdText = "DELETE FROM users." + username + "items WHERE Type = 'Weapons' AND Item = " + _weap + ";";
+        _cmd.CommandText = cmdText;
+        _cmd.ExecuteNonQuery();
+    }
+
+    public static void savePlayer(string username)
+    {
+        foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+        {
+            if (_p.Username == username)
+            {
+            }
+        }
     }
 }

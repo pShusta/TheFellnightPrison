@@ -162,4 +162,16 @@ public class PhotonRPC : MonoBehaviour {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         controller.GetComponent<NetworkV2>().loadRoom(_roomName);
     }
+
+    [PunRPC]
+    void dropWeapon(double _w, string username)
+    {
+        GameObject.FindWithTag("GameController").GetComponent<Database>().dropWeapon(_w, username);
+    }
+
+    [PunRPC]
+    void equipSwap(double _w, double _w2, string username)
+    {
+        GameObject.FindWithTag("GameController").GetComponent<Database>().updateWeaponEquiped(_w, _w2, username);
+    }
 }

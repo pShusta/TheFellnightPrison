@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class InvUI : MonoBehaviour {
 private UISlider _slider;
 public List<BaseItem> _inventory;
+public double curItem;
 private int _speed;
 private float _value, _rot, _numItems;
 private Transform _wheelTrans;
@@ -75,6 +76,7 @@ public GameObject _wheelObj;
                     _slider.sliderValue += 1 / _numItems;
                 _value = 0;
             }
+            curItem = _inventory[(int)(Math.Round((_slider.sliderValue * _numItems), 0, MidpointRounding.ToEven))].Id;
             _name.text = _inventory[(int)(Math.Round((_slider.sliderValue * _numItems), 0, MidpointRounding.ToEven))].Name;
             _desciption.text = _inventory[(int)(Math.Round((_slider.sliderValue * _numItems ), 0, MidpointRounding.ToEven))].Name;
         }

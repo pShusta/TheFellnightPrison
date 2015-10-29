@@ -211,6 +211,8 @@
      <Compile Include="Assets\Scripts\RandRoom.cs" />
      <Compile Include="Assets\Scripts\TavernControoller.cs" />
      <Compile Include="Assets\Scripts\TurnOnCharacter.cs" />
+     <Compile Include="Assets\Scripts\UI\Inventory\DropItem.cs" />
+     <Compile Include="Assets\Scripts\UI\Inventory\EquipItem.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory\InvPanelVisibility.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory\InvUI.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory\QuitButton.cs" />

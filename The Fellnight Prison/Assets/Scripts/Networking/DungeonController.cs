@@ -18,6 +18,14 @@ public class DungeonController : MonoBehaviour {
         if (PhotonNetwork.isMasterClient)
         {
             PhotonNetwork.DestroyPlayerObjects(_player);
+            foreach (Player _play in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+            {
+                if (_play.Username == _player.name)
+                {
+                    //save _play data
+                    break;
+                }
+            }
         }
         if (PhotonNetwork.playerList.Length <= 1)
         {
