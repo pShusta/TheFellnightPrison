@@ -8,7 +8,6 @@ public class PhotonRPC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        DontDestroyOnLoad(this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -21,9 +20,9 @@ public class PhotonRPC : MonoBehaviour {
         //myPhotonView = this.gameObject.GetComponent<PhotonView>();
         
         //Pair creds = new Pair(loginInfo, myPhotonView.owner);
-        Debug.Log("Sending RPC");
+        //Debug.Log("Sending RPC");
         myPhotonView = this.gameObject.GetComponent<PhotonView>();
-        Debug.Log("PhotonPlayer: " + myPhotonView.owner);
+        //Debug.Log("PhotonPlayer: " + myPhotonView.owner);
         myPhotonView.RPC("DbLogin", PhotonTargets.MasterClient, loginInfo, myPhotonView.owner);
     }
 
@@ -38,7 +37,7 @@ public class PhotonRPC : MonoBehaviour {
     void DbUsercheckReturn(bool _go)
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<Controller>().CheckUsernameReturn(_go);
+        controller.GetComponent<ControllerV2>().CheckUsernameReturn(_go);
     }
 
     [PunRPC]
@@ -55,14 +54,12 @@ public class PhotonRPC : MonoBehaviour {
     [PunRPC]
     void DbLogin(string[] _creds, PhotonPlayer _player)
     {
-        Debug.Log("Recieved RPC");
         string _username = _creds[0];
         string _password = _creds[1];
+
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         bool _go = controller.GetComponent<Database>().Login(_username, _password);
-        Debug.Log("Sending reply RPC");
-        Debug.Log("PhotonPlayer: " + _player);
-        Debug.Log("_go: " + _go);
+
         myPhotonView = this.gameObject.GetComponent<PhotonView>();
         myPhotonView.RPC("LoginResult", _player, _go);
     }
@@ -71,7 +68,7 @@ public class PhotonRPC : MonoBehaviour {
     void LoginResult(bool _result)
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<Controller>().LoginResult(_result);
+        controller.GetComponent<ControllerV2>().LoginResult(_result);
     }
 
     [PunRPC]
@@ -94,14 +91,14 @@ public class PhotonRPC : MonoBehaviour {
     void NoCharacter()
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<Controller>().NoCharacter();
+        controller.GetComponent<ControllerV2>().NoCharacter();
     }
 
     [PunRPC]
     void ReturnCore(int[] _stats)
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<Controller>().CoreReturn(_stats);
+        controller.GetComponent<ControllerV2>().CoreReturn(_stats);
     }
 
     [PunRPC]
@@ -113,11 +110,13 @@ public class PhotonRPC : MonoBehaviour {
     }
 
     [PunRPC]
-    void RecieveWeapon(string id, string wName, string dmgtype, string dmgamt, string edmgtype, string edmgamt, string range, string dura, string weight){
+    void RecieveWeapon(string id, string wName, string dmgtype, string dmgamt, string edmgtype, string edmgamt, string range, string dura, string weight, bool _equiped){
         Debug.Log("Recieve Weapon");
         Weapon _temp = new Weapon(Convert.ToInt32(id), wName, PublicDataTypes.ToDmgType(dmgtype), Convert.ToInt32(dmgamt), PublicDataTypes.ToEleDmgType(edmgtype), Convert.ToInt32(edmgamt), Convert.ToInt32(range), Convert.ToInt32(dura), Convert.ToInt32(weight));
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<Controller>()._player.InvWeapons.Add(_temp);
+        controller.GetComponent<ControllerV2>().carryData.player.InvWeapons.Add(_temp);
+        if(_equiped)
+            controller.GetComponent<ControllerV2>().carryData.player.Equiped = _temp;
     }
 
     [PunRPC]
@@ -126,14 +125,14 @@ public class PhotonRPC : MonoBehaviour {
         Debug.Log("Recieve Material");
         CraftingMaterial _temp = new CraftingMaterial(Convert.ToInt32(id), name, Convert.ToInt32(dura), Convert.ToInt32(weight));
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<Controller>()._player.InvMaterials.Add(_temp);
+        controller.GetComponent<ControllerV2>().carryData.player.InvMaterials.Add(_temp);
     }
 
     [PunRPC]
     void InvFilled()
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<Controller>().InvFilled();
+        controller.GetComponent<ControllerV2>().InvFilled();
     }
 
     [PunRPC]

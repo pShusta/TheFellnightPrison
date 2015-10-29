@@ -18,11 +18,10 @@ public class Database : MonoBehaviour{
     public GameObject Inventory, UIController;
     public GameObject[] _masterInputs;
 
-    public List<Player> Players = new List<Player>();
+    //public List<Player> Players = new List<Player>();
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public void GetInventory(string _username, PhotonPlayer _player)
@@ -83,7 +82,12 @@ public class Database : MonoBehaviour{
                 {
                     if (t == "Weapons")
                     {
-                        this.gameObject.GetComponent<Controller>().myPhotonView.RPC("RecieveWeapon", _player,
+                        bool _tempValue = false;
+                        if (_reader["idWeapons"].ToString() == equip)
+                        {
+                            _tempValue = true;
+                        }
+                        this.gameObject.GetComponent<ControllerV2>().view.RPC("RecieveWeapon", _player,
                                             _reader["idWeapons"].ToString(),
                                             _reader["WeaponName"].ToString(),
                                             _reader["DmgType"].ToString(),
@@ -92,7 +96,8 @@ public class Database : MonoBehaviour{
                                             _reader["EleDmgAmt"].ToString(),
                                             _reader["WeaponRange"].ToString(),
                                             _reader["Durability"].ToString(),
-                                            _reader["Weight"].ToString()
+                                            _reader["Weight"].ToString(),
+                                            _tempValue
                                      );
                         Weapon temp = new Weapon(Convert.ToInt32(_reader["idWeapons"].ToString()),
                                                   _reader["WeaponName"].ToString(),
@@ -111,7 +116,7 @@ public class Database : MonoBehaviour{
                     }
                     else if (t == "Materials")
                     {
-                        this.gameObject.GetComponent<Controller>().myPhotonView.RPC("RecieveMaterial", _player,
+                        this.gameObject.GetComponent<ControllerV2>().view.RPC("RecieveMaterial", _player,
                                             _reader["idMaterials"].ToString(),
                                             _reader["MaterialName"].ToString(),
                                             _reader["Durability"].ToString(),
@@ -129,8 +134,8 @@ public class Database : MonoBehaviour{
             _c = "";
         }
         Debug.Log("Calling InvFilled");
-        this.gameObject.GetComponent<Controller>().myPhotonView.RPC("InvFilled", _player);
-        foreach (Player _p in Players)
+        this.gameObject.GetComponent<ControllerV2>().view.RPC("InvFilled", _player);
+        foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
         {
             if (_p.Username == _username)
             {
@@ -180,7 +185,8 @@ public class Database : MonoBehaviour{
         }
         _reader.Close();
         Player _p = new Player(_username, _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1]);
-        Players.Add(_p);
+        //Players.Add(_p);
+        GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players.Add(_p);
         int[] _stats = new int[] { _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1] };
         return _stats;
     }
@@ -217,6 +223,9 @@ public class Database : MonoBehaviour{
 
         _cmd.CommandText = "CREATE TABLE " + _username + "Items (Item INT(11), Type VARCHAR(45), Quantity INT(11), Equiped INT(11));";
         _cmd.ExecuteNonQuery();
+
+        _cmd.CommandText = "INSERT INTO " + _username + "Items (Item, Type, Quantity, Equiped) VALUES (1, 'Weapons', 1, 1);";
+        _cmd.ExecuteNonQuery();
     }
 
     public bool Login(string _username, string _password)
@@ -241,19 +250,20 @@ public class Database : MonoBehaviour{
 
     public void MasterConnect()
     {
-        serverIP = _masterInputs[0].GetComponent<Text>().text;
-        port = _masterInputs[1].GetComponent<Text>().text;
-        Uid = _masterInputs[2].GetComponent<Text>().text;
-        Pwd = _masterInputs[3].GetComponent<InputField>().text;
+        serverIP = "localhost";
+        port = "3306";
+        Uid = "Fellnight";
+        Pwd = "Sunspear";
         database = "users";
         string source = "Server=" + serverIP + "; Port=" + port + "; Database=" + database + "; Uid=" + Uid + "; Password=" + Pwd + ";";
         _masterConnect = new MySqlConnection(source);
         _masterConnect.Open();
         Debug.Log("Connection Succesful");
+        //GameObject.FindWithTag("CarryData").GetComponent<CarryData>().ready = true;
         PhotonNetwork.Instantiate("GM", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
         UIController.GetComponent<MenuController>().setClear(true);
         //Inventory.SetActive(true);
-        this.gameObject.GetComponent<Controller>().CloseMasterLogin();
+        this.gameObject.GetComponent<ControllerV2>().CloseMasterLogin();
         //Application.LoadLevel("Tavern");
     }
 
@@ -375,5 +385,10 @@ public class Database : MonoBehaviour{
                                  );
         _reader.Close();
         return _mat;
+    }
+
+    public List<Player> getPlayers()
+    {
+        return GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players;
     }
 }

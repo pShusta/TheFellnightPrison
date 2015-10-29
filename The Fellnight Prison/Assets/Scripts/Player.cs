@@ -55,4 +55,9 @@ public class Player {
     {
         CurHp -= _value;
     }
+
+    public void EquipWeapon(int _index)
+    {
+        Equiped = InvWeapons[_index];
+    }
 }

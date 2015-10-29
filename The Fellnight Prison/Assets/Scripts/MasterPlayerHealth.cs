@@ -18,7 +18,7 @@ public class MasterPlayerHealth : MonoBehaviour
         {
             if (!GM)
             {
-                foreach (Player _p in GameObject.FindGameObjectWithTag("GameController").GetComponent<Database>().Players)
+                foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
                 {
                     if (_p.Username == this.gameObject.GetComponent<PhotonView>().owner.name)
                     {

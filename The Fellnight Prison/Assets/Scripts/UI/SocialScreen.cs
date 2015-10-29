@@ -127,7 +127,7 @@ public class SocialScreen : MonoBehaviour {
         Debug.Log("loadDungeonButton");
         //request master to host room
         string roomName = "FellnightPrison" + CurrentParty.Members[0].name;
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().myPhotonView.RPC("gmHostDungeon", GmPlayers[0], roomName);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().view.RPC("gmHostDungeon", GmPlayers[0], roomName);
         wait(3);
         //wait for five second, allowing master to ready room
         //call rpc on all PhotonPlayer in CurrentParty, go reverse order so owner leaves last, have them leave room and join the room the master preped
@@ -137,7 +137,7 @@ public class SocialScreen : MonoBehaviour {
     {
         for (int i = 1; i <= CurrentParty.Members.Count; i++)
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().myPhotonView.RPC("loadRoom", CurrentParty.Members[CurrentParty.Members.Count - i], "FellnightPrison" + CurrentParty.Members[0].name);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().view.RPC("loadRoom", CurrentParty.Members[CurrentParty.Members.Count - i], "FellnightPrison" + CurrentParty.Members[0].name);
         }
     }
 
@@ -149,7 +149,7 @@ public class SocialScreen : MonoBehaviour {
     public void invitePlayerButton(int _playerNum)
     {
         Debug.Log("invitePlayerButton: " + nonGmPlayers[_playerNum].name);
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().PlayerToon.GetComponent<PhotonView>().RPC("invitePlayerToParty", nonGmPlayers[_playerNum], PhotonNetwork.player);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().playerToon.GetComponent<PhotonView>().RPC("invitePlayerToParty", nonGmPlayers[_playerNum], PhotonNetwork.player);
     }
 
     public void kickPlayerButton(int _playerNum)
@@ -158,7 +158,7 @@ public class SocialScreen : MonoBehaviour {
         //Debug.Log("kickPlayerButton: " + _playerNum);
         foreach (PhotonPlayer _player in CurrentParty.Members)
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().PlayerToon.GetComponent<PhotonView>().RPC("kickPlayer", _player, poorKid);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().playerToon.GetComponent<PhotonView>().RPC("kickPlayer", _player, poorKid);
         }
     }
 
@@ -183,7 +183,7 @@ public class SocialScreen : MonoBehaviour {
 
     public void joinParty(PhotonPlayer _owner)
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().PlayerToon.GetComponent<PhotonView>().RPC("playerJoinParty", _owner, PhotonNetwork.player);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().playerToon.GetComponent<PhotonView>().RPC("playerJoinParty", _owner, PhotonNetwork.player);
     }
 
     public void playerJoinParty(PhotonPlayer _player)
@@ -201,7 +201,7 @@ public class SocialScreen : MonoBehaviour {
         {
             _players2[i] = _players[i];
         }
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>().PlayerToon.GetComponent<PhotonView>().RPC("recieveCurrentParty", _player, _players2, CurrentParty.PartyOpen);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().playerToon.GetComponent<PhotonView>().RPC("recieveCurrentParty", _player, _players2, CurrentParty.PartyOpen);
         updateCurrentPartyUi();
     }
 

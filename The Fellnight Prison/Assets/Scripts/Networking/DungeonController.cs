@@ -13,8 +13,22 @@ public class DungeonController : MonoBehaviour {
 	
 	}
 
+    void OnPhotonPlayerDisconnected(PhotonPlayer _player)
+    {
+        if (PhotonNetwork.isMasterClient)
+        {
+            PhotonNetwork.DestroyPlayerObjects(_player);
+        }
+        if (PhotonNetwork.playerList.Length <= 1)
+        {
+            returnToSunspear();
+        }
+    }
+
     public void returnToSunspear()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<NetworkV2>().returnToSunspear();
+        GameObject.FindWithTag("CarryData").GetComponent<CarryData>().destination = "FellnightPrisonLobby";
+        Application.LoadLevel(0);
+        PhotonNetwork.LeaveRoom();
     }
 }

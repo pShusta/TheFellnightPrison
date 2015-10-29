@@ -194,7 +194,9 @@
      <Compile Include="Assets\Scripts\MasterPlayerHealth.cs" />
      <Compile Include="Assets\Scripts\MobHealth.cs" />
      <Compile Include="Assets\Scripts\NavMeshScript.cs" />
+     <Compile Include="Assets\Scripts\Networking\CarryData.cs" />
      <Compile Include="Assets\Scripts\Networking\Controller.cs" />
+     <Compile Include="Assets\Scripts\Networking\ControllerV2.cs" />
      <Compile Include="Assets\Scripts\Networking\DungeonController.cs" />
      <Compile Include="Assets\Scripts\Networking\EnemyNetworkMotion.cs" />
      <Compile Include="Assets\Scripts\Networking\GlobalFunctions.cs" />

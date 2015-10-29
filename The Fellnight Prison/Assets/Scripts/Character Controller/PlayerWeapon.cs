@@ -29,15 +29,15 @@ public class PlayerWeapon : MonoBehaviour
         Weapon equiped;
         int _dmg = 0;
         Debug.Log("You hit: " + other.gameObject.name);
-        foreach (Player _p in GameObject.FindGameObjectWithTag("GameController").GetComponent<Database>().Players)
+        foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
         {
             if (_p.Username == myView.owner.name)
             {
                 equiped = _p.Equiped;
-                //_dmg = equiped.GetPhysDmgAmt();
-                Debug.Log("Setting _dmg");
+                _dmg = equiped.GetPhysDmgAmt();
+                Debug.Log("Setting _dmg: " + _dmg);
                 //temporary for alpha, set to flat 5
-                _dmg = 5;
+                //_dmg = 5;
                 //get weapon
             }
         }

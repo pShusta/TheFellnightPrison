@@ -14,8 +14,7 @@ public class NetworkV2 : MonoBehaviour
 
     public void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
-        roomName = "FellnightPrisonLobby";
+       roomName = "FellnightPrisonLobby";
     }
 
     public void Update()
@@ -95,13 +94,13 @@ public class NetworkV2 : MonoBehaviour
             if (connectAsMaster)
             {
                 initialLoad = false;
-                this.gameObject.GetComponent<Controller>().setInit(true);
+                this.gameObject.GetComponent<ControllerV2>().setInit(true);
                 PhotonNetwork.JoinOrCreateRoom("FellnightPrisonLobby", roomOptions, TypedLobby.Default);
             }
             else
             {
                 Debug.Log("Connecting as non-Master client");
-                this.gameObject.GetComponent<Controller>().setInit(true);
+                this.gameObject.GetComponent<ControllerV2>().setInit(true);
                 initialLoad = false;
                 PhotonNetwork.JoinRoom("FellnightPrisonLobby");
             }
@@ -111,12 +110,12 @@ public class NetworkV2 : MonoBehaviour
             if (GM)
             {
                 roomOptions = new RoomOptions() { isVisible = true, maxPlayers = 7 };
-                this.gameObject.GetComponent<Controller>().setInit(false);
+                this.gameObject.GetComponent<ControllerV2>().setInit(false);
                 PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
             }
             else
             {
-                this.gameObject.GetComponent<Controller>().setInit(false);
+                this.gameObject.GetComponent<ControllerV2>().setInit(false);
                 PhotonNetwork.JoinRoom(roomName);
             }
         }
@@ -171,7 +170,7 @@ public class NetworkV2 : MonoBehaviour
         Debug.Log("OnJoinedRoom: " + PhotonNetwork.room.ToString());
         //if(!initialLoad2)
         //    this.gameObject.GetComponent<Controller>().setInit(false);
-        this.gameObject.GetComponent<Controller>().ConnectionSuccesful();
+        this.gameObject.GetComponent<ControllerV2>().ConnectionSuccesful();
 
             //if (GM)
             //{
@@ -200,6 +199,8 @@ public class NetworkV2 : MonoBehaviour
         initialLoad = false;
         GM = true;
         roomName = _roomName;
+        this.gameObject.GetComponent<ControllerV2>().carryData.destination = _roomName;
+        this.gameObject.GetComponent<ControllerV2>().carryData.players = this.gameObject.GetComponent<Database>().getPlayers();
         PhotonNetwork.LeaveRoom();
 
         //wait(10);
@@ -219,6 +220,7 @@ public class NetworkV2 : MonoBehaviour
         initialLoad = true;
         initialLoad2 = true;
         roomName = "FellnightPrisonLobby";
+        GameObject.FindWithTag("CarryData").GetComponent<CarryData>().destination = "FellnightPrisonLobby";
         //this.gameObject.GetComponent<Controller>().loadInit = false;
         Application.LoadLevel(0);
         initialLoad = true;
