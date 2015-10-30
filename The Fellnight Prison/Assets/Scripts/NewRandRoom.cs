@@ -15,6 +15,7 @@ public class NewRandRoom : MonoBehaviour
     //public static GameObject[] myObjects;
     public GameObject[] roomBounds;
     public GameObject[] Rooms;
+    public GameObject dungeonExit;
 
     public GameObject[] DoorNodes;
     public GameObject[] WallNodes;
@@ -41,7 +42,20 @@ public class NewRandRoom : MonoBehaviour
         //Keep this below the SceneNodes.FindObjectsWithTag, otherwise it'll pick up the new rooms Nodes
         //GameObject myObj = Instantiate(Rooms[whichItem], new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
 
-        GameObject myObj = PhotonNetwork.Instantiate(Rooms[whichItem].name, new Vector3(100000, 100000, 100000), Quaternion.identity, 0) as GameObject;
+        GameObject myObj;
+        if (numSpawned == numToSpawn - 1)
+        {
+            //myObj = Instantiate(dungeonExit, new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
+            myObj = PhotonNetwork.Instantiate(dungeonExit.name, new Vector3(100000, 100000, 100000), Quaternion.identity, 0) as GameObject;
+
+        }
+        else
+        {
+            //myObj = Instantiate(Rooms[whichItem], new Vector3(6, 6, 6), Quaternion.identity) as GameObject;
+            myObj = PhotonNetwork.Instantiate(Rooms[whichItem].name, new Vector3(100000, 100000, 100000), Quaternion.identity, 0) as GameObject;
+
+        }
+        //GameObject myObj = PhotonNetwork.Instantiate(Rooms[whichItem].name, new Vector3(100000, 100000, 100000), Quaternion.identity, 0) as GameObject;
 
         //Finds all of the Ray Cast Nodes in the new object
         var RayNodes = myObj.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Ray Cast Node").ToArray();
@@ -141,7 +155,7 @@ public class NewRandRoom : MonoBehaviour
             if (nb.Intersects(ob))
             {
                 //Debug.Log("Spawned Item interceted with other item");
-                ParentNode.gameObject.tag = "Blocked Node";
+                //ParentNode.gameObject.tag = "Blocked Node";
                 PhotonNetwork.Destroy(myObj);
                 numSpawned--;
                 checkspace = false;
