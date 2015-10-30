@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 85f3d6d1cd7d8d848a55fd5266aa7258
+timeCreated: 1446162747
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: arch.000
+    100002: arch.002
+    100004: arch.003
+    100006: //RootNode
+    100008: entrance
+    100010: fadetoblack.001
+    100012: fadetoblack.005
+    100014: fadetoblack.007
+    100016: Roof 0 arc.001
+    100018: tile_01
+    100020: tile_02
+    100022: wall_02.000
+    100024: wall_02.004
+    100026: wall_02.006
+    100028: wall_02.008
+    100030: wall_corner_01
+    100032: wall_corner_01.001
+    100034: wall_corner_01.002
+    100036: wall_corner_01.003
+    400000: arch.000
+    400002: arch.002
+    400004: arch.003
+    400006: //RootNode
+    400008: entrance
+    400010: fadetoblack.001
+    400012: fadetoblack.005
+    400014: fadetoblack.007
+    400016: Roof 0 arc.001
+    400018: tile_01
+    400020: tile_02
+    400022: wall_02.000
+    400024: wall_02.004
+    400026: wall_02.006
+    400028: wall_02.008
+    400030: wall_corner_01
+    400032: wall_corner_01.001
+    400034: wall_corner_01.002
+    400036: wall_corner_01.003
+    2300000: arch.000
+    2300002: arch.002
+    2300004: arch.003
+    2300006: entrance
+    2300008: fadetoblack.001
+    2300010: fadetoblack.005
+    2300012: fadetoblack.007
+    2300014: Roof 0 arc.001
+    2300016: tile_01
+    2300018: tile_02
+    2300020: wall_02.000
+    2300022: wall_02.004
+    2300024: wall_02.006
+    2300026: wall_02.008
+    2300028: wall_corner_01
+    2300030: wall_corner_01.001
+    2300032: wall_corner_01.002
+    2300034: wall_corner_01.003
+    3300000: arch.000
+    3300002: arch.002
+    3300004: arch.003
+    3300006: entrance
+    3300008: fadetoblack.001
+    3300010: fadetoblack.005
+    3300012: fadetoblack.007
+    3300014: Roof 0 arc.001
+    3300016: tile_01
+    3300018: tile_02
+    3300020: wall_02.000
+    3300022: wall_02.004
+    3300024: wall_02.006
+    3300026: wall_02.008
+    3300028: wall_corner_01
+    3300030: wall_corner_01.001
+    3300032: wall_corner_01.002
+    3300034: wall_corner_01.003
+    4300000: wall_02.008
+    4300002: fadetoblack.007
+    4300004: wall_02.004
+    4300006: fadetoblack.005
+    4300008: tile_02
+    4300010: entrance
+    4300012: arch.000
+    4300014: arch.002
+    4300016: arch.003
+    4300018: Roof 0 arc.001
+    4300020: tile_01
+    4300022: wall_02.000
+    4300024: wall_02.006
+    4300026: wall_corner_01.001
+    4300028: fadetoblack.001
+    4300030: wall_corner_01.002
+    4300032: wall_corner_01.003
+    4300034: wall_corner_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
