@@ -191,7 +191,7 @@ public class NewRandRoom : MonoBehaviour
         {
             Transform ChildDoor = DoorNodes[i].transform;
 
-            if (ChildDoor.parent.tag == "Node" || ChildDoor.parent.tag == "Blocke Node")
+            if (ChildDoor.parent.tag == "Node" || ChildDoor.parent.tag == "Blocked Node")
             {
                 DoorNodes[i].gameObject.tag = "Delete Me";
             }

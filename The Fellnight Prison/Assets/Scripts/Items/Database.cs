@@ -15,11 +15,6 @@ public class Database : MonoBehaviour{
     private bool isMaster;
     private static MySqlConnection _masterConnect;
 
-    public GameObject Inventory, UIController;
-    public GameObject[] _masterInputs;
-
-    //public List<Player> Players = new List<Player>();
-
     void Start()
     {
     }
@@ -270,7 +265,7 @@ public class Database : MonoBehaviour{
         Debug.Log("Connection Succesful");
         //GameObject.FindWithTag("CarryData").GetComponent<CarryData>().ready = true;
         PhotonNetwork.Instantiate("GM", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
-        UIController.GetComponent<MenuController>().setClear(true);
+        GameObject.FindWithTag("MenuController").GetComponent<MenuController>().setClear(true);
         //Inventory.SetActive(true);
         this.gameObject.GetComponent<ControllerV2>().CloseMasterLogin();
         //Application.LoadLevel("Tavern");
