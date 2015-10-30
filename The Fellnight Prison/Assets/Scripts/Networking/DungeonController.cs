@@ -13,6 +13,11 @@ public class DungeonController : MonoBehaviour {
 	
 	}
 
+    void OnPhotonPlayerConnected(PhotonPlayer _player)
+    {
+        GameObject.FindWithTag("GameController").GetComponent<Database>().GeneratePlayerCore(_player.name, _player);
+    }
+
     void OnPhotonPlayerDisconnected(PhotonPlayer _player)
     {
         if (PhotonNetwork.isMasterClient)
@@ -22,7 +27,7 @@ public class DungeonController : MonoBehaviour {
             {
                 if (_play.Username == _player.name)
                 {
-                    //save _play data
+                    GameObject.FindWithTag("GameController").GetComponent<Database>().pleaseSavePlayer(_player);
                     break;
                 }
             }

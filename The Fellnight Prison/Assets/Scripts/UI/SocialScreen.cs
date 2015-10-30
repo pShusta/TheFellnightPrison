@@ -127,9 +127,17 @@ public class SocialScreen : MonoBehaviour {
         Debug.Log("loadDungeonButton");
         //request master to host room
         string roomName = "FellnightPrison" + CurrentParty.Members[0].name;
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().view.RPC("gmHostDungeon", GmPlayers[0], roomName);
+        PhotonPlayer[] _players = new PhotonPlayer[CurrentParty.Members.Count];
+        for (int i = 0; i < CurrentParty.Members.Count; i++)
+        {
+            _players[i] = CurrentParty.Members[i];
+        }
+
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().view.RPC("savePlayers", PhotonTargets.MasterClient, _players);
+
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().view.RPC("gmHostDungeon", GmPlayers[0], roomName, _players);
         wait(3);
-        //wait for five second, allowing master to ready room
+        //wait for three second, allowing master to ready room
         //call rpc on all PhotonPlayer in CurrentParty, go reverse order so owner leaves last, have them leave room and join the room the master preped
     }
 

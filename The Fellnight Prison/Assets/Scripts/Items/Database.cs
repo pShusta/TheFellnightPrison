@@ -465,13 +465,56 @@ public class Database : MonoBehaviour{
         _cmd.ExecuteNonQuery();
     }
 
-    public static void savePlayer(string username)
+    public void pleaseSavePlayers(PhotonPlayer[] _players)
     {
-        foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+        savePlayers(_players);
+    }
+
+    public static void savePlayers(PhotonPlayer[] _players)
+    {
+        foreach (PhotonPlayer _p in _players)
         {
-            if (_p.Username == username)
+            foreach (Player _p2 in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
             {
+                if (_p2.Username == _p.name)
+                {
+                    MySqlCommand _cmd = _masterConnect.CreateCommand();
+
+                    string cmdText = "UPDATE users.skills SET OneHandSword = " + _p2.OneHandedSword + " AND Gathering = " + _p2.Gathering + " WHERE username = " + _p.name + ";";
+                    _cmd.CommandText = cmdText;
+                    _cmd.ExecuteNonQuery();
+
+                    cmdText = "UPDATE users.basestats SET Str = " + _p2.Str + " AND Agi = " + _p2.Agi + " AND Con = " + _p2.Con + " AND Intel = " + _p2.Intel + " AND Luck = " + _p2.Luck + " WHERE username = " + _p.name + ";";
+                    _cmd.CommandText = cmdText;
+                    _cmd.ExecuteNonQuery();
+                    break;
+                }
             }
         }
+    }
+
+    public void pleaseSavePlayer(PhotonPlayer _player){
+        savePlayer(_player);
+    }
+
+    public static void savePlayer(PhotonPlayer _players)
+    {
+
+            foreach (Player _p2 in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+            {
+                if (_p2.Username == _players.name)
+                {
+                    MySqlCommand _cmd = _masterConnect.CreateCommand();
+
+                    string cmdText = "UPDATE users.skills SET OneHandSword = " + _p2.OneHandedSword + " AND Gathering = " + _p2.Gathering + " WHERE username = " + _p2.Username + ";";
+                    _cmd.CommandText = cmdText;
+                    _cmd.ExecuteNonQuery();
+
+                    cmdText = "UPDATE users.basestats SET Str = " + _p2.Str + " AND Agi = " + _p2.Agi + " AND Con = " + _p2.Con + " AND Intel = " + _p2.Intel + " AND Luck = " + _p2.Luck + " WHERE username = " + _p2.Username + ";";
+                    _cmd.CommandText = cmdText;
+                    _cmd.ExecuteNonQuery();
+                    break;
+                }
+            }
     }
 }

@@ -8,6 +8,7 @@ public class CarryData : MonoBehaviour {
     public string username, password;
     public string destination;
     public List<Player> players = new List<Player>();
+    public PhotonPlayer[] playersView;
     public bool ready = false;
 
 	// Use this for initialization

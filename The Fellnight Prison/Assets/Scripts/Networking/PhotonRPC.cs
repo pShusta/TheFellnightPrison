@@ -150,8 +150,9 @@ public class PhotonRPC : MonoBehaviour {
     }
 
     [PunRPC]
-    void gmHostDungeon(string _roomName)
+    void gmHostDungeon(string _roomName, PhotonPlayer[] _players)
     {
+        GameObject.FindWithTag("CarryData").GetComponent<CarryData>().playersView = _players;
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         controller.GetComponent<NetworkV2>().gmHostDungeon(_roomName);
     }

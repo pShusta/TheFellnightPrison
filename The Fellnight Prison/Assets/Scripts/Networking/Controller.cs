@@ -258,5 +258,8 @@ public class Controller : MonoBehaviour {
         myPhotonView.RPC("LoadDungeonLevel", PhotonTargets.MasterClient);
     }
 
-    
+    void OnPhotonPlayerDisconnect(PhotonPlayer _player)
+    {
+        GameObject.FindWithTag("GameController").GetComponent<Database>().pleaseSavePlayer(_player);
+    }
 }
