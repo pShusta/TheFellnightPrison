@@ -5,6 +5,9 @@ public class MobHealth : MonoBehaviour {
 
     public int MaxHp;
     public float CurHp;
+    private float timer;
+    private bool run = false;
+    private GameObject tempPow;
 
 	// Use this for initialization
 	void Start () {
@@ -13,14 +16,40 @@ public class MobHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (run)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                run = false;
+                PhotonNetwork.Destroy(tempPow);
+            }
+        }
         if (CurHp <= 0)
         {
-            //dead
+            if (PhotonNetwork.isMasterClient)
+            {
+                PhotonNetwork.Destroy(this.gameObject);
+                int temp = Random.Range(0, 100);
+                bool _temp;
+                if (temp < 5)
+                {
+                    _temp = true;
+                }
+                else
+                {
+                    _temp = false;
+                }
+                this.gameObject.GetComponent<PhotonView>().RPC("mobKill", PhotonTargets.MasterClient, _temp);
+            }
         }
 	}
 
     public void takeDamage(float _value)
     {
         CurHp -= _value;
+        tempPow = (GameObject)PhotonNetwork.Instantiate("powEffect", this.gameObject.transform.position, Quaternion.identity, 0);
+        timer = 2;
+        run = true;
     }
 }
