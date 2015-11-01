@@ -5,7 +5,7 @@ public class HitBox : MonoBehaviour {
 
     private float MaxDamage;
     public bool blocked, mob, limb;
-    public GameObject MobHealth;
+    public GameObject MobHealth, damageResponse;
 
 	void Start () {
         if (!PhotonNetwork.isMasterClient)
@@ -38,6 +38,10 @@ public class HitBox : MonoBehaviour {
         if (mob)
         {
             MobHealth.GetComponent<MobHealth>().takeDamage(_value);
+            
+            damageResponse = (GameObject)PhotonNetwork.Instantiate("powEffect", this.gameObject.transform.position, Quaternion.identity, 0);
+            //damageResponse.gameObject.transform.parent = this.gameObject.transform;
+                
         }
         else
         {

@@ -159,6 +159,7 @@
      <Compile Include="Assets\Prefabs\InventoryPackage\InventoryControllerScript.cs" />
      <Compile Include="Assets\Scripts\Character Controller\PlayerWeapon.cs" />
      <Compile Include="Assets\Scripts\Character Controller\Swing.cs" />
+     <Compile Include="Assets\Scripts\DestroyInFiveSeconds.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\FriendWeb\FriendClass.cs" />
      <Compile Include="Assets\Scripts\FriendWeb\FriendDatabase.cs" />
