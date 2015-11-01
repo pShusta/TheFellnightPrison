@@ -629,15 +629,73 @@ public class Database : MonoBehaviour{
                 {
                     MySqlCommand _cmd = _masterConnect.CreateCommand();
 
-                    string cmdText = "UPDATE users.skills SET OneHandSword = " + _p2.OneHandedSword + " AND Gathering = " + _p2.Gathering + " WHERE username = " + _p2.Username + ";";
+                    string cmdText = "UPDATE users.skills SET OneHandSword = " + _p2.OneHandedSword + " AND Gathering = " + _p2.Gathering + " WHERE username = '" + _p2.Username + "';";
                     _cmd.CommandText = cmdText;
                     _cmd.ExecuteNonQuery();
 
-                    cmdText = "UPDATE users.basestats SET Str = " + _p2.Str + " AND Agi = " + _p2.Agi + " AND Con = " + _p2.Con + " AND Intel = " + _p2.Intel + " AND Luck = " + _p2.Luck + " WHERE username = " + _p2.Username + ";";
+                    cmdText = "UPDATE users.basestats SET Str = " + _p2.Str + " AND Agi = " + _p2.Agi + " AND Con = " + _p2.Con + " AND Intel = " + _p2.Intel + " AND Luck = " + _p2.Luck + " WHERE username = '" + _p2.Username + "';";
                     _cmd.CommandText = cmdText;
                     _cmd.ExecuteNonQuery();
                     break;
                 }
             }
+    }
+
+    public void gainItem(PhotonPlayer _player, double itemId)
+    {
+        gainItemDo(_player, itemId);
+    }
+
+    public static void gainItemDo(PhotonPlayer _player, double itemId)
+    {
+        string _fill = "', '";
+        string values = "('" + itemId + _fill + "'Weapons'" + _fill + "1" + _fill + "0" + "')";
+        string locations = "(Item, Type, Quantity, Equiped)";
+        string cmdString = "INSERT INTO users." + _player.name + "items " + locations + " VALUES" + values;
+
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = cmdString;
+        _cmd.ExecuteNonQuery();
+
+        Weapon itemGained = ReadWeaponDb((int)itemId);
+
+        GameObject.FindWithTag("GameController").GetComponent<ControllerV2>().view.RPC("RecieveWeapon", PhotonTargets.MasterClient,
+                                            _player,
+                                            itemGained.Id.ToString(),
+                                            itemGained.Name,
+                                            itemGained.GetDmgType().ToString(),
+                                            itemGained.GetPhysDmgAmt().ToString(),
+                                            itemGained.GetEleDmgType().ToString(),
+                                            itemGained.GetEleDmgAmt().ToString(),
+                                            itemGained.GetRange().ToString(),
+                                            itemGained.GetDura().ToString(),
+                                            itemGained.GetWeight().ToString(),
+                                            false
+                                     );
+        GameObject.FindWithTag("GameController").GetComponent<ControllerV2>().view.RPC("RecieveWeapon", _player,
+                                            itemGained.Id.ToString(),
+                                            itemGained.Name,
+                                            itemGained.GetDmgType().ToString(),
+                                            itemGained.GetPhysDmgAmt().ToString(),
+                                            itemGained.GetEleDmgType().ToString(),
+                                            itemGained.GetEleDmgAmt().ToString(),
+                                            itemGained.GetRange().ToString(),
+                                            itemGained.GetDura().ToString(),
+                                            itemGained.GetWeight().ToString(),
+                                            false
+                                     );
+    }
+
+    public void gainExp(PhotonPlayer _player, int _expGain, int _curXp)
+    {
+        gainExpGo(_player, _expGain, _curXp);
+    }
+
+    public static void gainExpGo(PhotonPlayer _player, int _expGain, int curExp)
+    {
+        string cmdString = "UPDATE users.skills  SET OneHandSword = " + (curExp + _expGain) + " WHERE username = '" + _player.name + "';";
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = cmdString;
+        _cmd.ExecuteNonQuery();
     }
 }

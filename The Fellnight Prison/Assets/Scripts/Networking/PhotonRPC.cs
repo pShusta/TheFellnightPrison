@@ -109,6 +109,26 @@ public class PhotonRPC : MonoBehaviour {
     }
 
     [PunRPC]
+    void RecieveWeapon(PhotonPlayer _player, string id, string wName, string dmgtype, string dmgamt, string edmgtype, string edmgamt, string range, string dura, string weight, bool _equiped)
+    {
+        Debug.Log("Recieve Weapon");
+        Weapon _temp = new Weapon(Convert.ToInt32(id), wName, PublicDataTypes.ToDmgType(dmgtype), Convert.ToInt32(dmgamt), PublicDataTypes.ToEleDmgType(edmgtype), Convert.ToInt32(edmgamt), Convert.ToInt32(range), Convert.ToInt32(dura), Convert.ToInt32(weight));
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        foreach (Player _p in controller.GetComponent<ControllerV2>().carryData.players)
+        {
+            if (_p.Username == _player.name)
+            {
+                _p.InvWeapons.Add(_temp);
+                if (_equiped)
+                    _p.Equiped = _temp;
+            }
+        }
+        //controller.GetComponent<ControllerV2>().carryData.player.InvWeapons.Add(_temp);
+        //if (_equiped)
+        //    controller.GetComponent<ControllerV2>().carryData.player.Equiped = _temp;
+    }
+
+    [PunRPC]
     void RecieveMaterial(string id, string name, string dura, string weight)
     {
         Debug.Log("Recieve Material");

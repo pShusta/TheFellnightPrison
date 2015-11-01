@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MobHealth : MonoBehaviour {
 
-    public int MaxHp;
+    public int MaxHp, expValue;
     public float CurHp;
     private float timer;
     private bool run = false;
@@ -40,7 +40,8 @@ public class MobHealth : MonoBehaviour {
                 {
                     _temp = false;
                 }
-                this.gameObject.GetComponent<PhotonView>().RPC("mobKill", PhotonTargets.MasterClient, _temp);
+                //int money
+                GameObject.FindWithTag("GameController").GetComponent<PhotonView>().RPC("mobKill", PhotonTargets.MasterClient, _temp, expValue);
             }
         }
 	}
