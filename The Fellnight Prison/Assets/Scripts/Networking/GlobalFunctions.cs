@@ -5,25 +5,11 @@ public class GlobalFunctions :  MonoBehaviour{
 
 	private bool _ready = false;
     private bool _connection = false;
-    //public GameObject[] Spawns;
 
 
     public void Start()
     {
-        //if (!PhotonNetwork.connected) { PhotonNetwork.ConnectUsingSettings("V0.0"); }
     }
-
-    public void Update()
-    {
-
-    }
-
-	public void SpawnPlayer(){
-        //GameObject.FindGameObjectWithTag("Spawnpoint").transform.position
-
-		//GameObject _player = PhotonNetwork.Instantiate("TempPlayer",  , Quaternion.identity, 0);
-		//if(_player.GetPhotonView().isMine) { _player.SetActive(true); }
-	}
 
     public bool PhotonConnection()
     {
@@ -71,13 +57,11 @@ public class GlobalFunctions :  MonoBehaviour{
 	void OnJoinedLobby(){
 		Debug.Log("OnJoinedLobby");
         PhotonNetwork.JoinRoom("FillerRoom-");
-        // + Random.Range(1, 100000)
 	}
 	
 	void OnPhotonJoinRoomFailed(){
 		Debug.Log ("OnJoinRoomFailed");
 		PhotonNetwork.CreateRoom("FillerRoom-");
-        // + Random.Range(1, 100000)
 	}
 	
 	void OnPhotonCreateRoomFailed(){

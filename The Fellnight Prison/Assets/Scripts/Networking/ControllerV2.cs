@@ -14,16 +14,12 @@ public class ControllerV2 : MonoBehaviour {
 
     private bool initLoad, _create, UsernameAvailable;
 
-	// Use this for initialization
 	void Start () {
         _carryDataObj = GameObject.FindWithTag("CarryData");
         _create = false;
         if (_carryDataObj != null)
         {
             carryData = GameObject.FindWithTag("CarryData").GetComponent<CarryData>();
-            //view = PhotonNetwork.Instantiate("playerTest", Vector3.zero, Quaternion.identity, 0).GetComponent<PhotonView>();
-            //rpc = view.GetComponent<PhotonRPC>();
-            //AutoLogin();
         }
         else
         {
@@ -60,6 +56,8 @@ public class ControllerV2 : MonoBehaviour {
         loginButton.GetComponent<Button>().interactable = false;
         if (!PhotonNetwork.connected)
         {
+            if (loginPanelUsername.GetComponent<InputField>().text == "Master" && loginPanelPassword.GetComponent<InputField>().text == "")
+                this.gameObject.GetComponent<NetworkV2>().setAsMaster();
             this.gameObject.GetComponent<NetworkV2>().PhotonConnect();
             UsernameAvailable = false;
         }
@@ -81,7 +79,6 @@ public class ControllerV2 : MonoBehaviour {
             if (carryData.username == "Master" && carryData.password == "")
             {
                 loginPanel.SetActive(false);
-                //masterConnectPanel.SetActive(true);
                 carryData.username = "Master";
                 carryData.password = "";
                 this.gameObject.GetComponent<Database>().MasterConnect();
@@ -101,7 +98,6 @@ public class ControllerV2 : MonoBehaviour {
             loginPanel.SetActive(false);
             carryData.username = "Master";
             carryData.password = "";
-            //masterConnectPanel.SetActive(true);
             this.gameObject.GetComponent<Database>().MasterConnect();
         }
         else

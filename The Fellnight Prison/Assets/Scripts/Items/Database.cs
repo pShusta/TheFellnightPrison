@@ -122,7 +122,6 @@ public class Database : MonoBehaviour{
                                                       Convert.ToInt32(_reader["Durability"].ToString()),
                                                       Convert.ToInt32(_reader["Weight"].ToString())));
                     }
-                    //Debug.Log(_reader["id" + t].ToString());
                 }
                 _reader.Close();
             }
@@ -143,6 +142,111 @@ public class Database : MonoBehaviour{
                     _p.InvWeapons.Add(_w);
                 }
                 _p.Equiped = Equip;
+                break;
+            }
+        }
+    }
+
+    public void MasterGetInventory(string _username)
+    {
+        Debug.Log("Database.GetInventory();");
+        List<int> _ids = new List<int>();
+        List<string> _types = new List<string>();
+        string[] _ty = new string[] { "Weapons", "Materials" };
+        List<Weapon> Weapons = new List<Weapon>();
+        List<CraftingMaterial> Mats = new List<CraftingMaterial>();
+        string equip = "";
+        Weapon Equip = null;
+
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = "SELECT * FROM users." + _username + "Items;";
+        MySqlDataReader _reader = _cmd.ExecuteReader();
+        while (_reader.Read())
+        {
+            _ids.Add(Convert.ToInt32(_reader["Item"].ToString()));
+            _types.Add(_reader["Type"].ToString());
+            if (_reader["Equiped"].ToString() == "1")
+            {
+                equip = _reader["Item"].ToString();
+            }
+        }
+        _reader.Close();
+        string _c = "";
+        foreach (string t in _ty)
+        {
+            for (int i = 0; i < _ids.Count; i++)
+            {
+                if (_types[i] == t)
+                {
+                    if (_c != "")
+                    {
+                        _c += " OR id" + t + " = " + _ids[i];
+                    }
+                    else
+                    {
+                        _c += " id" + t + " = " + _ids[i];
+                    }
+                }
+            }
+            Debug.Log("SELECT * FROM thefellnightprison." + t + " WHERE " + _c + ";");
+            _cmd.CommandText = "SELECT * FROM thefellnightprison." + t + " WHERE " + _c + ";";
+            if (_c != "")
+            {
+                try
+                {
+                    _reader.Close();
+                }
+                catch
+                {
+
+                }
+                _reader = _cmd.ExecuteReader();
+                while (_reader.Read())
+                {
+                    if (t == "Weapons")
+                    {
+                        Weapon temp = new Weapon(Convert.ToInt32(_reader["idWeapons"].ToString()),
+                                                  _reader["WeaponName"].ToString(),
+                                                  PublicDataTypes.ToDmgType(_reader["DmgType"].ToString()),
+                                                  Convert.ToInt32(_reader["DmgAmt"].ToString()),
+                                                  PublicDataTypes.ToEleDmgType(_reader["EleDmgType"].ToString()),
+                                                  Convert.ToInt32(_reader["EleDmgAmt"].ToString()),
+                                                  Convert.ToInt32(_reader["WeaponRange"].ToString()),
+                                                  Convert.ToInt32(_reader["Durability"].ToString()),
+                                                  Convert.ToInt32(_reader["Weight"].ToString()));
+                        Weapons.Add(temp);
+                        if (_reader["idWeapons"].ToString() == equip)
+                        {
+                            Equip = temp;
+                        }
+                    }
+                    else if (t == "Materials")
+                    {
+                        Mats.Add(new CraftingMaterial(Convert.ToInt32(_reader["idMaterials"].ToString()),
+                                                      _reader["MaterialName"].ToString(),
+                                                      Convert.ToInt32(_reader["Durability"].ToString()),
+                                                      Convert.ToInt32(_reader["Weight"].ToString())));
+                    }
+                }
+                _reader.Close();
+            }
+            _c = "";
+        }
+        Debug.Log("Calling InvFilled");
+        foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+        {
+            if (_p.Username == _username)
+            {
+                foreach (CraftingMaterial _m in Mats)
+                {
+                    _p.InvMaterials.Add(_m);
+                }
+                foreach (Weapon _w in Weapons)
+                {
+                    _p.InvWeapons.Add(_w);
+                }
+                _p.Equiped = Equip;
+                Debug.Log("Setting Equiped: " + _p.Equiped.Name);
                 break;
             }
         }
@@ -180,8 +284,6 @@ public class Database : MonoBehaviour{
         }
         _reader.Close();
         Player _p = new Player(_username, _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1]);
-        //if GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players contains the player, remove it, thenadd it back in
-        //     this will insure that the most up to date version is available
         foreach (Player _play in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
         {
             if (_play.Username == _p.Username)
@@ -193,6 +295,49 @@ public class Database : MonoBehaviour{
         GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players.Add(_p);
         int[] _stats = new int[] { _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1] };
         return _stats;
+    }
+
+    public void MasterGeneratePlayerCore(string _username)
+    {
+        MySqlCommand _cmd = _masterConnect.CreateCommand();
+        _cmd.CommandText = "SELECT * FROM users.basestats Where username = '" + _username + "'";
+        MySqlDataReader _reader = _cmd.ExecuteReader();
+        _reader.Read();
+        int[] _stats1;
+        if (_reader.HasRows)
+        {
+            _stats1 = new int[] {Convert.ToInt32(_reader["Str"].ToString()), 
+                                  Convert.ToInt32(_reader["Agi"].ToString()), 
+                                  Convert.ToInt32(_reader["Con"].ToString()), 
+                                  Convert.ToInt32(_reader["Intel"].ToString()), 
+                                  Convert.ToInt32(_reader["Luck"].ToString())};
+            _reader.Close();
+            _cmd.CommandText = "SELECT * FROM users.skills Where username = '" + _username + "'";
+            _reader = _cmd.ExecuteReader();
+            _reader.Read();
+            int[] _stats2 = new int[] { };
+            if (_reader.HasRows)
+            {
+                _stats2 = new int[] {Convert.ToInt32(_reader["OneHandSword"].ToString()), 
+                                  Convert.ToInt32(_reader["Gathering"].ToString())};
+            }
+            _reader.Close();
+            Player _p = new Player(_username, _stats1[0], _stats1[1], _stats1[2], _stats1[3], _stats1[4], _stats2[0], _stats2[1]);
+            foreach (Player _play in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
+            {
+                if (_play.Username == _p.Username)
+                {
+                    GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players.Remove(_play);
+                    break;
+                }
+            }
+            GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players.Add(_p);
+        }
+        else
+        {
+            _reader.Close();
+        }
+        
     }
 
     public bool CheckUsername(string _username)
@@ -238,8 +383,6 @@ public class Database : MonoBehaviour{
         _cmd.CommandText = "SELECT * FROM users.usernamepassword Where username = '" + _username + "'";
         MySqlDataReader _reader = _cmd.ExecuteReader();
         _reader.Read();
-        //_reader.Read();
-        //Debug.Log("_reader['Passcode'] == " + _reader["Passcode"]);
         if (_reader["Passcode"].ToString() == _password.ToString())
         {
             _reader.Close();
@@ -263,12 +406,9 @@ public class Database : MonoBehaviour{
         _masterConnect = new MySqlConnection(source);
         _masterConnect.Open();
         Debug.Log("Connection Succesful");
-        //GameObject.FindWithTag("CarryData").GetComponent<CarryData>().ready = true;
         PhotonNetwork.Instantiate("GM", GameObject.FindGameObjectWithTag("Spawnpoint").transform.position, Quaternion.identity, 0);
         GameObject.FindWithTag("MenuController").GetComponent<MenuController>().setClear(true);
-        //Inventory.SetActive(true);
         this.gameObject.GetComponent<ControllerV2>().CloseMasterLogin();
-        //Application.LoadLevel("Tavern");
     }
 
     public static  Weapon ReadWeaponDb(int id)
@@ -294,11 +434,6 @@ public class Database : MonoBehaviour{
 
     public static int WeaponDbInsert(Weapon _weap)
     {
-        //string source = "Server=" + serverIP + ";Database=" + database + ";Uid=" + Uid + ";Pwd=" + Pwd + ";";
-        //MySqlConnection _connect = new MySqlConnection(source);
-        //_connect.Open();
-
-        //name, range, DmgType, EleDmgType, DmgAmt, EleDmgAmt, WeapType, Durability, Weight
         string _fill = "', '";
         string _name, _dmgt, _elet, _weapt;
         int _range, _dmga, _elea, _dura, _wght;
@@ -316,8 +451,6 @@ public class Database : MonoBehaviour{
         string locations = "(WeaponName, WeaponRange, EleDmgType, DmgType, EleDmgAmt, DmgAmt, WeapType, Durability, Weight)";
         string cmdText = "INSERT INTO weapons " + locations + " VALUES" + values;
         
-        //  "UPDATE users." + username + "items SET Equiped = " + value + " WHERE Type = 'Weapons' AND Item = " + id + ";";
-
         MySqlCommand _cmd = _masterConnect.CreateCommand();
         _cmd.CommandText = cmdText;
         _cmd.ExecuteNonQuery();
@@ -343,11 +476,6 @@ public class Database : MonoBehaviour{
 
     public static int MaterialDbInsert(CraftingMaterial _weap)
     {
-        //string source = "Server=" + serverIP + ";Database=" + database + ";Uid=" + Uid + ";Pwd=" + Pwd + ";";
-        //MySqlConnection _connect = new MySqlConnection(source);
-        //_connect.Open();
-
-        //name, range, DmgType, EleDmgType, DmgAmt, EleDmgAmt, WeapType, Durability, Weight
         string _fill = "', '";
         string _name;
         int _dura, _wght;
@@ -391,11 +519,6 @@ public class Database : MonoBehaviour{
                                  );
         _reader.Close();
         return _mat;
-    }
-
-    public List<Player> getPlayers()
-    {
-        return GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players;
     }
 
     public void updateWeaponEquiped(double _weap, double _weap2, string username)

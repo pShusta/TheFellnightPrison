@@ -4,7 +4,6 @@ using System.Collections;
 public class MainController : MonoBehaviour {
     public GameObject[] Spawns;
 
-	// Use this for initialization
 	void Start () {
         if (PhotonNetwork.isMasterClient) { 
             LaunchGenerator();
@@ -14,21 +13,13 @@ public class MainController : MonoBehaviour {
     public void LaunchGenerator()
     {
         Debug.Log("LaunchGenerator()");
-        //this.gameObject.GetComponent<NewRandRoom>().enabled = true;
-        if(PhotonNetwork.isMasterClient)
-            this.gameObject.GetComponent<NewRandRoom>().enabled = true;
+        this.gameObject.GetComponent<NewRandRoom>().enabled = true;
     }
 
     public void FinishGenerator()
     {
         this.gameObject.GetComponent<PhotonView>().RPC("SpawnPlayer", PhotonTargets.All);
-        //this.gameObject.GetComponent<GlobalFunctions>().SpawnPlayer();
     }
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public void quitButton()
     {

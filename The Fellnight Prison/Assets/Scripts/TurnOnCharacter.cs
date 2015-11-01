@@ -16,10 +16,6 @@ public class TurnOnCharacter : MonoBehaviour {
         {
             this.gameObject.GetComponentInChildren<Camera>().enabled = true;
             this.gameObject.GetComponentInChildren<AudioListener>().enabled = true;
-            if(GM)
-                foreach(PhotonPlayer _player in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().playersView){
-                    GameObject.FindWithTag("GameController").GetComponent<Database>().GeneratePlayerCore(_player.name, _player);
-                }
             script.enabled = true;
             go = false;
         }

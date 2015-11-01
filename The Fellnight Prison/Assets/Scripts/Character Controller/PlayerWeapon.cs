@@ -8,7 +8,6 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject weapon;
     private BoxCollider sword;
 
-    // Use this for initialization
     void Start()
     {
         if (PhotonNetwork.isMasterClient)
@@ -23,26 +22,27 @@ public class PlayerWeapon : MonoBehaviour
 
 
     }
+
     void OnTriggerEnter(Collider other)
     {
         this.gameObject.GetComponent<Collider>().enabled = false;
         Weapon equiped;
         int _dmg = 0;
         Debug.Log("You hit: " + other.gameObject.name);
+        Debug.Log("myView.owner.name: " + myView.owner.name);
+        Debug.Log("carryData.players.count: " + GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players.Count);
         foreach (Player _p in GameObject.FindWithTag("CarryData").GetComponent<CarryData>().players)
         {
+            Debug.Log("CarryData.players.Username: " + _p.Username);
             if (_p.Username == myView.owner.name)
             {
                 equiped = _p.Equiped;
+                Debug.Log("_p.Equiped: " + _p.Equiped + " _p.Equiped.Name: " + _p.Equiped.Name);
                 _dmg = equiped.GetPhysDmgAmt();
                 Debug.Log("Setting _dmg: " + _dmg);
-                //temporary for alpha, set to flat 5
-                //_dmg = 5;
-                //get weapon
             }
         }
-                
-        //other.gameObject.GetComponent<HitBox>().takeDamage(_dmg);
+        
         MonoBehaviour _script = other.gameObject.GetComponent<HitBox>();
         if (_script != null)
         {
@@ -52,12 +52,5 @@ public class PlayerWeapon : MonoBehaviour
         {
             Debug.Log("Immortal Object");
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

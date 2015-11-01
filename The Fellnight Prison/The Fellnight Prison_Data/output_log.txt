@@ -39,19 +39,129 @@ Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\T
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\BehaviorDesignerRuntime.dll (this message is harmless)
 Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\BehaviorDesignerRuntime.dll into Unity Child Domain
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.150 seconds
+- Completed reload, in  0.163 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 17c8 -> priority: 1 
+PhotonConnect
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Configuration.dll (this message is harmless)
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Xml.dll (this message is harmless)
+Connected to Photon Server
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnConnectedToMaster()
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnJoinedLobby
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnRecievedRoomListUpdate
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Set numRooms to 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnCreatedRoom
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnJoinedRoom: Room: 'FellnightPrisonLobby' visible,open 1/20 players.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Transactions.dll (this message is harmless)
+Connection Succesful
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ControllerV2.CloseMasterLogin()
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
 NullReferenceException: Object reference not set to an instance of an object
-  at Controller.Start () [0x00000] in <filename unknown>:0 
+  at NetworkMotion.OnPhotonSerializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlagIsitialize engi inversiot: r, Syst1 (44735eation.Bin61b3)
+inGfxDevice: creatin[] parameters, System.elobalizaation.
+CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (ExitGames.Client.Photon.Hashtable data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 7800 Series (ID=0x6818)
+    Vendor:   ATI
+    VRAM:     2026 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.dll (this message is harmless)
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.West.dll (this message is harmless)
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.West.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\I18N.West.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\MySql.Data.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\MySql.Data.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Data.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Data.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Drawing.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Drawing.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.JsonFx.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\Pathfinding.JsonFx.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\BehaviorDesignerRuntime.dll (this message is harmless)
+Loading C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\BehaviorDesignerRuntime.dll into Unity Child Domain
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.324 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 21f0 -> priority: 1 
+  Thread -> id: ec8 -> priority: 1 
+PhotonConnect
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Configuration.dll (this message is harmless)
 Platform assembly: C:\Users\Phil\Documents\GitHub\TheFellnightPrison\The Fellnight Prison\The Fellnight Prison_Data\Managed\System.Xml.dll (this message is harmless)
 Connected to Photon Server
@@ -78,7 +188,45 @@ Connecting as non-Master client
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-OnJoinedRoom: Room: 'FellnightPrisonLobby' visible,open 2/20 players.
+OnJoinedRoom: Room: 'FellnightPrisonLobby' visible,open 3/20 players.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+You hit: SHIELD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerWeapon.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+You hit: SHIELD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerWeapon.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+GetInventory();
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Database.GetInventory();
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+SELECT * FROM thefellnightprison.Weapons WHERE  idWeapons = 1 OR idWeapons = 2 OR idWeapons = 3 OR idWeapons = 4 OR idWeapons = 5 OR idWeapons = 7 OR idWeapons = 8 OR idWeapons = 9 OR idWeapons = 10 OR idWeapons = 11 OR idWeapons = 12 OR idWeapons = 13 OR idWeapons = 14 OR idWeapons = 15 OR idWeapons = 16 OR idWeapons = 17 OR idWeapons = 18 OR idWeapons = 19 OR idWeapons = 20 OR idWeapons = 21 OR idWeapons = 22 OR idWeapons = 23 OR idWeapons = 24;
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+SELECT * FROM thefellnightprison.Materials WHERE ;
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Calling InvFilled
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
@@ -174,47 +322,46 @@ Recieve Weapon
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-You hit: default
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkMotion.OnPhotonSerializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.SerializeComponent (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.SerializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeWrite (.PhotonView view) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.RunViewUpdate () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkMotion.OnPhotonSerializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (ExitGames.Client.Photon.Hashtable data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Found Owner
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Immortal Object
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-You hit: default
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Immortal Object
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Called Inventory
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Called Main Menu
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Called Main Menu
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-You hit: default
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Immortal Object
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-You hit: default
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Immortal Object
+Setting Health for: Merick
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
@@ -222,15 +369,290 @@ Called Social menu
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Called Social menu
+loadDungeonButton
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-You hit: default
+PhotonView with ID 3001 has no method "savePlayers" marked with the [PunRPC](C#) or @PunRPC(JS) property! Args: PhotonPlayer
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnConnectedToMaster()
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnJoinedLobby
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnRecievedRoomListUpdate
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Set numRooms to 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnJoinedRoom: Room: 'FellnightPrisonMerick' visible,open 2/7 players.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ControllerV2.ConnectionSuccesful().carryData.ready
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ControllerV2.ConnectionSuccesful().carryData.ready.else
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+You hit: SHIELD
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerWeapon.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1649)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 38.132851 ms
+
+Unloading 140 unused Assets to reduce memory usage. Loaded Objects now: 3931.
+Total: 12.487201 ms (FindLiveObjects: 0.253733 ms CreateObjectMapping: 0.183333 ms MarkObjects: 6.800445 ms  DeleteObjects: 5.241867 ms)
+
+QueueIncomingReliableWarning. This client buffers many incoming messages. This is OK temporarily. With lots of these warnings, check if you send too much or execute messages too slow. 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+QueueIncomingReliableWarning. This client buffers many incoming messages. This is OK temporarily. With lots of these warnings, check if you send too much or execute messages too slow. 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1020. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1021. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1022. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1023. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1024. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1025. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1026. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1027. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1028. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1029. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1030. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1031. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Received OnSerialization for view ID 1032. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1699 on Room4(Clone) 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1700 on arch.006 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1701 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1702 on arch.003 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1703 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1704 on arch.008 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1705 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1706 on arch.005 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1707 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1708 on arch.001 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1709 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1710 on arch.007 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1712 on arch.010 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1713 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1714 on arch.004 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1715 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1716 on arch.000 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1876 on arch.005 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1877 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1878 on arch.002 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1879 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1880 on arch.003 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1881 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1882 on arch.004 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1883 on Wall 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1884 on Room2(Clone) 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1885 on arch.000 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkMotion.OnPhotonSerializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (ExitGames.Client.Photon.Hashtable data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+You hit: Bip01 L Calf
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerWeapon.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+You hit: arch.007
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+myView.owner.name: Merick
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+carryData.players.count: 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
 Immortal Object
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+You hit: arch.007
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+myView.owner.name: Merick
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+carryData.players.count: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Immortal Object
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OnDisconnectedFromPhoton()
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 

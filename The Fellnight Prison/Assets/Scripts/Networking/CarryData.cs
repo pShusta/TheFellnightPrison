@@ -7,12 +7,13 @@ public class CarryData : MonoBehaviour {
     public Player player;
     public string username, password;
     public string destination;
-    public List<Player> players = new List<Player>();
-    public PhotonPlayer[] playersView = new PhotonPlayer[0];
+    public List<Player> players;
+    public PhotonPlayer[] playersView;
     public bool ready = false;
 
-	// Use this for initialization
 	void Start () {
+        players = new List<Player>();
+        playersView = new PhotonPlayer[0];
         DontDestroyOnLoad(this.gameObject);
 	}
 }

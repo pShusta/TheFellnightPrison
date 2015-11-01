@@ -22,17 +22,8 @@ public class Controller : MonoBehaviour {
 	void Start () {
         _create = false;
         okay = true;
-        carryData = GameObject.FindGameObjectWithTag("CarryData").GetComponent<CarryData>();
+        carryData = GameObject.FindWithTag("CarryData").GetComponent<CarryData>();
 	}
-	
-	void Update () {
-        
-	}
-
-    public void takeDamage()
-    {
-
-    }
 
     public GameObject getCurMenu()
     {
@@ -83,7 +74,6 @@ public class Controller : MonoBehaviour {
         else
         {
             CreateInputs[3].GetComponent<Text>().text = "Passwords do not match";
-            //passwords do not match
         }
     }
 
@@ -95,12 +85,10 @@ public class Controller : MonoBehaviour {
             UsernameAvailable = true;
             CreateInputs[3].GetComponent<Text>().text = "Username Available";
             CreateInputs[0].GetComponentInParent<InputField>().interactable = false;
-            //Good Name
         }
         else
         {
             CreateInputs[3].GetComponent<Text>().text = "Username Not Available";
-            //Bad Name
         }
     }
 
@@ -119,7 +107,6 @@ public class Controller : MonoBehaviour {
     public void ConnectionSuccesful()
     {
 
-        //<---------------------------
         if (!set)
         {
             username = _loginInputs[0].GetComponent<Text>().text;
@@ -168,7 +155,6 @@ public class Controller : MonoBehaviour {
             {
                 LoginPanel.SetActive(false);
                 MasterConnectPanel.SetActive(true);
-                //this.gameObject.GetComponent<Database>().MasterConnect();
             }
             else
             {
@@ -183,7 +169,6 @@ public class Controller : MonoBehaviour {
         Debug.Log("Recieved reply RPC");
         if (_result)
         {
-            //Login Succesful
             try
             {
                 SuccessOrFail[0].SetActive(true);
@@ -199,7 +184,6 @@ public class Controller : MonoBehaviour {
         }
         else
         {
-            //Login Fail
             SuccessOrFail[1].SetActive(true);
             LoginButton.GetComponent<Button>().interactable = true;
         }
@@ -212,7 +196,6 @@ public class Controller : MonoBehaviour {
     }
 
     public void CoreReturn(int[] _stats){
-        //Recieved Core stats for player
         _player = new Player(username.ToString(), _stats[0], _stats[1], _stats[2], _stats[3], _stats[4], _stats[5], _stats[6]);
         SuccessOrFail[0].GetComponent<Text>().text = "Player Loaded";
         myPhotonView.owner.name = _player.Username;

@@ -6,7 +6,7 @@ public class HitBox : MonoBehaviour {
     private float MaxDamage;
     public bool blocked, mob, limb;
     public GameObject MobHealth;
-	// Use this for initialization
+
 	void Start () {
         if (!PhotonNetwork.isMasterClient)
         {
@@ -14,7 +14,6 @@ public class HitBox : MonoBehaviour {
         }
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (limb)
         {

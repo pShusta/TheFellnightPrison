@@ -14,10 +14,8 @@ public class SocialScreen : MonoBehaviour {
 
     void Start()
     {
-        //Debug.Log("PhotonNetwork.player in SocialScreen.Start()" + PhotonNetwork.player);
-        //CurrentParty = new Party(PhotonNetwork.player);
     }
-    // Use this for initialization
+
 	void OnEnable () {
         if (CurrentParty == null)
         {
@@ -38,7 +36,6 @@ public class SocialScreen : MonoBehaviour {
         }
         foreach (PhotonPlayer _player in ConnectedPlayers)
         {
-            //Debug.Log("Name: " + _player.name);
             if (_player.name != "" && _player.name != PhotonNetwork.player.name)
             {
                 nonGmPlayers[counter] = _player;
@@ -55,7 +52,6 @@ public class SocialScreen : MonoBehaviour {
         updateCurrentPartyUi();
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (timer != null)
         {
@@ -81,7 +77,6 @@ public class SocialScreen : MonoBehaviour {
         }
         foreach (PhotonPlayer _player in ConnectedPlayers)
         {
-            //Debug.Log("Name: " + _player.name);
             if (_player.name != "" && _player.name != PhotonNetwork.player.name)
             {
                 nonGmPlayers[counter] = _player;
@@ -125,7 +120,6 @@ public class SocialScreen : MonoBehaviour {
     public void loadDungeonButton()
     {
         Debug.Log("loadDungeonButton");
-        //request master to host room
         string roomName = "FellnightPrison" + CurrentParty.Members[0].name;
         PhotonPlayer[] _players = new PhotonPlayer[CurrentParty.Members.Count];
         for (int i = 0; i < CurrentParty.Members.Count; i++)
@@ -137,8 +131,6 @@ public class SocialScreen : MonoBehaviour {
 
         GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().view.RPC("gmHostDungeon", GmPlayers[0], roomName, _players);
         wait(3);
-        //wait for three second, allowing master to ready room
-        //call rpc on all PhotonPlayer in CurrentParty, go reverse order so owner leaves last, have them leave room and join the room the master preped
     }
 
     void launchDungeon()
@@ -163,7 +155,6 @@ public class SocialScreen : MonoBehaviour {
     public void kickPlayerButton(int _playerNum)
     {
         PhotonPlayer poorKid = CurrentParty.Members[_playerNum];
-        //Debug.Log("kickPlayerButton: " + _playerNum);
         foreach (PhotonPlayer _player in CurrentParty.Members)
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllerV2>().playerToon.GetComponent<PhotonView>().RPC("kickPlayer", _player, poorKid);

@@ -6,23 +6,12 @@ public class PhotonRPC : MonoBehaviour {
 
     public PhotonView myPhotonView;
 
-	// Use this for initialization
 	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
     public void Login(string[] loginInfo)
     {
-        //myPhotonView = this.gameObject.GetComponent<PhotonView>();
-        
-        //Pair creds = new Pair(loginInfo, myPhotonView.owner);
-        //Debug.Log("Sending RPC");
         myPhotonView = this.gameObject.GetComponent<PhotonView>();
-        //Debug.Log("PhotonPlayer: " + myPhotonView.owner);
         myPhotonView.RPC("DbLogin", PhotonTargets.MasterClient, loginInfo, myPhotonView.owner);
     }
 
@@ -139,13 +128,11 @@ public class PhotonRPC : MonoBehaviour {
     void SoloRoom()
     {
         PhotonNetwork.room.open = false;
-        //PhotonNetwork.room.visible = false;
     }
 
     [PunRPC]
     void LoadDungeonLevel()
     {
-        //PhotonNetwork.automaticallySyncScene = true;
         PhotonNetwork.LoadLevel(1);
     }
 
