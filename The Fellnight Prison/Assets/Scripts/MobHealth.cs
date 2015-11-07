@@ -8,6 +8,7 @@ public class MobHealth : MonoBehaviour {
     private float timer;
     private bool run = false;
     private GameObject tempPow;
+    public GameObject generator = null;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,11 @@ public class MobHealth : MonoBehaviour {
         {
             if (PhotonNetwork.isMasterClient)
             {
+                if (generator != null)
+                {
+                    generator.GetComponent<MobGenerator>().RemoveMob(this.gameObject);
+                }
+
                 PhotonNetwork.Destroy(this.gameObject);
                 int temp = Random.Range(0, 100);
                 bool _temp;
@@ -52,5 +58,10 @@ public class MobHealth : MonoBehaviour {
         tempPow = (GameObject)PhotonNetwork.Instantiate("powEffect", this.gameObject.transform.position, Quaternion.identity, 0);
         timer = 2;
         run = true;
+    }
+
+    public void setGenerator(GameObject _generator)
+    {
+        generator = _generator;
     }
 }

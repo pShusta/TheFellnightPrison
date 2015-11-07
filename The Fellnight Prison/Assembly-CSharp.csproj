@@ -193,6 +193,7 @@
      <Compile Include="Assets\Scripts\MainController.cs" />
      <Compile Include="Assets\Scripts\MakeMap.cs" />
      <Compile Include="Assets\Scripts\MasterPlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\MobGenerator.cs" />
      <Compile Include="Assets\Scripts\MobHealth.cs" />
      <Compile Include="Assets\Scripts\NavMeshScript.cs" />
      <Compile Include="Assets\Scripts\Networking\CarryData.cs" />

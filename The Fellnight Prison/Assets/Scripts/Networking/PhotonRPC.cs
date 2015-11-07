@@ -182,4 +182,16 @@ public class PhotonRPC : MonoBehaviour {
     {
         GameObject.FindWithTag("GameController").GetComponent<Database>().updateWeaponEquiped(_w, _w2, username);
     }
+
+    [PunRPC]
+    void gainExp(int expGain)
+    {
+        GameObject.FindWithTag("MenuController").GetComponent<MenuController>().gainedExp(expGain);
+    }
+
+    [PunRPC]
+    void gainedItem(string _name)
+    {
+        GameObject.FindWithTag("MenuController").GetComponent<MenuController>().gainedItem(_name);
+    }
 }

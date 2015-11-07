@@ -129,6 +129,20 @@ public class NetworkV2 : MonoBehaviour
         }
     }
 
+    void OnPhotonPlayerConnected(PhotonPlayer _new)
+    {
+        for (int i = 0; i < GameObject.FindWithTag("CarryData").GetComponent<CarryData>().playersView.Length; i++)
+        {
+            if (GameObject.FindWithTag("CarryData").GetComponent<CarryData>().playersView[i].name == _new.name)
+            {
+                Debug.Log("Found duplicate entry in playersView");
+                GameObject.FindWithTag("CarryData").GetComponent<CarryData>().playersView[i] = _new;
+                return;
+            }
+        }
+        Debug.Log("Duplicate was not found in playersView");
+    }
+
     void OnJoinedLobby()
     {
         Debug.Log("OnJoinedLobby");

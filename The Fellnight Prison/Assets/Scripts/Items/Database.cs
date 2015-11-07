@@ -693,7 +693,8 @@ public class Database : MonoBehaviour{
 
     public static void gainExpGo(PhotonPlayer _player, int _expGain, int curExp)
     {
-        string cmdString = "UPDATE users.skills  SET OneHandSword = " + (curExp + _expGain) + " WHERE username = '" + _player.name + "';";
+        int temp = (curExp + _expGain);
+        string cmdString = "UPDATE users.skills  SET OneHandSword = " + temp + " WHERE username = '" + _player.name + "';";
         MySqlCommand _cmd = _masterConnect.CreateCommand();
         _cmd.CommandText = cmdString;
         _cmd.ExecuteNonQuery();

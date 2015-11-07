@@ -19,6 +19,10 @@ public class MainController : MonoBehaviour {
 
     public void FinishGenerator()
     {
+        foreach (GameObject generator in GameObject.FindGameObjectsWithTag("MobGenerator"))
+        {
+            generator.GetComponent<MobGenerator>().enabled = true;
+        }
         this.gameObject.GetComponent<PhotonView>().RPC("SpawnPlayer", PhotonTargets.All);
     }
 
@@ -53,7 +57,7 @@ public class MainController : MonoBehaviour {
         int partySize = _players.Length;
         int expPerPlayer = expGain / partySize;
         double itemId = 0;
-        Weapon _temp = null; ;
+        Weapon _temp = null;
         int playerToRecieveItem = playerToRecieveItem = Random.Range(0, partySize);
         if (itemDrop)
         {
@@ -65,13 +69,13 @@ public class MainController : MonoBehaviour {
             if (itemDrop && i == playerToRecieveItem)
             {
                 this.gameObject.GetComponent<Database>().gainItem(_players[i], itemId);
-                this.gameObject.GetComponent<PhotonView>().RPC("gainedItem", _players[i], _temp.Name);
+                GameObject.FindWithTag("GameController").GetComponent<PhotonView>().RPC("gainedItem", _players[i], _temp.Name);
             }
-            this.gameObject.GetComponent<Database>().gainExp(_players[i], expGain, _playerList[i].OneHandedSword);
+            this.gameObject.GetComponent<Database>().gainExp(_players[i], expPerPlayer, _playerList[i].OneHandedSword);
             int curLevel = (int)Mathf.Floor(Mathf.Log10(_playerList[i].OneHandedSword));
-            _playerList[i].OneHandedSword += expGain;
+            _playerList[i].OneHandedSword += expPerPlayer;
 
-            this.gameObject.GetComponent<PhotonView>().RPC("gainExp", _players[i], expGain);
+            GameObject.FindWithTag("GameController").GetComponent<PhotonView>().RPC("gainExp", _players[i], expPerPlayer);
 
             if ((int)Mathf.Floor(Mathf.Log10(_playerList[i].OneHandedSword)) > curLevel)
             {
@@ -80,15 +84,5 @@ public class MainController : MonoBehaviour {
         }
     }
 
-    [PunRPC]
-    void getExp(int expGain)
-    {
-        GameObject.FindWithTag("MenuController").GetComponent<MenuController>().gainedExp(expGain);
-    }
-
-    [PunRPC]
-    void gainedItem(string _name)
-    {
-        GameObject.FindWithTag("MenuController").GetComponent<MenuController>().gainedItem(_name);
-    }
+    
 }
