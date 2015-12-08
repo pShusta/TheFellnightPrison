@@ -1,0 +1,5 @@
+﻿The Fellnight Prison
+Logan Pettit and Phil Shusta
+
+
+        The Fellnight Prison uses a mouse based input system for combat.  To input an attack command, simply hold down the left mouse button, drag the cursor across the screen and then release the left mouse button.  Depending on the way you drag the mouse a different attack command will be called.  It is also possible to enter an attack command by scrollig the mouse wheel.  Movement is controlled with the standard wasd movement and mouse position look controls.  W and S control forward and back motion, A and D control staff while the mouse is used to control look direction.  The current menu controls are S for social menu, esc for the main menu and I for the inventory menu.  The goal of the game is to make your way to the boss room and defeate the boss.
